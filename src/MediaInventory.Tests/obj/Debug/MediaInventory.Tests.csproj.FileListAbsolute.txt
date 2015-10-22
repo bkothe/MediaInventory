@@ -35,3 +35,12 @@ C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\Me
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Iesi.Collections.xml
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\NHibernate.xml
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\MediaInventory.Tests.dll.config
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\nunit.core.interfaces.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.AutoNSubstitute.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.NUnit2.Addins.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.NUnit2.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.xml
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.AutoNSubstitute.xml
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.NUnit2.xml
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.NUnit2.Addins.xml

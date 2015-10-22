@@ -26,3 +26,4 @@ C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\Me
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\FluentNHibernate.xml
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\Iesi.Collections.xml
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\NHibernate.xml
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\obj\Debug\MediaInventory.csprojResolveAssemblyReference.cache
