@@ -56,27 +56,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Artist.cs" />
-    <Compile Include="Core\ArtistCreationService.cs" />
-    <Compile Include="Core\ArtistValidator.cs" />
-    <Compile Include="Core\Concert.cs" />
-    <Compile Include="Core\ConcertCreationService.cs" />
-    <Compile Include="Core\ConcertValidator.cs" />
-    <Compile Include="Core\Media.cs" />
-    <Compile Include="Core\Venue.cs" />
-    <Compile Include="Core\VenueValidator.cs" />
+    <Compile Include="Core\Artist\Artist.cs" />
+    <Compile Include="Core\Artist\ArtistCreationService.cs" />
+    <Compile Include="Core\Artist\ArtistDeletionService.cs" />
+    <Compile Include="Core\Artist\ArtistModificationService.cs" />
+    <Compile Include="Core\Artist\ArtistValidator.cs" />
+    <Compile Include="Core\Media\CommercialAudioMediaCreationService.cs" />
+    <Compile Include="Core\Media\CommercialAudioMediaDeletionService.cs" />
+    <Compile Include="Core\Media\CommercialAudioMediaValidator.cs" />
+    <Compile Include="Core\Performance\Concert.cs" />
+    <Compile Include="Core\Performance\ConcertCreationService.cs" />
+    <Compile Include="Core\Performance\ConcertDeletionService.cs" />
+    <Compile Include="Core\Performance\ConcertModificationService.cs" />
+    <Compile Include="Core\Performance\ConcertValidator.cs" />
+    <Compile Include="Core\Media\Media.cs" />
+    <Compile Include="Core\Venue\Venue.cs" />
+    <Compile Include="Core\Venue\VenueCreationService.cs" />
+    <Compile Include="Core\Venue\VenueDeletionService.cs" />
+    <Compile Include="Core\Venue\VenueModificationService.cs" />
+    <Compile Include="Core\Venue\VenueValidator.cs" />
     <Compile Include="Infrastructure\Application\ITimestampedEntity.cs" />
     <Compile Include="Infrastructure\Framework\Collections\EnumerableExtensions.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\IAuditedCreateEntity.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\IAuditedEntity.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\IAuditedModifyEntity.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\IIdEntity.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\ITimestampedCreateEntity.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\IRepository.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\ITimestampedEntity.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\ITimestampedModifyEntity.cs" />
     <Compile Include="Infrastructure\Framework\Exceptions\ApplicationException.cs" />
+    <Compile Include="Infrastructure\Framework\Exceptions\NotFoundException.cs" />
     <Compile Include="Infrastructure\Framework\Exceptions\ValidationException.cs" />
+    <Compile Include="Infrastructure\Framework\ObjectExtensions.cs" />
+    <Compile Include="Infrastructure\Framework\Reflection\ObjectExtensions.cs" />
+    <Compile Include="Infrastructure\Framework\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Framework\" />
+    <Folder Include="Infrastructure\Framework\Data\Orm\NHibernate\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

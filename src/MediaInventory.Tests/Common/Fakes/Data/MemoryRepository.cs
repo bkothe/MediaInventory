@@ -45,10 +45,12 @@ namespace MediaInventory.Tests.Common.Fakes.Data
         public TEntity Add(TEntity entity)
         {
             var id = _keyProperty.GetValue(entity, null);
+
             if (_keyProperty.PropertyType == typeof(Guid) && ((Guid)id) == Guid.Empty)
                 _keyProperty.SetValue(entity, Guid.NewGuid(), null);
             else if (_keyProperty.PropertyType == typeof(int) && ((int)id) == 0)
                 _keyProperty.SetValue(entity, _entities.Any() ? (int)this.Max(_key) + 1 : 1, null);
+
             _entities.Add(entity);
             return entity;
         }

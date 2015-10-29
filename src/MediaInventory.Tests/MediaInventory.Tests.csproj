@@ -93,11 +93,21 @@
     <Compile Include="Common\Fakes\Data\MemoryRepository.cs" />
     <Compile Include="LocalAddin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit\Core\ArtistCreationServiceTests.cs" />
-    <Compile Include="Unit\Core\ArtistValidatorTests.cs" />
-    <Compile Include="Unit\Core\ConcertValidatorTests.cs" />
-    <Compile Include="Unit\Core\PerformanceCreationServiceTests.cs" />
-    <Compile Include="Unit\Core\VenueValidatorTests.cs" />
+    <Compile Include="Unit\Core\Artist\ArtistCreationServiceTests.cs" />
+    <Compile Include="Unit\Core\Artist\ArtistDeletionServiceTests.cs" />
+    <Compile Include="Unit\Core\Artist\ArtistModificationServiceTests.cs" />
+    <Compile Include="Unit\Core\Artist\ArtistValidatorTests.cs" />
+    <Compile Include="Unit\Core\Media\CommercialAudioMediaCreationServiceTests.cs" />
+    <Compile Include="Unit\Core\Media\CommercialAudioMediaDeletionServiceTests.cs" />
+    <Compile Include="Unit\Core\Media\CommercialAudioMediaValidatorTests.cs" />
+    <Compile Include="Unit\Core\Performance\ConcertDeletionServiceTests.cs" />
+    <Compile Include="Unit\Core\Performance\ConcertModificationServiceTests.cs" />
+    <Compile Include="Unit\Core\Performance\ConcertValidatorTests.cs" />
+    <Compile Include="Unit\Core\Performance\ConcertCreationServiceTests.cs" />
+    <Compile Include="Unit\Core\Venue\VenueCreationServiceTests.cs" />
+    <Compile Include="Unit\Core\Venue\VenueDeletionServiceTests.cs" />
+    <Compile Include="Unit\Core\Venue\VenueModificationServiceTests.cs" />
+    <Compile Include="Unit\Core\Venue\VenueValidatorTests.cs" />
     <Compile Include="Unit\Infrastructure\Framework\Collections\EnumerableExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
