@@ -1,9 +1,9 @@
 ﻿using System;
-using MediaInventory.Infrastructure.Application;
+using MediaInventory.Infrastructure.Framework.Data.Orm;
 
 namespace MediaInventory.Core.Artist
 {
-    public class Artist : ITimestampedEntity
+    public class Artist : IIdEntity, ITimestampedEntity
     {
         public virtual Guid Id { get; set; }
         public virtual string Name { get; set; }

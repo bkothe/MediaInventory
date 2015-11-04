@@ -1,16 +1,17 @@
 ﻿using System;
-using MediaInventory.Infrastructure.Application;
+using MediaInventory.Infrastructure.Framework.Data.Orm;
 
 namespace MediaInventory.Core.Venue
 {
-    public class Venue : ITimestampedEntity
+    public class Venue : IIdEntity, ITimestampedEntity
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime? Modified { get; set; }
+        public virtual Guid Id { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string City { get; set; }
+        public virtual string State { get; set; }
+        public virtual Venue PreviousVenue { get; set; }
+        public virtual DateTime Created { get; set; }
+        public virtual DateTime? Modified { get; set; }
 
         public virtual Venue Clone()
         {

@@ -1,5 +1,5 @@
 ﻿using System;
-using MediaInventory.Infrastructure.Application;
+using MediaInventory.Infrastructure.Framework.Data.Orm;
 
 namespace MediaInventory.Core.Performance
 {
@@ -12,14 +12,14 @@ namespace MediaInventory.Core.Performance
         DateTime Date { get; set; }
     }
 
-    public class Concert : IPerformance, ITimestampedEntity
+    public class Concert : IIdEntity, IPerformance, ITimestampedEntity
     {
-        public Guid Id { get; set; }
-        public Artist.Artist Artist { get; set; }
-        public Venue.Venue Venue { get; set; }
-        public DateTime Date { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime? Modified { get; set; }
+        public virtual Guid Id { get; set; }
+        public virtual Artist.Artist Artist { get; set; }
+        public virtual Venue.Venue Venue { get; set; }
+        public virtual DateTime Date { get; set; }
+        public virtual DateTime Created { get; set; }
+        public virtual DateTime? Modified { get; set; }
 
         public virtual Concert Clone()
         {

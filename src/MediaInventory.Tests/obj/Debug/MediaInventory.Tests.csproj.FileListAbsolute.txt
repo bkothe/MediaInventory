@@ -44,3 +44,12 @@ C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\Me
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.AutoNSubstitute.xml
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.NUnit2.xml
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Ploeh.AutoFixture.NUnit2.Addins.xml
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Bender.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Flexo.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\SimpleConfig.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\StructureMap.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Bender.pdb
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\Flexo.pdb
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\SimpleConfig.pdb
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\StructureMap.pdb
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory.Tests\bin\Debug\StructureMap.xml

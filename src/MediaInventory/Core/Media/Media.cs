@@ -1,6 +1,5 @@
 ﻿using System;
 using MediaInventory.Infrastructure.Framework.Data.Orm;
-using ITimestampedEntity = MediaInventory.Infrastructure.Application.ITimestampedEntity;
 
 namespace MediaInventory.Core.Media
 {
@@ -30,18 +29,18 @@ namespace MediaInventory.Core.Media
 
     public class CommercialAudioMedia : IMedia, IIdEntity, ITimestampedEntity
     {
-        public Guid Id { get; set; }
-        public Artist.Artist Artist { get; set; }
-        public string Title { get; set; }
-        public MediaFormat MediaFormat { get; set; }
-        public DateTime? Released { get; set; }
-        public DateTime? Purchased { get; set; }
-        public decimal? PurchasePrice { get; set; }
-        public string PurchaseLocation { get; set; }
-        public int MediaCount { get; set; }
-        public string Notes { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime? Modified { get; set; }
+        public virtual Guid Id { get; set; }
+        public virtual Artist.Artist Artist { get; set; }
+        public virtual string Title { get; set; }
+        public virtual MediaFormat MediaFormat { get; set; }
+        public virtual DateTime? Released { get; set; }
+        public virtual DateTime? Purchased { get; set; }
+        public virtual decimal? PurchasePrice { get; set; }
+        public virtual string PurchaseLocation { get; set; }
+        public virtual int MediaCount { get; set; }
+        public virtual string Notes { get; set; }
+        public virtual DateTime Created { get; set; }
+        public virtual DateTime? Modified { get; set; }
     }
 
     public class VideoMedia : IMedia, IIdEntity, ITimestampedEntity

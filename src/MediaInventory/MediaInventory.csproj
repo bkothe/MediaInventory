@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bender, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bender.3.0.1.0\lib\Bender.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flexo, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\flexo.1.0.3.0\lib\Flexo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
       <Private>True</Private>
@@ -44,6 +52,18 @@
     </Reference>
     <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleConfig, Version=1.0.37.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleConfig.1.0.37.0\lib\SimpleConfig.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -70,24 +90,40 @@
     <Compile Include="Core\Performance\ConcertModificationService.cs" />
     <Compile Include="Core\Performance\ConcertValidator.cs" />
     <Compile Include="Core\Media\Media.cs" />
+    <Compile Include="Core\Registry.cs" />
     <Compile Include="Core\Venue\Venue.cs" />
     <Compile Include="Core\Venue\VenueCreationService.cs" />
     <Compile Include="Core\Venue\VenueDeletionService.cs" />
     <Compile Include="Core\Venue\VenueModificationService.cs" />
     <Compile Include="Core\Venue\VenueValidator.cs" />
-    <Compile Include="Infrastructure\Application\ITimestampedEntity.cs" />
+    <Compile Include="Infrastructure\Application\Configuration\Configuration.cs" />
+    <Compile Include="Infrastructure\Application\Configuration\Data.cs" />
+    <Compile Include="Infrastructure\Application\Persistence\ArtistMap.cs" />
+    <Compile Include="Infrastructure\Application\Persistence\ConcertMap.cs" />
+    <Compile Include="Infrastructure\Application\Persistence\CommercialAudioMediaMap.cs" />
+    <Compile Include="Infrastructure\Application\Persistence\VenueMap.cs" />
     <Compile Include="Infrastructure\Framework\Collections\EnumerableExtensions.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\IAuditedCreateEntity.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\IAuditedEntity.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\IAuditedModifyEntity.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\NHibernate\CompositeInterceptor.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\NHibernate\IEventListener.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\IIdEntity.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\ITimestampedCreateEntity.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\IRepository.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\ITimestampedEntity.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\ITimestampedModifyEntity.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\NHibernate\LazySession.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\NHibernate\LazySessionFactory.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\NHibernate\NHibernateExtensions.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\NHibernate\Repository.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\NHibernate\SessionFactoryBuilder.cs" />
+    <Compile Include="Infrastructure\Framework\Data\Orm\NHibernate\UnitOfWork.cs" />
     <Compile Include="Infrastructure\Framework\Exceptions\ApplicationException.cs" />
     <Compile Include="Infrastructure\Framework\Exceptions\NotFoundException.cs" />
     <Compile Include="Infrastructure\Framework\Exceptions\ValidationException.cs" />
+    <Compile Include="Infrastructure\Framework\Linq\ExpressionExtensions.cs" />
     <Compile Include="Infrastructure\Framework\ObjectExtensions.cs" />
     <Compile Include="Infrastructure\Framework\Reflection\ObjectExtensions.cs" />
     <Compile Include="Infrastructure\Framework\StringExtensions.cs" />
@@ -96,9 +132,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\Framework\Data\Orm\NHibernate\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

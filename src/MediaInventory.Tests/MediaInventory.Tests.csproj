@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bender, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bender.3.0.1.0\lib\Bender.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flexo, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\flexo.1.0.3.0\lib\Flexo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
       <Private>True</Private>
@@ -78,6 +86,10 @@
       <HintPath>..\packages\Should.1.1.20\lib\Should.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleConfig, Version=1.0.37.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleConfig.1.0.37.0\lib\SimpleConfig.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -88,9 +100,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Comparers\DateTimeEqualityComparer.cs" />
+    <Compile Include="Common\Comparers\EntityEqualityComparer.cs" />
+    <Compile Include="Common\Configuration.cs" />
+    <Compile Include="Common\Data\NHibernate.cs" />
+    <Compile Include="Common\Data\TestData\Context.cs" />
+    <Compile Include="Common\Data\TestData\Repositories.cs" />
+    <Compile Include="Common\Data\TestData\TestData.cs" />
+    <Compile Include="Common\Data\TestData\Tracking.cs" />
     <Compile Include="Common\Extensions\RandomString.cs" />
     <Compile Include="Common\Extensions\ShouldExtensions.cs" />
     <Compile Include="Common\Fakes\Data\MemoryRepository.cs" />
+    <Compile Include="Common\Fakes\MemorySessionFactoryBuilder.cs" />
+    <Compile Include="Integration\Application\Persistence\ArtistMapTests.cs" />
+    <Compile Include="Integration\Application\Persistence\CommercialAudioMediaMapTests.cs" />
+    <Compile Include="Integration\Application\Persistence\ConcertMapTests.cs" />
+    <Compile Include="Integration\Application\Persistence\VenueMapTests.cs" />
     <Compile Include="LocalAddin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit\Core\Artist\ArtistCreationServiceTests.cs" />
@@ -120,6 +145,7 @@
       <Name>MediaInventory</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
