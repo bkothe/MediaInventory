@@ -76,6 +76,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Administration\User.cs" />
+    <Compile Include="Core\Administration\UserValidator.cs" />
     <Compile Include="Core\Artist\Artist.cs" />
     <Compile Include="Core\Artist\ArtistCreationService.cs" />
     <Compile Include="Core\Artist\ArtistDeletionService.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Infrastructure\Application\Persistence\ArtistMap.cs" />
     <Compile Include="Infrastructure\Application\Persistence\ConcertMap.cs" />
     <Compile Include="Infrastructure\Application\Persistence\CommercialAudioMediaMap.cs" />
+    <Compile Include="Infrastructure\Application\Persistence\UserMap.cs" />
     <Compile Include="Infrastructure\Application\Persistence\VenueMap.cs" />
     <Compile Include="Infrastructure\Framework\Collections\EnumerableExtensions.cs" />
     <Compile Include="Infrastructure\Framework\Data\Orm\IAuditedCreateEntity.cs" />

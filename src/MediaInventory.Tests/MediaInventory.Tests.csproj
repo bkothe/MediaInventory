@@ -115,9 +115,11 @@
     <Compile Include="Integration\Application\Persistence\ArtistMapTests.cs" />
     <Compile Include="Integration\Application\Persistence\CommercialAudioMediaMapTests.cs" />
     <Compile Include="Integration\Application\Persistence\ConcertMapTests.cs" />
+    <Compile Include="Integration\Application\Persistence\UserMapTests.cs" />
     <Compile Include="Integration\Application\Persistence\VenueMapTests.cs" />
     <Compile Include="LocalAddin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\Core\Administration\UserValidatorTests.cs" />
     <Compile Include="Unit\Core\Artist\ArtistCreationServiceTests.cs" />
     <Compile Include="Unit\Core\Artist\ArtistDeletionServiceTests.cs" />
     <Compile Include="Unit\Core\Artist\ArtistModificationServiceTests.cs" />
