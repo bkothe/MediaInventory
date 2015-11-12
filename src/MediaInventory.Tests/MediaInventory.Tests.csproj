@@ -112,11 +112,11 @@
     <Compile Include="Common\Extensions\ShouldExtensions.cs" />
     <Compile Include="Common\Fakes\Data\MemoryRepository.cs" />
     <Compile Include="Common\Fakes\MemorySessionFactoryBuilder.cs" />
-    <Compile Include="Integration\Application\Persistence\ArtistMapTests.cs" />
-    <Compile Include="Integration\Application\Persistence\CommercialAudioMediaMapTests.cs" />
-    <Compile Include="Integration\Application\Persistence\ConcertMapTests.cs" />
-    <Compile Include="Integration\Application\Persistence\UserMapTests.cs" />
-    <Compile Include="Integration\Application\Persistence\VenueMapTests.cs" />
+    <Compile Include="Integration\Infrastructure\Application\Data\Persistence\ArtistMapTests.cs" />
+    <Compile Include="Integration\Infrastructure\Application\Data\Persistence\CommercialAudioMediaMapTests.cs" />
+    <Compile Include="Integration\Infrastructure\Application\Data\Persistence\ConcertMapTests.cs" />
+    <Compile Include="Integration\Infrastructure\Application\Data\Persistence\UserMapTests.cs" />
+    <Compile Include="Integration\Infrastructure\Application\Data\Persistence\VenueMapTests.cs" />
     <Compile Include="LocalAddin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit\Core\Administration\UserValidatorTests.cs" />
@@ -135,7 +135,7 @@
     <Compile Include="Unit\Core\Venue\VenueDeletionServiceTests.cs" />
     <Compile Include="Unit\Core\Venue\VenueModificationServiceTests.cs" />
     <Compile Include="Unit\Core\Venue\VenueValidatorTests.cs" />
-    <Compile Include="Unit\Infrastructure\Framework\Collections\EnumerableExtensionsTests.cs" />
+    <Compile Include="Unit\Infrastructure\Common\Collections\EnumerableExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

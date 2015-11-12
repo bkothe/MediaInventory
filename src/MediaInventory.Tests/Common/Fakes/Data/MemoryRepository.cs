@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 
 namespace MediaInventory.Tests.Common.Fakes.Data
 {

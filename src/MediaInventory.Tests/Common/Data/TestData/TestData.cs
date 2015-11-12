@@ -1,4 +1,4 @@
-﻿using MediaInventory.Infrastructure.Framework.Data.Orm.NHibernate;
+﻿using MediaInventory.Infrastructure.Common.Data.Orm.NHibernate;
 
 namespace MediaInventory.Tests.Common.Data.TestData
 {

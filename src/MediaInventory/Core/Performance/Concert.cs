@@ -1,5 +1,5 @@
 ﻿using System;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 
 namespace MediaInventory.Core.Performance
 {

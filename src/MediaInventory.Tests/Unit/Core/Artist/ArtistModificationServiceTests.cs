@@ -1,6 +1,6 @@
 ﻿using System;
 using MediaInventory.Core.Artist;
-using MediaInventory.Infrastructure.Framework.Exceptions;
+using MediaInventory.Infrastructure.Common.Exceptions;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NUnit.Framework;
 using Should;

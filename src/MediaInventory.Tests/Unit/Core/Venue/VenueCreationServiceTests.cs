@@ -1,6 +1,6 @@
 ﻿using System;
 using MediaInventory.Core.Venue;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 using MediaInventory.Tests.Common.Extensions;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;

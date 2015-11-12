@@ -2,8 +2,8 @@
 using System.Data;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Conventions.Helpers;
-using MediaInventory.Infrastructure.Application.Persistence;
-using MediaInventory.Infrastructure.Framework.Data.Orm.NHibernate;
+using MediaInventory.Infrastructure.Application.Data.Persistence;
+using MediaInventory.Infrastructure.Common.Data.Orm.NHibernate;
 using MediaInventory.Tests.Common.Fakes;
 
 namespace MediaInventory.Tests.Common.Data

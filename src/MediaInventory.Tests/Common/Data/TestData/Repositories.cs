@@ -3,8 +3,8 @@ using MediaInventory.Core.Artist;
 using MediaInventory.Core.Media;
 using MediaInventory.Core.Performance;
 using MediaInventory.Core.Venue;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
-using MediaInventory.Infrastructure.Framework.Data.Orm.NHibernate;
+using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.Infrastructure.Common.Data.Orm.NHibernate;
 
 namespace MediaInventory.Tests.Common.Data.TestData
 {

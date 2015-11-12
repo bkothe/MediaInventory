@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using MediaInventory.Core.Artist;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;
 using NUnit.Framework;

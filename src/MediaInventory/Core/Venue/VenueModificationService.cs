@@ -1,7 +1,7 @@
 ﻿using System;
 using FluentValidation;
-using MediaInventory.Infrastructure.Framework.Collections;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
+using MediaInventory.Infrastructure.Common.Collections;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 
 namespace MediaInventory.Core.Venue
 {

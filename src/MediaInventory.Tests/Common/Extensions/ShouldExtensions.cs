@@ -1,7 +1,7 @@
 ﻿using System;
-using MediaInventory.Infrastructure.Framework.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MediaInventory.Infrastructure.Common.Collections;
 using Should;
 
 namespace MediaInventory.Tests.Common.Extensions

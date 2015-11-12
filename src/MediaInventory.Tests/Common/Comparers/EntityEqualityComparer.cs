@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 
 namespace MediaInventory.Tests.Common.Comparers
 {

@@ -1,7 +1,7 @@
 ﻿using System;
-using MediaInventory.Infrastructure.Framework.Collections;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
-using MediaInventory.Infrastructure.Framework.Exceptions;
+using MediaInventory.Infrastructure.Common.Collections;
+using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.Infrastructure.Common.Exceptions;
 
 namespace MediaInventory.Core.Performance
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using FluentValidation;
 using MediaInventory.Core.Performance;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;
 using NUnit.Framework;

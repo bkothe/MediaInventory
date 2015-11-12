@@ -1,6 +1,6 @@
 ﻿using System;
 using MediaInventory.Core.Media;
-using MediaInventory.Infrastructure.Framework.Data.Orm;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;
 using NUnit.Framework;
