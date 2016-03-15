@@ -47,8 +47,8 @@ namespace MediaInventory.Tests.Common.Data.TestData
         private void DeleteTrackedEntities()
         {
             Users.ForEach(x => _repositories.UserRepository.Delete(x));
-            Venues.ForEach(x => _repositories.VenueRepository.Delete(x));
             Concerts.ForEach(x => _repositories.ConcertRepository.Delete(x));
+            Venues.ForEach(x => _repositories.VenueRepository.Delete(x));
             Artists.ForEach(x => _repositories.ArtistRepository.Delete(x));
 
             _session.Flush();

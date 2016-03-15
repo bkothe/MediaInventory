@@ -30,12 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bender, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bender.3.0.1.0\lib\Bender.dll</HintPath>
+    <Reference Include="Bender, Version=3.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bender.3.0.33.0\lib\Bender.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Flexo, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\flexo.1.0.3.0\lib\Flexo.dll</HintPath>
+    <Reference Include="Flexo, Version=1.0.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\flexo.1.0.22.0\lib\Flexo.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -92,6 +92,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -100,14 +101,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acceptance\Common\Http\AcceptSelector.cs" />
+    <Compile Include="Acceptance\Common\Http\ContentTypeSelector.cs" />
+    <Compile Include="Acceptance\Common\Http\Http.cs" />
+    <Compile Include="Acceptance\Common\Http\Client.cs" />
+    <Compile Include="Acceptance\Common\Http\Request.cs" />
+    <Compile Include="Acceptance\Common\Http\Response.cs" />
+    <Compile Include="Acceptance\Common\Http\VerbSelector.cs" />
+    <Compile Include="Acceptance\Ui\api\artist\ArtistDeleteHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\artist\ArtistGetHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\artist\ArtistPostHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\concert\ConcertDeleteHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\concert\ConcertGetHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\venue\VenueDeleteHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\venue\VenueGetHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\venue\VenuePostHandlerTests.cs" />
     <Compile Include="Common\Comparers\DateTimeEqualityComparer.cs" />
     <Compile Include="Common\Comparers\EntityEqualityComparer.cs" />
     <Compile Include="Common\Configuration.cs" />
     <Compile Include="Common\Data\NHibernate.cs" />
+    <Compile Include="Common\Data\TestData\ArtistsDsl.cs" />
+    <Compile Include="Common\Data\TestData\ConcertsDsl.cs" />
     <Compile Include="Common\Data\TestData\Context.cs" />
     <Compile Include="Common\Data\TestData\Repositories.cs" />
     <Compile Include="Common\Data\TestData\TestData.cs" />
     <Compile Include="Common\Data\TestData\Tracking.cs" />
+    <Compile Include="Common\Data\TestData\VenuesDsl.cs" />
     <Compile Include="Common\Extensions\RandomString.cs" />
     <Compile Include="Common\Extensions\ShouldExtensions.cs" />
     <Compile Include="Common\Fakes\Data\MemoryRepository.cs" />
@@ -142,6 +161,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MediaInventory.UI\MediaInventory.UI.csproj">
+      <Project>{E6A606CB-5672-4A85-AD97-4BEE167E7ACB}</Project>
+      <Name>MediaInventory.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MediaInventory\MediaInventory.csproj">
       <Project>{62a2c2fc-a3d2-403a-91b7-e88f332847a5}</Project>
       <Name>MediaInventory</Name>

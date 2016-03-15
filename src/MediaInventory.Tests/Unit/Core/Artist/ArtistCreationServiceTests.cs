@@ -45,10 +45,10 @@ namespace MediaInventory.Tests.Unit.Core.Artist
             artist.Name.ShouldEqual(ArtistName);
         }
 
-        [Test, ExpectedException(typeof(ValidationException))]
+        [Test]
         public void should_throw_exception_when_artist_name_is_empty()
         {
-            _artistCreationService.Create("");
+            Assert.Throws<ValidationException>(() => _artistCreationService.Create(""));
         }
     }
 }

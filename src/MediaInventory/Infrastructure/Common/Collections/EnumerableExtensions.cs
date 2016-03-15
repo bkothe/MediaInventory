@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using MediaInventory.Infrastructure.Common.Reflection;
 
 namespace MediaInventory.Infrastructure.Common.Collections
 {
@@ -23,11 +21,6 @@ namespace MediaInventory.Infrastructure.Common.Collections
                 secondList.RemoveAt(index);
             }
             return secondList.Count == 0;
-        }
-
-        public static T FirstOrThrowNotFound<T>(this IEnumerable<T> source, Func<T, bool> expression, Guid entityId, string name = null)
-        {
-            return source.FirstOrDefault(expression).IfNullThrowNotFound(entityId, name ?? nameof(T));
         }
     }
 }

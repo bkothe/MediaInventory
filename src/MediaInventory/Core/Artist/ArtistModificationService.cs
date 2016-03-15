@@ -23,7 +23,7 @@ namespace MediaInventory.Core.Artist
 
         public Artist Modify(Guid id, Action<Artist> modify)
         {
-            var artist = _artists.FirstOrThrowNotFound(x => x.Id == id, id);
+            var artist = _artists.FirstOrThrowNotFound(x => x.Id == id);
 
             TryModify(artist, modify);
 

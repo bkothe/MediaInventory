@@ -23,7 +23,7 @@ namespace MediaInventory.Core.Venue
 
         public Venue Modify(Guid id, Action<Venue> modify)
         {
-            var venue = _venues.FirstOrThrowNotFound(x => x.Id == id, id);
+            var venue = _venues.FirstOrThrowNotFound(x => x.Id == id);
 
             TryModify(venue, modify);
 

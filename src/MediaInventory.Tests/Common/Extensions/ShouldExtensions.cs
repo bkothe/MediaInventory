@@ -16,7 +16,6 @@ namespace MediaInventory.Tests.Common.Extensions
                 .ShouldBeTrue(string.Format("Expected: equivalent to <{0}>, But was: <{1}>", expectedArray.Aggregate(","), sourceArray.Aggregate(",")));
         }
 
-        
         public static DateTime ShouldNotBeWithinSeconds(this DateTime source, int seconds, bool utc = false)
         {
             return source.ShouldNotBeWithinSeconds(utc ? DateTime.UtcNow : DateTime.Now, seconds);

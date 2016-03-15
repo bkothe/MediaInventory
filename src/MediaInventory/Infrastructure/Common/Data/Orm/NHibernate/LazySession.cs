@@ -50,8 +50,14 @@ namespace MediaInventory.Infrastructure.Common.Data.Orm.NHibernate
         public void RollbackTransaction()
         {
             if (_transaction == null || !_transaction.IsActive) return;
-            _transaction.Rollback();
-            _transaction.Dispose();
+            // We don't rollback exceptions to obscure the exception
+            // that triggered the rollback in the first place.
+            try
+            {
+                _transaction.Rollback();
+                _transaction.Dispose();
+            }
+            catch { }
         }
 
         public void Refresh(object entity)

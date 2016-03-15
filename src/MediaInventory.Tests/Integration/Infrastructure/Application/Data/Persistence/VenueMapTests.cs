@@ -52,7 +52,7 @@ namespace MediaInventory.Tests.Integration.Infrastructure.Application.Data.Persi
                 .CheckProperty(x => x.State, RandomString.GenerateAlphaNumeric(2))
                 .CheckProperty(x => x.Created, DateTime.Now, new DateTimeEqualityComparer(1))
                 .CheckProperty(x => x.Modified, null)
-                .CheckReference(x => x.PreviousVenue, null)
+                .CheckProperty(x => x.PreviousVenue, null)
                 .VerifyTheMappings();
         }
     }

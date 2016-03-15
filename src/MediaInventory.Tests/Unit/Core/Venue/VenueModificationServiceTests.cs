@@ -50,10 +50,10 @@ namespace MediaInventory.Tests.Unit.Core.Venue
             venue.State.ShouldEqual(NewState);
         }
 
-        [Test, ExpectedException(typeof(NotFoundException))]
+        [Test]
         public void should_throw_not_found_when_venue_does_not_exist()
         {
-            _venueModificationService.Modify(Guid.NewGuid(), null);
+            Assert.Throws<NotFoundException>(() => _venueModificationService.Modify(Guid.NewGuid(), null));
         }
     }
 }

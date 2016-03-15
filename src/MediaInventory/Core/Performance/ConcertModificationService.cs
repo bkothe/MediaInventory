@@ -23,7 +23,7 @@ namespace MediaInventory.Core.Performance
 
         public Concert Modify(Guid concertId, Action<Concert> modify)
         {
-            var concert = _concerts.FirstOrThrowNotFound(x => x.Id == concertId, concertId);
+            var concert = _concerts.FirstOrThrowNotFound(x => x.Id == concertId);
 
             TryModify(concert, modify);
 

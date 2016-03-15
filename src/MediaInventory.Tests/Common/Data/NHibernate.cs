@@ -10,7 +10,6 @@ namespace MediaInventory.Tests.Common.Data
 {
     public static class NHibernate
     {
-        
         public static Func<ILazySession> OpenMediaInventorySession = () => new LazySession(MediaInventorySessionFactory);
         public static ILazySessionFactory MediaInventorySessionFactory = CreateSessionFactory(Configuration.Current.Data.MediaInventory.ConnectionString);
 
@@ -21,7 +20,7 @@ namespace MediaInventory.Tests.Common.Data
                 Mappings(map => map.FluentMappings.AddFromAssembly(typeof(ArtistMap).Assembly).Conventions.Add(AutoImport.Never())).
                 ExposeConfiguration(config =>
                 {
-                    config.CommandTimeout(600)
+                    config.CommandTimeout(60)
                         .SetInterceptors()
                         .AutoQuote();
                 }).

@@ -6,5 +6,6 @@ namespace MediaInventory.Infrastructure.Application.Configuration
     public class Configuration
     {
         public Data Data { get; set; }
+        public Web Web { get; set; }
     }
 }

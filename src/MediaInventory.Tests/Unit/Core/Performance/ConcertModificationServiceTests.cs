@@ -58,13 +58,13 @@ namespace MediaInventory.Tests.Unit.Core.Performance
             concert.Date.ShouldEqual(NewDate);
         }
 
-        [Test, ExpectedException(typeof(NotFoundException))]
+        [Test]
         public void should_throw_not_found_when_concert_does_not_exist()
         {
-            _concertModificationService.Modify(Guid.NewGuid(), null);
+            Assert.Throws<NotFoundException>(() => _concertModificationService.Modify(Guid.NewGuid(), null));
         }
 
-        [Test, ExpectedException(typeof(ValidationException))]
+        [Test]
         public void should_throw_validation_exception_when_artist_does_not_exist()
         {
             var concert = _concerts.Add(new Concert
@@ -74,13 +74,13 @@ namespace MediaInventory.Tests.Unit.Core.Performance
                 Date = OldDate
             });
 
-            _concertModificationService.Modify(concert.Id, x =>
+            Assert.Throws<ValidationException>(() => _concertModificationService.Modify(concert.Id, x =>
             {
                 x.Artist = new MediaInventory.Core.Artist.Artist { Id = Guid.NewGuid() };
-            });
+            }));
         }
 
-        [Test, ExpectedException(typeof(ValidationException))]
+        [Test]
         public void should_throw_validation_exception_when_venue_does_not_exist()
         {
             var concert = _concerts.Add(new Concert
@@ -90,10 +90,10 @@ namespace MediaInventory.Tests.Unit.Core.Performance
                 Date = OldDate
             });
 
-            _concertModificationService.Modify(concert.Id, x =>
+            Assert.Throws<ValidationException>(() => _concertModificationService.Modify(concert.Id, x =>
             {
                 x.Venue = new MediaInventory.Core.Venue.Venue { Id = Guid.NewGuid() };
-            });
+            }));
         }
     }
 }

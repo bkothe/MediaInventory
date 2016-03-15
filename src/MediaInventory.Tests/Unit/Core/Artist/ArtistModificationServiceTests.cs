@@ -33,10 +33,10 @@ namespace MediaInventory.Tests.Unit.Core.Artist
             artist.Name.ShouldEqual(NewName);
         }
 
-        [Test, ExpectedException(typeof(NotFoundException))]
+        [Test]
         public void should_throw_not_found_when_artist_does_not_exist()
         {
-            _artistModificationService.Modify(Guid.NewGuid(), null);
+            Assert.Throws<NotFoundException>(() => _artistModificationService.Modify(Guid.NewGuid(), null));
         }
     }
 }

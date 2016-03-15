@@ -16,7 +16,7 @@
     <RootNamespace>MediaInventory.UI</RootNamespace>
     <AssemblyName>MediaInventory.UI</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -43,11 +43,99 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bender, Version=3.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bender.3.0.33.0\lib\Bender.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bottles, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bottles.2.2.0.610\lib\Bottles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flexo, Version=1.0.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\flexo.1.0.22.0\lib\Flexo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuCore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuCore.2.0.0.311\lib\FubuCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuLocalization, Version=0.9.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuLocalization.0.9.5.124\lib\FubuLocalization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.Bender, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Bender.1.0.4.0\lib\FubuMVC.Bender.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.Core, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Core.1.3.0.1710\lib\net40\FubuMVC.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.Core.Assets, Version=0.9.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Core.Assets.0.9.9.577\lib\net40\FubuMVC.Core.Assets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.Core.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Core.UI.1.0.0.166\lib\net40\FubuMVC.Core.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.Core.View, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Core.View.1.1.0.581\lib\net40\FubuMVC.Core.View.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.Diagnostics, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Diagnostics.0.9.8.382\lib\net40\FubuMVC.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.JQueryUI, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.JQueryUI.0.5.0.359\lib\net40\FubuMVC.JQueryUI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.Navigation, Version=0.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Navigation.0.9.1.244\lib\net40\FubuMVC.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.Spark, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Spark.1.1.0.597\lib\net40\FubuMVC.Spark.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FubuMVC.StructureMap3, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\FubuMVC.StructureMap3.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.TwitterBootstrap, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.TwitterBootstrap.0.0.0.660\lib\net40\FubuMVC.TwitterBootstrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlTags, Version=1.2.0.144, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlTags.1.2.0.144\lib\4.0\HtmlTags.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spark, Version=1.8.0.0, Culture=neutral, PublicKeyToken=7f8549eed921a12c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spark.1.8.1.0\lib\NET45\Spark.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -64,8 +152,13 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="index.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -75,10 +168,37 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="api\artist\ArtistDeleteHandler.cs" />
+    <Compile Include="api\artist\ArtistGetHandler.cs" />
+    <Compile Include="api\artist\ArtistModel.cs" />
+    <Compile Include="api\artist\ArtistPostHandler.cs" />
+    <Compile Include="api\concert\ConcertDeleteHandler.cs" />
+    <Compile Include="api\concert\ConcertGetHandler.cs" />
+    <Compile Include="api\concert\ConcertEnumerationModel.cs" />
+    <Compile Include="api\concert\ConcertModel.cs" />
+    <Compile Include="api\RequestGuidId.cs" />
+    <Compile Include="api\venue\VenueDeleteHandler.cs" />
+    <Compile Include="api\venue\VenueGetHandler.cs" />
+    <Compile Include="api\venue\VenueModel.cs" />
+    <Compile Include="api\venue\VenuePostHandler.cs" />
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="Conventions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MediaInventory\MediaInventory.csproj">
+      <Project>{62a2c2fc-a3d2-403a-91b7-e88f332847a5}</Project>
+      <Name>MediaInventory</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -95,7 +215,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>9465</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:9465/</IISUrl>
+          <IISUrl>http://mediainventory.dev.briankothe.com</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://mediainventory.dev.briankothe.com</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

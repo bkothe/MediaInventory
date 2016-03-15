@@ -55,16 +55,18 @@ namespace MediaInventory.Tests.Unit.Core.Performance
             concert.Date.ShouldEqual(date);
         }
 
-        [Test, ExpectedException(typeof(ValidationException))]
+        [Test]
         public void should_throw_exception_when_artist_does_not_exist()
         {
-            _concertCreationService.Create(new MediaInventory.Core.Artist.Artist(), DateTime.Now, _venues.Add(new MediaInventory.Core.Venue.Venue()));
+            Assert.Throws<ValidationException>(() => _concertCreationService
+                .Create(new MediaInventory.Core.Artist.Artist(), DateTime.Now, _venues.Add(new MediaInventory.Core.Venue.Venue())));
         }
 
-        [Test, ExpectedException(typeof(ValidationException))]
+        [Test]
         public void should_throw_exception_when_venue_does_not_exist()
         {
-            _concertCreationService.Create(_artists.Add(new MediaInventory.Core.Artist.Artist()), DateTime.Now, new MediaInventory.Core.Venue.Venue());
+            Assert.Throws<ValidationException>(() => _concertCreationService
+                .Create(_artists.Add(new MediaInventory.Core.Artist.Artist()), DateTime.Now, new MediaInventory.Core.Venue.Venue()));
         }
     }
 }
