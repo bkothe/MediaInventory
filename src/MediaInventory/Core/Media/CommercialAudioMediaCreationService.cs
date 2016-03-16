@@ -1,27 +1,35 @@
 ﻿using System;
+using MediaInventory.Infrastructure.Common.Collections;
 using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.Infrastructure.Common.Exceptions;
 
 namespace MediaInventory.Core.Media
 {
     public interface ICommercialAudioMediaCreationService
     {
-        CommercialAudioMedia Create(Artist.Artist artist, string title, MediaFormat mediaFormat, DateTime? released, DateTime? purchased, decimal? purchasePrice, string purchaseLocation, int mediaCount, string notes);
+        CommercialAudioMedia Create(Guid artistId, string title, MediaFormat mediaFormat, DateTime? released,
+            DateTime? purchased, decimal? purchasePrice, string purchaseLocation, int mediaCount, string notes);
     }
 
     public class CommercialAudioMediaCreationService : ICommercialAudioMediaCreationService
     {
         private readonly IRepository<CommercialAudioMedia> _commercialAudioMediae;
+        private readonly IRepository<Artist.Artist> _artists;
+        private readonly CommercialAudioMediaValidator _commercialAudioMediaValidator;
 
-        public CommercialAudioMediaCreationService(IRepository<CommercialAudioMedia> commercialAudioMediae)
+        public CommercialAudioMediaCreationService(IRepository<CommercialAudioMedia> commercialAudioMediae, 
+            IRepository<Artist.Artist> artists, CommercialAudioMediaValidator commercialAudioMediaValidator)
         {
             _commercialAudioMediae = commercialAudioMediae;
+            _artists = artists;
+            _commercialAudioMediaValidator = commercialAudioMediaValidator;
         }
 
-        public CommercialAudioMedia Create(Artist.Artist artist, string title, MediaFormat mediaFormat, DateTime? released,
+        public CommercialAudioMedia Create(Guid artistId, string title, MediaFormat mediaFormat, DateTime? released,
             DateTime? purchased, decimal? purchasePrice, string purchaseLocation, int mediaCount, string notes)
         {
             var commercialAudioMedia = new CommercialAudioMedia {
-                Artist = artist,
+                Artist = _artists.FirstOrThrowNotFound(x => x.Id == artistId, artistId, "Artist"),
                 Title = title,
                 MediaFormat = mediaFormat,
                 Released = released,
@@ -32,9 +40,9 @@ namespace MediaInventory.Core.Media
                 Notes = notes
             };
 
-            _commercialAudioMediae.Add(commercialAudioMedia);
+            _commercialAudioMediaValidator.ValidateAndThrow(commercialAudioMedia);
 
-            return commercialAudioMedia;
+            return _commercialAudioMediae.Add(commercialAudioMedia);
         }
     }
 }

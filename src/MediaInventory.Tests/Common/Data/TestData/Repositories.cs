@@ -12,17 +12,17 @@ namespace MediaInventory.Tests.Common.Data.TestData
     {
         public Repositories(ILazySession session)
         {
-            UserRepository = new Repository<User>(session);
             ArtistRepository = new Repository<Artist>(session);
-            VenueRepository = new Repository<Venue>(session);
-            ConcertRepository = new Repository<Concert>(session);
             CommercialAudioMediaRepository = new Repository<CommercialAudioMedia>(session);
+            ConcertRepository = new Repository<Concert>(session);
+            UserRepository = new Repository<User>(session);
+            VenueRepository = new Repository<Venue>(session);
         }
 
-        public IRepository<User> UserRepository { get; }
         public IRepository<Artist> ArtistRepository { get; }
-        public IRepository<Venue> VenueRepository { get; }
-        public IRepository<Concert> ConcertRepository { get; }
         public IRepository<CommercialAudioMedia> CommercialAudioMediaRepository { get; }
+        public IRepository<Concert> ConcertRepository { get; }
+        public IRepository<User> UserRepository { get; }
+        public IRepository<Venue> VenueRepository { get; }
     }
 }

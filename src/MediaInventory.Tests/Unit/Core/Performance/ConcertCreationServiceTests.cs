@@ -1,7 +1,7 @@
 ﻿using System;
-using FluentValidation;
 using MediaInventory.Core.Performance;
 using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.Infrastructure.Common.Exceptions;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;
 using NUnit.Framework;
@@ -37,7 +37,7 @@ namespace MediaInventory.Tests.Unit.Core.Performance
             var concert = concertCreationService.Create(_artists.Add(new MediaInventory.Core.Artist.Artist()),
                 DateTime.Now, _venues.Add(new MediaInventory.Core.Venue.Venue()));
 
-            concerts.Received(1).Add(Arg.Is(concert));
+            concerts.Received(1).Add(Arg.Is<Concert>(x => x.Id == concert.Id));
         }
 
         [Test]

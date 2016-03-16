@@ -1,6 +1,6 @@
 ﻿using System;
-using FluentValidation;
 using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.Infrastructure.Common.Exceptions;
 
 namespace MediaInventory.Core.Performance
 {
@@ -31,9 +31,7 @@ namespace MediaInventory.Core.Performance
 
             _concertValidator.ValidateAndThrow(concert);
 
-            _concerts.Add(concert);
-
-            return concert;
+            return _concerts.Add(concert);
         }
     }
 }

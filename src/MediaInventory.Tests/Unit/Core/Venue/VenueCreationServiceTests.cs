@@ -5,6 +5,7 @@ using MediaInventory.Tests.Common.Extensions;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;
 using NUnit.Framework;
+using Ploeh.AutoFixture.NUnit2;
 using Should;
 
 namespace MediaInventory.Tests.Unit.Core.Venue
@@ -33,7 +34,7 @@ namespace MediaInventory.Tests.Unit.Core.Venue
             var venue = venueCreationService.Create(RandomString.GenerateAlphaNumeric(),
                 RandomString.GenerateAlphaNumeric(), RandomString.GenerateAlphaNumeric(2));
 
-            venues.Received(1).Add(Arg.Is(venue));
+            venues.Received(1).Add(Arg.Is<MediaInventory.Core.Venue.Venue>(x => x.Id == venue.Id));
         }
 
         [Test]

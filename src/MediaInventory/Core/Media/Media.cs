@@ -13,7 +13,9 @@ namespace MediaInventory.Core.Media
         BluRay = 6,
         Mp3 = 7,
         Flac = 8,
-        Shn = 9
+        Shn = 9,
+        Cassette = 10,
+        EightTrack = 11
     }
 
     public enum Rating

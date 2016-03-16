@@ -56,4 +56,3 @@ C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\Me
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\tr\FluentValidation.resources.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\obj\Debug\MediaInventory.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\obj\Debug\MediaInventory.pdb
-C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\obj\Debug\MediaInventory.csprojResolveAssemblyReference.cache

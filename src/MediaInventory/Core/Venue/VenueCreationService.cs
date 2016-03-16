@@ -1,5 +1,5 @@
-﻿using FluentValidation;
-using MediaInventory.Infrastructure.Common.Data.Orm;
+﻿using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.Infrastructure.Common.Exceptions;
 
 namespace MediaInventory.Core.Venue
 {
@@ -30,9 +30,7 @@ namespace MediaInventory.Core.Venue
 
             _venueValidator.ValidateAndThrow(venue);
 
-            _venues.Add(venue);
-
-            return venue;
+            return _venues.Add(venue);
         }
     }
 }

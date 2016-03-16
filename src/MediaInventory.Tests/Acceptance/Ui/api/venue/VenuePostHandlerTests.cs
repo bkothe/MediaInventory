@@ -38,13 +38,13 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.venue
             var response = Http.ForUi.AsPublic(false, false, PostVenueUrl)
                 .PostJson<VenuePostHandler.Request, VenueModel>(request);
 
+            _testData.IncludeInCleanUp(_testData.Repositories.VenueRepository.Get(response.Data.Id));
+
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Id.ShouldNotEqual(Guid.Empty);
-            response.Data.Name.ShouldEqual(request.Name);
-            response.Data.City.ShouldEqual(request.City);
-            response.Data.State.ShouldEqual(request.State);
-
-            _testData.IncludeInCleanUp(_testData.Repositories.VenueRepository.Get(response.Data.Id));
+            response.Data.Name.ShouldEqual(name);
+            response.Data.City.ShouldEqual(city);
+            response.Data.State.ShouldEqual(state);
         }
     }
 }

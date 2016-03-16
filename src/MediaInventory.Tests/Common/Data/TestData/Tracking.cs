@@ -2,6 +2,7 @@
 using System.Data;
 using MediaInventory.Core.Administration;
 using MediaInventory.Core.Artist;
+using MediaInventory.Core.Media;
 using MediaInventory.Core.Performance;
 using MediaInventory.Core.Venue;
 using MediaInventory.Infrastructure.Common.Data.Orm.NHibernate;
@@ -23,16 +24,18 @@ namespace MediaInventory.Tests.Common.Data.TestData
             if (_inTransaction)
                 session.BeginTransaction(IsolationLevel.ReadCommitted);
 
-            Users = new List<User>();
             Artists = new List<Artist>();
-            Venues = new List<Venue>();
+            CommercialAudioMediae = new List<CommercialAudioMedia>();
             Concerts = new List<Concert>();
+            Users = new List<User>();
+            Venues = new List<Venue>();
         }
 
-        public List<User> Users { get; }
         public List<Artist> Artists { get; }
-        public List<Venue> Venues { get; }
+        public List<CommercialAudioMedia> CommercialAudioMediae { get; }
         public List<Concert> Concerts { get; }
+        public List<User> Users { get; }
+        public List<Venue> Venues { get; }
 
         public void CleanUp()
         {
@@ -46,10 +49,11 @@ namespace MediaInventory.Tests.Common.Data.TestData
 
         private void DeleteTrackedEntities()
         {
-            Users.ForEach(x => _repositories.UserRepository.Delete(x));
+            CommercialAudioMediae.ForEach(x => _repositories.CommercialAudioMediaRepository.Delete(x));
             Concerts.ForEach(x => _repositories.ConcertRepository.Delete(x));
-            Venues.ForEach(x => _repositories.VenueRepository.Delete(x));
             Artists.ForEach(x => _repositories.ArtistRepository.Delete(x));
+            Venues.ForEach(x => _repositories.VenueRepository.Delete(x));
+            Users.ForEach(x => _repositories.UserRepository.Delete(x));
 
             _session.Flush();
         }

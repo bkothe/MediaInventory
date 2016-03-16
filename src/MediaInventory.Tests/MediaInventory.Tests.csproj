@@ -113,6 +113,9 @@
     <Compile Include="Acceptance\Ui\api\artist\ArtistPostHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\concert\ConcertDeleteHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\concert\ConcertGetHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\media\CommercialAudioMediaDeleteHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\media\CommercialAudioMediaGetHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\media\CommercialAudioMediaPostHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\venue\VenueDeleteHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\venue\VenueGetHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\venue\VenuePostHandlerTests.cs" />
@@ -121,6 +124,7 @@
     <Compile Include="Common\Configuration.cs" />
     <Compile Include="Common\Data\NHibernate.cs" />
     <Compile Include="Common\Data\TestData\ArtistsDsl.cs" />
+    <Compile Include="Common\Data\TestData\CommercialAudioMedieaDsl.cs" />
     <Compile Include="Common\Data\TestData\ConcertsDsl.cs" />
     <Compile Include="Common\Data\TestData\Context.cs" />
     <Compile Include="Common\Data\TestData\Repositories.cs" />

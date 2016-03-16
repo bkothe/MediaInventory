@@ -1,5 +1,5 @@
-﻿using FluentValidation;
-using MediaInventory.Infrastructure.Common.Data.Orm;
+﻿using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.Infrastructure.Common.Exceptions;
 
 namespace MediaInventory.Core.Artist
 {
@@ -25,9 +25,7 @@ namespace MediaInventory.Core.Artist
 
             _artistValidator.ValidateAndThrow(artist);
 
-            _artists.Add(artist);
-
-            return artist;
+            return _artists.Add(artist);
         }
     }
 }

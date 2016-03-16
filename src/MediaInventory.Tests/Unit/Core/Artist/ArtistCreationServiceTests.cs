@@ -1,6 +1,6 @@
-﻿using FluentValidation;
-using MediaInventory.Core.Artist;
+﻿using MediaInventory.Core.Artist;
 using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.Infrastructure.Common.Exceptions;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;
 using NUnit.Framework;
@@ -34,7 +34,7 @@ namespace MediaInventory.Tests.Unit.Core.Artist
 
             var artist = artistCreationService.Create(ArtistName);
 
-            artists.Received(1).Add(Arg.Is(artist));
+            artists.Received(1).Add(Arg.Is<MediaInventory.Core.Artist.Artist>(x => x.Id == artist.Id));
         }
 
         [Test]

@@ -1,6 +1,5 @@
 ﻿using System;
 using FluentNHibernate.Testing;
-using MediaInventory.Core.Artist;
 using MediaInventory.Core.Media;
 using MediaInventory.Tests.Common.Comparers;
 using MediaInventory.Tests.Common.Data.TestData;
@@ -40,11 +39,14 @@ namespace MediaInventory.Tests.Integration.Infrastructure.Application.Data.Persi
                 .CheckProperty(x => x.Notes, RandomString.GenerateAlphaNumeric())
                 .CheckProperty(x => x.Created, DateTime.Now, new DateTimeEqualityComparer(1))
                 .CheckProperty(x => x.Modified, DateTime.Now, new DateTimeEqualityComparer(1))
-                .CheckReference(x => x.Artist, new Artist
-                {
-                    Name = RandomString.GenerateAlphaNumeric()
-                }, x => x.Id)
+                .CheckReference(x => x.Artist, _testData.Artists.Create().Artist, x => x.Id)
                 .VerifyTheMappings();
+        }
+
+        [Test]
+        public void should_persist_nullables()
+        {
+            throw new NotImplementedException();
         }
     }
 }

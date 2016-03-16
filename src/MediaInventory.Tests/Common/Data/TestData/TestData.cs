@@ -1,4 +1,5 @@
 ﻿using MediaInventory.Core.Artist;
+using MediaInventory.Core.Media;
 using MediaInventory.Core.Performance;
 using MediaInventory.Core.Venue;
 using MediaInventory.Infrastructure.Common.Data.Orm.NHibernate;
@@ -13,8 +14,9 @@ namespace MediaInventory.Tests.Common.Data.TestData
         {
             _context = context;
             Artists = new ArtistsDsl(_context);
-            Venues = new VenuesDsl(_context);
+            CommercialAudioMediea = new CommercialAudioMedieaDsl(_context);
             Concerts = new ConcertsDsl(_context);
+            Venues = new VenuesDsl(_context);
         }
 
         public static IntegrationTestData ForIntegrationTests()
@@ -53,19 +55,22 @@ namespace MediaInventory.Tests.Common.Data.TestData
 
         // Data generation
         public ArtistsDsl Artists { get; private set; }
-        public VenuesDsl Venues { get; private set; }
         public ConcertsDsl Concerts { get; private set; }
+        public CommercialAudioMedieaDsl CommercialAudioMediea { get; private set; }
+        public VenuesDsl Venues { get; private set; }
 
         // Tracking
         public Tracking Tracking => _context.Tracking;
 
         public Artist IncludeInCleanUp(Artist entity) { Tracking.Artists.Add(entity); return entity; }
-        public Venue IncludeInCleanUp(Venue entity) { Tracking.Venues.Add(entity); return entity; }
+        public CommercialAudioMedia IncludeInCleanUp(CommercialAudioMedia entity) { Tracking.CommercialAudioMediae.Add(entity); return entity; }
         public Concert IncludeInCleanUp(Concert entity) { Tracking.Concerts.Add(entity); return entity; }
+        public Venue IncludeInCleanUp(Venue entity) { Tracking.Venues.Add(entity); return entity; }
 
         public void ExcludeInCleanup(Artist entity) { Tracking.Artists.Remove(entity); }
-        public void ExcludeInCleanup(Venue entity) { Tracking.Venues.Remove(entity); }
+        public void ExcludeInCleanup(CommercialAudioMedia entity) { Tracking.CommercialAudioMediae.Remove(entity); }
         public void ExcludeInCleanup(Concert entity) { Tracking.Concerts.Remove(entity); }
+        public void ExcludeInCleanup(Venue entity) { Tracking.Venues.Remove(entity); }
 
         public void CleanUp()
         {
