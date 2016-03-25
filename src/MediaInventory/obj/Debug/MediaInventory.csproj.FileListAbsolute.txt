@@ -1,5 +1,6 @@
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\MediaInventory.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\MediaInventory.pdb
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\AutoMapper.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\Bender.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\Bottles.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\Flexo.dll
@@ -18,6 +19,7 @@ C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\Me
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\SimpleConfig.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\StructureMap.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\StructureMap.Net4.dll
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\AutoMapper.xml
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\Bender.pdb
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\Bottles.pdb
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\Flexo.pdb
@@ -56,3 +58,4 @@ C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\Me
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\bin\Debug\tr\FluentValidation.resources.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\obj\Debug\MediaInventory.dll
 C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\obj\Debug\MediaInventory.pdb
+C:\Users\bkothe.RMCORP\Dropbox\Development\Projects\MediaInventory\Source\src\MediaInventory\obj\Debug\MediaInventory.csprojResolveAssemblyReference.cache

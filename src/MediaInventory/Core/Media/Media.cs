@@ -43,6 +43,11 @@ namespace MediaInventory.Core.Media
         public virtual string Notes { get; set; }
         public virtual DateTime Created { get; set; }
         public virtual DateTime? Modified { get; set; }
+
+        public virtual CommercialAudioMedia Clone()
+        {
+            return (CommercialAudioMedia)MemberwiseClone();
+        }
     }
 
     public class VideoMedia : IMedia, IIdEntity, ITimestampedEntity

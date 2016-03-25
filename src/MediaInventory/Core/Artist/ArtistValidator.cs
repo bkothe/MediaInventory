@@ -13,7 +13,7 @@ namespace MediaInventory.Core.Artist
         {
             RuleFor(x => x.Name)
                 .NotEmpty().WithMessage(NameNullEmptyMessage)
-                .Length(2, 45).WithMessage(NameLengthMessage)
+                .Length(2, 65).WithMessage(NameLengthMessage)
                 .Must((artist, name) => !artists.Any(x => x.Id != artist.Id && x.Name == name))
                     .WithMessage(NameDuplicateMessage);
         }

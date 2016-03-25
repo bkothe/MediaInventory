@@ -1,0 +1,22 @@
+{
+  "name": "RM",
+  "version": "0.0.0",
+  "homepage": "https://mediainventory.briankothe.com/app",
+  "authors": "",
+  "description": "MediaInventory",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.0",
+    "angular-route": "1.5.0",
+    "lodash": "~4.6.1"
+  }
+}

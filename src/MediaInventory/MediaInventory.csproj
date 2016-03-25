@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Bender, Version=3.0.33.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bender.3.0.33.0\lib\Bender.dll</HintPath>
       <Private>True</Private>
@@ -123,6 +127,7 @@
     <Compile Include="Core\Artist\ArtistValidator.cs" />
     <Compile Include="Core\Media\CommercialAudioMediaCreationService.cs" />
     <Compile Include="Core\Media\CommercialAudioMediaDeletionService.cs" />
+    <Compile Include="Core\Media\CommercialAudioMediaModificationService.cs" />
     <Compile Include="Core\Media\CommercialAudioMediaValidator.cs" />
     <Compile Include="Core\Performance\Concert.cs" />
     <Compile Include="Core\Performance\ConcertCreationService.cs" />

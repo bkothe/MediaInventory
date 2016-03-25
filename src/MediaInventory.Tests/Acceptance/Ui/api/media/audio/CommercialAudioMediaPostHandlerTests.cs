@@ -8,7 +8,7 @@ using MediaInventory.UI.api.media.audio;
 using NUnit.Framework;
 using Should;
 
-namespace MediaInventory.Tests.Acceptance.Ui.api.media
+namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
 {
     [TestFixture]
     public class CommercialAudioMediaPostHandlerTests

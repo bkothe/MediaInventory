@@ -46,7 +46,19 @@ namespace MediaInventory.Tests.Integration.Infrastructure.Application.Data.Persi
         [Test]
         public void should_persist_nullables()
         {
-            throw new NotImplementedException();
+            new PersistenceSpecification<CommercialAudioMedia>(_testData.Session.GetSession())
+                .CheckProperty(x => x.Title, RandomString.GenerateAlphaNumeric())
+                .CheckProperty(x => x.MediaFormat, MediaFormat.Vinyl)
+                .CheckProperty(x => x.Released, null)
+                .CheckProperty(x => x.Purchased, null)
+                .CheckProperty(x => x.PurchasePrice, null)
+                .CheckProperty(x => x.PurchaseLocation, null)
+                .CheckProperty(x => x.MediaCount, 3)
+                .CheckProperty(x => x.Notes, null)
+                .CheckProperty(x => x.Created, DateTime.Now, new DateTimeEqualityComparer(1))
+                .CheckProperty(x => x.Modified, null)
+                .CheckReference(x => x.Artist, _testData.Artists.Create().Artist, x => x.Id)
+                .VerifyTheMappings();
         }
     }
 }

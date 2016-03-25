@@ -2,7 +2,6 @@
 using AutoMapper;
 using MediaInventory.Core.Performance;
 using MediaInventory.Infrastructure.Common.Objects;
-using MediaInventory.UI.api.artist;
 using MediaInventory.UI.api.venue;
 
 namespace MediaInventory.UI.api.concert
@@ -10,7 +9,8 @@ namespace MediaInventory.UI.api.concert
     public class ConcertModel
     {
         public Guid Id { get; set; }
-        public ArtistModel Artist { get; set; }
+        public string ArtistName { get; set; }
+        public Guid ArtistId { get; set; }
         public VenueModel Venue { get; set; }
         public DateTime Date { get; set; }
     }

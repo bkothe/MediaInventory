@@ -45,14 +45,14 @@ namespace MediaInventory.Tests.Unit.Core.Artist
         }
 
         [TestCase(1, TestName = "should_have_error_when_name_is_too_short")]
-        [TestCase(46, TestName = "should_have_error_when_name_is_too_long")]
+        [TestCase(66, TestName = "should_have_error_when_name_is_too_long")]
         public void should_have_error_for_name_length(int length)
         {
             _artistValidator.ShouldHaveValidationErrorFor(x => x.Name, RandomString.GenerateAlphaNumeric(length));
         }
 
         [TestCase(2, TestName = "should_not_have_error_when_name_is_min_length")]
-        [TestCase(45, TestName = "should_not_have_error_when_name_is_max_length")]
+        [TestCase(65, TestName = "should_not_have_error_when_name_is_max_length")]
         public void should_not_have_error_for_name_length(int length)
         {
             _artistValidator.ShouldNotHaveValidationErrorFor(x => x.Name, RandomString.GenerateAlphaNumeric(length));

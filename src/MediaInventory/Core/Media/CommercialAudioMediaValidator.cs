@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using FluentValidation;
+using MediaInventory.Infrastructure.Common.Data.Orm;
 
 namespace MediaInventory.Core.Media
 {
@@ -13,7 +14,7 @@ namespace MediaInventory.Core.Media
         public const string MediaCountNotNullMessage = "Media count is required";
         public const string MediaCountGreaterThanMessage = "Media count must be greater than {ComparisonValue}.";
 
-        public CommercialAudioMediaValidator(IQueryable<Artist.Artist> artists)
+        public CommercialAudioMediaValidator(IRepository<Artist.Artist> artists)
         {
             RuleFor(x => x.Artist)
                 .NotNull().WithMessage(ArtistNullMessage)

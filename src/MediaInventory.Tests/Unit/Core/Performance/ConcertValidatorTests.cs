@@ -39,6 +39,13 @@ namespace MediaInventory.Tests.Unit.Core.Performance
         }
 
         [Test]
+        public void should_have_error_when_other_artists_exist_and_artist_is_null()
+        {
+            _artists.Add(new MediaInventory.Core.Artist.Artist());
+            _concertValidator.ShouldHaveValidationErrorFor(x => x.Artist, new Concert { Artist = null });
+        }
+
+        [Test]
         public void should_have_error_when_artist_does_not_exist()
         {
             _concertValidator.ShouldHaveValidationErrorFor(x => x.Artist, new MediaInventory.Core.Artist.Artist());
@@ -54,6 +61,13 @@ namespace MediaInventory.Tests.Unit.Core.Performance
         [Test]
         public void should_have_error_when_venue_is_null()
         {
+            _concertValidator.ShouldHaveValidationErrorFor(x => x.Venue, new Concert { Venue = null });
+        }
+
+        [Test]
+        public void should_have_error_when_other_venues_exist_and_venue_is_null()
+        {
+            _venues.Add(new MediaInventory.Core.Venue.Venue());
             _concertValidator.ShouldHaveValidationErrorFor(x => x.Venue, new Concert { Venue = null });
         }
 

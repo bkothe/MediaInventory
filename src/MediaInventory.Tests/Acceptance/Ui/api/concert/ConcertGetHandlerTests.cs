@@ -54,8 +54,8 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.concert
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Id.ShouldEqual(concert.Id);
             response.Data.Date.ShouldEqual(concert.Date);
-            response.Data.Artist.Id.ShouldEqual(concert.Artist.Id);
-            response.Data.Artist.Name.ShouldEqual(concert.Artist.Name);
+            response.Data.ArtistId.ShouldEqual(concert.Artist.Id);
+            response.Data.ArtistName.ShouldEqual(concert.Artist.Name);
             response.Data.Venue.Id.ShouldEqual(concert.Venue.Id);
             response.Data.Venue.Name.ShouldEqual(concert.Venue.Name);
             response.Data.Venue.City.ShouldEqual(concert.Venue.City);
