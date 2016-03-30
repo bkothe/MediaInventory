@@ -13,13 +13,13 @@ namespace MediaInventory.Application
             ForSingletonOf<Configuration>().Use(configuration);
 
             // ------------------------------ Data Access ------------------------------
-                // NHibernate
-                ForSingletonOf<ISessionFactoryBuilder>().Use<SessionFactoryBuilder>();
-                ForSingletonOf<ILazySessionFactory>().Use<LazySessionFactory>();
+            // NHibernate
+            ForSingletonOf<ISessionFactoryBuilder>().Use<SessionFactoryBuilder>();
+            ForSingletonOf<ILazySessionFactory>().Use<LazySessionFactory>();
 
-                For<ILazySession>().Use(context => new LazySession(context.GetInstance<ILazySessionFactory>()));
-                For<IUnitOfWork>().Use<UnitOfWork>();
-                For(typeof(IRepository<>)).Use(typeof(Repository<>));
+            For<ILazySession>().Use(context => new LazySession(context.GetInstance<ILazySessionFactory>()));
+            For<IUnitOfWork>().Use<UnitOfWork>();
+            For(typeof(IRepository<>)).Use(typeof(Repository<>));
         }
     }
 }

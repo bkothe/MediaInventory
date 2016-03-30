@@ -8,7 +8,7 @@ using Should;
 namespace MediaInventory.Tests.Unit.Core.Media
 {
     [TestFixture]
-    public class CommercialAudioMediaModificationServiceTests
+    public class AudioModificationServiceTests
     {
         private readonly Guid OldArtistId = Guid.NewGuid();
         private readonly Guid NewArtistId = Guid.NewGuid();
@@ -29,9 +29,9 @@ namespace MediaInventory.Tests.Unit.Core.Media
         private const string OldNotes = "My old notes";
         private const string NewNotes = "My new notes";
 
-        private MemoryRepository<CommercialAudioMedia> _commercialAudioMediae;
+        private MemoryRepository<Audio> _audios;
         private MemoryRepository<MediaInventory.Core.Artist.Artist> _artists;
-        private CommercialAudioMediaModificationService _commercialAudioMediaModificationService;
+        private AudioModificationService _audioModificationService;
 
         [SetUp]
         public void SetUp()
@@ -39,15 +39,15 @@ namespace MediaInventory.Tests.Unit.Core.Media
             _artists = new MemoryRepository<MediaInventory.Core.Artist.Artist>(x => x.Id,
                 new MediaInventory.Core.Artist.Artist { Id = OldArtistId },
                 new MediaInventory.Core.Artist.Artist { Id = NewArtistId });
-            _commercialAudioMediae = new MemoryRepository<CommercialAudioMedia>(x => x.Id);
-            _commercialAudioMediaModificationService = new CommercialAudioMediaModificationService(_commercialAudioMediae,
-                new CommercialAudioMediaValidator(_artists));
+            _audios = new MemoryRepository<Audio>(x => x.Id);
+            _audioModificationService = new AudioModificationService(_audios,
+                new AudioValidator(_artists));
         }
 
         [Test]
-        public void should_modify_commercial_audio_media()
+        public void should_modify_audio()
         {
-            var audio = _commercialAudioMediae.Add(new CommercialAudioMedia
+            var audio = _audios.Add(new Audio
             {
                 Artist = _artists.Get(OldArtistId),
                 Title = OldTitle,
@@ -60,7 +60,7 @@ namespace MediaInventory.Tests.Unit.Core.Media
                 Notes = OldNotes
             });
 
-            _commercialAudioMediaModificationService.Modify(audio.Id, x =>
+            _audioModificationService.Modify(audio.Id, x =>
             {
                 x.Artist = _artists.Get(NewArtistId);
                 x.Title = NewTitle;
@@ -87,13 +87,13 @@ namespace MediaInventory.Tests.Unit.Core.Media
         [Test]
         public void should_throw_not_found_when_audio_does_not_exist()
         {
-            Assert.Throws<NotFoundException>(() => _commercialAudioMediaModificationService.Modify(Guid.NewGuid(), null));
+            Assert.Throws<NotFoundException>(() => _audioModificationService.Modify(Guid.NewGuid(), null));
         }
 
         [Test]
         public void should_throw_validation_exception_when_artist_does_not_exist()
         {
-            var audio = _commercialAudioMediae.Add(new CommercialAudioMedia
+            var audio = _audios.Add(new Audio
             {
                 Artist = _artists.Get(OldArtistId),
                 Title = OldTitle,
@@ -101,7 +101,7 @@ namespace MediaInventory.Tests.Unit.Core.Media
                 MediaCount = OldMediaCount
             });
 
-            Assert.Throws<ValidationException>(() => _commercialAudioMediaModificationService.Modify(audio.Id, x =>
+            Assert.Throws<ValidationException>(() => _audioModificationService.Modify(audio.Id, x =>
             {
                 x.Artist = new MediaInventory.Core.Artist.Artist { Id = Guid.NewGuid() };
             }));

@@ -355,10 +355,10 @@
     <Compile Include="api\concert\ConcertEnumerationModel.cs" />
     <Compile Include="api\concert\ConcertModel.cs" />
     <Compile Include="api\concert\ConcertPostHandler.cs" />
-    <Compile Include="api\media\audio\CommercialAudioMediaDeleteHandler.cs" />
-    <Compile Include="api\media\audio\CommercialAudioMediaModel.cs" />
-    <Compile Include="api\media\audio\CommercialAudioMediaGetHandler.cs" />
-    <Compile Include="api\media\audio\CommercialAudioMediaPostHandler.cs" />
+    <Compile Include="api\media\audio\AudioDeleteHandler.cs" />
+    <Compile Include="api\media\audio\AudioModel.cs" />
+    <Compile Include="api\media\audio\AudioGetHandler.cs" />
+    <Compile Include="api\media\audio\AudioPostHandler.cs" />
     <Compile Include="api\concert\ConcertPutHandler.cs" />
     <Compile Include="api\RequestGuidId.cs" />
     <Compile Include="api\venue\VenueDeleteHandler.cs" />

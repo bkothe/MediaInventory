@@ -9,20 +9,22 @@ namespace MediaInventory.UI.api.artist
     public class ArtistGetHandler
     {
         private readonly IRepository<Artist> _artists;
+        private readonly IMapper _mapper;
 
-        public ArtistGetHandler(IRepository<Artist> artists)
+        public ArtistGetHandler(IRepository<Artist> artists, IMapper mapper)
         {
             _artists = artists;
+            _mapper = mapper;
         }
 
         public ArtistModel Execute_Id(RequestGuidId request)
         {
-            return Mapper.Map<ArtistModel>(_artists.FirstOrThrowNotFound(x => x.Id == request.Id));
+            return _mapper.Map<ArtistModel>(_artists.FirstOrThrowNotFound(x => x.Id == request.Id));
         }
 
         public List<ArtistModel> Execute()
         {
-            return Mapper.Map<List<ArtistModel>>(_artists);
+            return _mapper.Map<List<ArtistModel>>(_artists);
         }
     }
 }

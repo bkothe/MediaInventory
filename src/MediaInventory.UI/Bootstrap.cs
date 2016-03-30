@@ -2,7 +2,6 @@
 using FubuMVC.Core;
 using FubuMVC.Core.Packaging.VirtualPaths;
 using FubuMVC.StructureMap3;
-using MediaInventory.Infrastructure.Common.Objects;
 using MediaInventory.Infrastructure.Common.Web.Fubu;
 using MediaInventory.UI;
 using StructureMap;
@@ -31,8 +30,6 @@ namespace MediaInventory.UI
                 .Bootstrap();
 
             PackageRegistry.AssertNoFailures();
-
-            ModelMapping.Bootstrap();
         }
     }
 }

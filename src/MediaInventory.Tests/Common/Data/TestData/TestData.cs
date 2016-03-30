@@ -14,7 +14,7 @@ namespace MediaInventory.Tests.Common.Data.TestData
         {
             _context = context;
             Artists = new ArtistsDsl(_context);
-            CommercialAudioMediea = new CommercialAudioMedieaDsl(_context);
+            Audios = new AudiosDsl(_context);
             Concerts = new ConcertsDsl(_context);
             Venues = new VenuesDsl(_context);
         }
@@ -56,19 +56,19 @@ namespace MediaInventory.Tests.Common.Data.TestData
         // Data generation
         public ArtistsDsl Artists { get; private set; }
         public ConcertsDsl Concerts { get; private set; }
-        public CommercialAudioMedieaDsl CommercialAudioMediea { get; private set; }
+        public AudiosDsl Audios { get; private set; }
         public VenuesDsl Venues { get; private set; }
 
         // Tracking
         public Tracking Tracking => _context.Tracking;
 
         public Artist IncludeInCleanUp(Artist entity) { Tracking.Artists.Add(entity); return entity; }
-        public CommercialAudioMedia IncludeInCleanUp(CommercialAudioMedia entity) { Tracking.CommercialAudioMediae.Add(entity); return entity; }
+        public Audio IncludeInCleanUp(Audio entity) { Tracking.Audios.Add(entity); return entity; }
         public Concert IncludeInCleanUp(Concert entity) { Tracking.Concerts.Add(entity); return entity; }
         public Venue IncludeInCleanUp(Venue entity) { Tracking.Venues.Add(entity); return entity; }
 
         public void ExcludeInCleanup(Artist entity) { Tracking.Artists.Remove(entity); }
-        public void ExcludeInCleanup(CommercialAudioMedia entity) { Tracking.CommercialAudioMediae.Remove(entity); }
+        public void ExcludeInCleanup(Audio entity) { Tracking.Audios.Remove(entity); }
         public void ExcludeInCleanup(Concert entity) { Tracking.Concerts.Remove(entity); }
         public void ExcludeInCleanup(Venue entity) { Tracking.Venues.Remove(entity); }
 

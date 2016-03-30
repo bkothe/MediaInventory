@@ -1,7 +1,6 @@
 ﻿using System;
 using AutoMapper;
 using MediaInventory.Core.Performance;
-using MediaInventory.Infrastructure.Common.Objects;
 using MediaInventory.UI.api.venue;
 
 namespace MediaInventory.UI.api.concert
@@ -15,11 +14,11 @@ namespace MediaInventory.UI.api.concert
         public DateTime Date { get; set; }
     }
 
-    public class ConcertModelMapping : IModelMapping
+    public class ConcertModelMapping : Profile
     {
-        public void Initialize()
+        protected override void Configure()
         {
-            Mapper.CreateMap<Concert, ConcertModel>();
+            CreateMap<Concert, ConcertModel>();
         }
     }
 }

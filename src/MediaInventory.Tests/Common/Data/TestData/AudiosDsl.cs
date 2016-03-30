@@ -5,21 +5,21 @@ using MediaInventory.Tests.Common.Extensions;
 
 namespace MediaInventory.Tests.Common.Data.TestData
 {
-    public class CommercialAudioMedieaDsl
+    public class AudiosDsl
     {
         private readonly Context _context;
         private readonly ArtistsDsl _artistsDsl;
 
-        public CommercialAudioMedieaDsl(Context context)
+        public AudiosDsl(Context context)
         {
             _context = context;
             _artistsDsl = new ArtistsDsl(context);
         }
 
-        public CommercialAudioMediaDsl Create(Action<CommercialAudioMedia> configure = null)
+        public AudioDsl Create(Action<Audio> configure = null)
         {
-            return new CommercialAudioMediaDsl(_context, _context.Repositories
-                .CommercialAudioMediaRepository.Add(new CommercialAudioMedia
+            return new AudioDsl(_context, _context.Repositories
+                .Audios.Add(new Audio
                 {
                     Artist = _artistsDsl.Create().Artist,
                     Title = RandomString.GenerateAlphaNumeric(),
@@ -27,21 +27,21 @@ namespace MediaInventory.Tests.Common.Data.TestData
                     MediaCount = 1
                 }
                 .ActOn(configure))
-                .ActOn(x => _context.Tracking.CommercialAudioMediae.Add(x))
+                .ActOn(x => _context.Tracking.Audios.Add(x))
                 .ThenDo(_context.Session.Flush));
         }
     }
 
-    public class CommercialAudioMediaDsl
+    public class AudioDsl
     {
         private readonly Context _context;
 
-        public CommercialAudioMediaDsl(Context context, CommercialAudioMedia commercialAudioMedia)
+        public AudioDsl(Context context, Audio audio)
         {
             _context = context;
-            CommercialAudioMedia = commercialAudioMedia;
+            Audio = audio;
         }
 
-        public CommercialAudioMedia CommercialAudioMedia { get; private set; }
+        public Audio Audio { get; private set; }
     }
 }

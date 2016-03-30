@@ -11,15 +11,17 @@ namespace MediaInventory.UI.api.artist
         }
 
         private readonly ArtistCreationService _artistCreationService;
+        private readonly IMapper _mapper;
 
-        public ArtistPostHandler(ArtistCreationService artistCreationService)
+        public ArtistPostHandler(ArtistCreationService artistCreationService, IMapper mapper)
         {
             _artistCreationService = artistCreationService;
+            _mapper = mapper;
         }
 
         public ArtistModel Execute(Request request)
         {
-            return Mapper.Map<ArtistModel>(_artistCreationService.Create(request.Name));
+            return _mapper.Map<ArtistModel>(_artistCreationService.Create(request.Name));
         }
     }
 }

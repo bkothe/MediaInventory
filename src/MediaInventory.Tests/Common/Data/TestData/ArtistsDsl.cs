@@ -17,7 +17,7 @@ namespace MediaInventory.Tests.Common.Data.TestData
         public ArtistDsl Create(Action<Artist> configure = null)
         {
             return new ArtistDsl(_context, _context.Repositories
-                .ArtistRepository.Add(new Artist
+                .Artists.Add(new Artist
                 {
                     Name = RandomString.GenerateAlphaNumeric()
                 }

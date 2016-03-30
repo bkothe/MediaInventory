@@ -11,7 +11,7 @@ using Should;
 namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
 {
     [TestFixture]
-    public class CommercialAudioMediaPostHandlerTests
+    public class AudioPostHandlerTests
     {
         private const string PostAudioUrl = "api/media/audio";
 
@@ -43,7 +43,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
 
             var artist = _testData.Artists.Create().Artist;
 
-            var request = new CommercialAudioMediaPostHandler.Request
+            var request = new AudioPostHandler.Request
             {
                 ArtistId = artist.Id,
                 Title = title,
@@ -57,9 +57,9 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
             };
 
             var response = Http.ForUi.AsPublic(false, false, PostAudioUrl)
-                .PostJson<CommercialAudioMediaPostHandler.Request, CommercialAudioMediaModel>(request);
+                .PostJson<AudioPostHandler.Request, AudioModel>(request);
 
-            _testData.IncludeInCleanUp(_testData.Repositories.CommercialAudioMediaRepository.Get(response.Data.Id));
+            _testData.IncludeInCleanUp(_testData.Repositories.Audios.Get(response.Data.Id));
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Id.ShouldNotEqual(Guid.Empty);

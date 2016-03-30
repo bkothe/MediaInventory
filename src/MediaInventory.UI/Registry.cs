@@ -1,4 +1,7 @@
-﻿using MediaInventory.Infrastructure.Common.Web;
+﻿using AutoMapper;
+using MediaInventory.Infrastructure.Common.Web;
+using StructureMap.Graph;
+using Mapper = MediaInventory.Infrastructure.Common.Objects.Mapper;
 
 namespace MediaInventory.UI
 {
@@ -6,8 +9,15 @@ namespace MediaInventory.UI
     {
         public Registry()
         {
-            // Web
-            
+            // infrastructure
+            For<IMapper>().Use<Mapper>();
+            Scan(x =>
+            {
+                x.TheCallingAssembly();
+                x.AddAllTypesOf<Profile>();
+            });
+
+            // web
             For<IHttpStatus>().Use<HttpStatus>();
             For<IRequestHeaders>().Use<RequestHeaders>();
             For<IResponseHeaders>().Use<ResponseHeaders>();

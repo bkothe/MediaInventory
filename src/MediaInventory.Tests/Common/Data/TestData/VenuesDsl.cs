@@ -17,7 +17,7 @@ namespace MediaInventory.Tests.Common.Data.TestData
         public VenueDsl Create(Action<Venue> configure = null)
         {
             return new VenueDsl(_context, _context.Repositories
-                .VenueRepository.Add(new Venue
+                .Venues.Add(new Venue
                 {
                     Name = RandomString.GenerateAlphaNumeric(),
                     City = RandomString.GenerateAlphaNumeric(),

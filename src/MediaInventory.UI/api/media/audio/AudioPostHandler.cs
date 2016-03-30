@@ -4,9 +4,10 @@ using MediaInventory.Core.Media;
 
 namespace MediaInventory.UI.api.media.audio
 {
-    public class CommercialAudioMediaPostHandler
+    public class AudioPostHandler
     {
-        private readonly CommercialAudioMediaCreationService _commercialAudioMediaCreationService;
+        private readonly AudioCreationService _audioCreationService;
+        private readonly IMapper _mapper;
 
         public class Request
         {
@@ -21,14 +22,15 @@ namespace MediaInventory.UI.api.media.audio
             public string Notes { get; set; }
         }
 
-        public CommercialAudioMediaPostHandler(CommercialAudioMediaCreationService commercialAudioMediaCreationService)
+        public AudioPostHandler(AudioCreationService audioCreationService, IMapper mapper)
         {
-            _commercialAudioMediaCreationService = commercialAudioMediaCreationService;
+            _audioCreationService = audioCreationService;
+            _mapper = mapper;
         }
 
-        public CommercialAudioMediaModel Execute(Request request)
+        public AudioModel Execute(Request request)
         {
-            return Mapper.Map<CommercialAudioMediaModel>(_commercialAudioMediaCreationService.Create(request.ArtistId, request.Title, request.MediaFormat,
+            return _mapper.Map<AudioModel>(_audioCreationService.Create(request.ArtistId, request.Title, request.MediaFormat,
                 request.Released, request.Purchased, request.PurchasePrice, request.PurchaseLocation, request.MediaCount,
                 request.Notes));
         }

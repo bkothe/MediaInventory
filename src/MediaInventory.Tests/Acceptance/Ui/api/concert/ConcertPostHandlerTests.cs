@@ -45,7 +45,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.concert
             var response = Http.ForUi.AsPublic(false, false, PostConcertUrl)
                 .PostJson<ConcertPostHandler.Request, ConcertModel>(request);
 
-            _testData.IncludeInCleanUp(_testData.Repositories.ConcertRepository.Get(response.Data.Id));
+            _testData.IncludeInCleanUp(_testData.Repositories.Concerts.Get(response.Data.Id));
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Id.ShouldNotEqual(Guid.Empty);

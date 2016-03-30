@@ -34,7 +34,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.concert
             var response = Http.ForUi.AsPublic(false, false, DeleteConcertUrl, concert.Id).Delete();
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
-            _testData.Repositories.ConcertRepository.Count(x => x.Id == concert.Id).ShouldEqual(0);
+            _testData.Repositories.Concerts.Count(x => x.Id == concert.Id).ShouldEqual(0);
 
             _testData.ExcludeInCleanup(concert);
         }

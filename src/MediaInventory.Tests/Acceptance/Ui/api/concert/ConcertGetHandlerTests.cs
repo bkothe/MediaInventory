@@ -41,7 +41,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.concert
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Count.ShouldEqual(2);
-            response.Data.Select(x => x.Date.Ticks).ShouldBeEquivalent(new[] { concertDate1.Ticks, concertDate2.Ticks });
+            response.Data.Select(x => x.Date).ShouldBeEquivalent(new[] { concertDate1, concertDate2 });
         }
 
         [Test]

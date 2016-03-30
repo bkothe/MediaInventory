@@ -13,15 +13,17 @@ namespace MediaInventory.UI.api.venue
         }
 
         private readonly VenueCreationService _venueCreationService;
+        private readonly IMapper _mapper;
 
-        public VenuePostHandler(VenueCreationService venueCreationService)
+        public VenuePostHandler(VenueCreationService venueCreationService, IMapper mapper)
         {
             _venueCreationService = venueCreationService;
+            _mapper = mapper;
         }
 
         public VenueModel Execute(Request request)
         {
-            return Mapper.Map<VenueModel>(_venueCreationService.Create(request.Name, request.City, request.State));
+            return _mapper.Map<VenueModel>(_venueCreationService.Create(request.Name, request.City, request.State));
         }
     }
 }

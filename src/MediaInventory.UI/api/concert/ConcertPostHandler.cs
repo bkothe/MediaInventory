@@ -14,15 +14,17 @@ namespace MediaInventory.UI.api.concert
         }
 
         private readonly ConcertCreationService _concertCreationService;
+        private readonly IMapper _mapper;
 
-        public ConcertPostHandler(ConcertCreationService concertCreationService)
+        public ConcertPostHandler(ConcertCreationService concertCreationService, IMapper mapper)
         {
             _concertCreationService = concertCreationService;
+            _mapper = mapper;
         }
 
         public ConcertModel Execute(Request request)
         {
-            return Mapper.Map<ConcertModel>(_concertCreationService.Create(request.ArtistId, request.Date, request.VenueId));
+            return _mapper.Map<ConcertModel>(_concertCreationService.Create(request.ArtistId, request.Date, request.VenueId));
         }
     }
 }

@@ -13,10 +13,10 @@ using Should;
 namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
 {
     [TestFixture]
-    public class CommercialAudioMediaGetHandlerTests
+    public class AudioGetHandlerTests
     {
-        private const string GetMediaUrl = "api/media/audio/{0}";
-        private const string EnumerateMediaUrl = "api/media/audio";
+        private const string GetAudioUrl = "api/media/audio/{0}";
+        private const string EnumerateAudioUrl = "api/media/audio";
 
         private UiAcceptanceTestData _testData;
 
@@ -33,21 +33,21 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
         }
 
         [Test]
-        public void should_enumerate_commercial_audio()
+        public void should_enumerate_audio()
         {
-            var mediaId1 = _testData.CommercialAudioMediea.Create().CommercialAudioMedia.Id;
-            var mediaId2 = _testData.CommercialAudioMediea.Create().CommercialAudioMedia.Id;
+            var audioId1 = _testData.Audios.Create().Audio.Id;
+            var audioId2 = _testData.Audios.Create().Audio.Id;
 
-            var response = Http.ForUi.AsPublic(false, false, EnumerateMediaUrl)
-                .GetJson<List<CommercialAudioMediaModel>>();
+            var response = Http.ForUi.AsPublic(false, false, EnumerateAudioUrl)
+                .GetJson<List<AudioModel>>();
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Count.ShouldEqual(2);
-            response.Data.Select(x => x.Id).ShouldBeEquivalent(new[] { mediaId1, mediaId2 });
+            response.Data.Select(x => x.Id).ShouldBeEquivalent(new[] { audioId1, audioId2 });
         }
 
         [Test]
-        public void should_get_commercial_audio()
+        public void should_get_audio()
         {
             const string artistName = "Rush";
             const string title = "2112";
@@ -59,7 +59,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
             const int mediaCount = 1;
             const string notes = "Notes about 2112";
 
-            _testData.CommercialAudioMediea.Create(x =>
+            _testData.Audios.Create(x =>
             {
                 x.Artist.Name = artistName;
                 x.Title = title;
@@ -72,11 +72,11 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
                 x.Notes = notes;
             });
 
-            var response = Http.ForUi.AsPublic(false, false, GetMediaUrl,
-                _testData.Tracking.CommercialAudioMediae.Single().Id).GetJson<CommercialAudioMediaModel>();
+            var response = Http.ForUi.AsPublic(false, false, GetAudioUrl,
+                _testData.Tracking.Audios.Single().Id).GetJson<AudioModel>();
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
-            response.Data.Id.ShouldEqual(_testData.Tracking.CommercialAudioMediae.Single().Id);
+            response.Data.Id.ShouldEqual(_testData.Tracking.Audios.Single().Id);
             response.Data.ArtistId.ShouldNotEqual(Guid.Empty);
             response.Data.ArtistName.ShouldEqual(artistName);
             response.Data.Title.ShouldEqual(title);
@@ -92,8 +92,8 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
         [Test]
         public void should_return_not_found()
         {
-            Http.ForUi.AsPublic(false, false, GetMediaUrl, Guid.NewGuid())
-                .GetJson<CommercialAudioMediaModel>().Status.ShouldEqual(HttpStatusCode.NotFound);
+            Http.ForUi.AsPublic(false, false, GetAudioUrl, Guid.NewGuid())
+                .GetJson<AudioModel>().Status.ShouldEqual(HttpStatusCode.NotFound);
         }
     }
 }

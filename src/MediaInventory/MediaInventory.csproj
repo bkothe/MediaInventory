@@ -125,10 +125,10 @@
     <Compile Include="Core\Artist\ArtistDeletionService.cs" />
     <Compile Include="Core\Artist\ArtistModificationService.cs" />
     <Compile Include="Core\Artist\ArtistValidator.cs" />
-    <Compile Include="Core\Media\CommercialAudioMediaCreationService.cs" />
-    <Compile Include="Core\Media\CommercialAudioMediaDeletionService.cs" />
-    <Compile Include="Core\Media\CommercialAudioMediaModificationService.cs" />
-    <Compile Include="Core\Media\CommercialAudioMediaValidator.cs" />
+    <Compile Include="Core\Media\AudioCreationService.cs" />
+    <Compile Include="Core\Media\AudioDeletionService.cs" />
+    <Compile Include="Core\Media\AudioModificationService.cs" />
+    <Compile Include="Core\Media\AudioValidator.cs" />
     <Compile Include="Core\Performance\Concert.cs" />
     <Compile Include="Core\Performance\ConcertCreationService.cs" />
     <Compile Include="Core\Performance\ConcertDeletionService.cs" />
@@ -145,7 +145,7 @@
     <Compile Include="Infrastructure\Application\Configuration\Data.cs" />
     <Compile Include="Infrastructure\Application\Configuration\Web.cs" />
     <Compile Include="Infrastructure\Application\Data\Persistence\ArtistMap.cs" />
-    <Compile Include="Infrastructure\Application\Data\Persistence\CommercialAudioMediaMap.cs" />
+    <Compile Include="Infrastructure\Application\Data\Persistence\AudioMap.cs" />
     <Compile Include="Infrastructure\Application\Data\Persistence\ConcertMap.cs" />
     <Compile Include="Infrastructure\Application\Data\Persistence\UserMap.cs" />
     <Compile Include="Infrastructure\Application\Data\Persistence\VenueMap.cs" />
@@ -178,8 +178,7 @@
     <Compile Include="Infrastructure\Common\Linq\ExpressionExtensions.cs" />
     <Compile Include="Infrastructure\Common\Linq\LinqExtensions.cs" />
     <Compile Include="Infrastructure\Common\ObjectExtensions.cs" />
-    <Compile Include="Infrastructure\Common\Objects\IModelMapping.cs" />
-    <Compile Include="Infrastructure\Common\Objects\ModelMapping.cs" />
+    <Compile Include="Infrastructure\Common\Objects\Mapper.cs" />
     <Compile Include="Infrastructure\Common\Reflection\AssemblyExttensions.cs" />
     <Compile Include="Infrastructure\Common\Reflection\ObjectExtensions.cs" />
     <Compile Include="Infrastructure\Common\StringExtensions.cs" />

@@ -21,10 +21,10 @@ namespace MediaInventory.Tests.Common.Data.TestData
         public ConcertDsl Create(Action<Concert> configure = null)
         {
             return new ConcertDsl(_context, _context.Repositories
-                .ConcertRepository.Add(new Concert
+                .Concerts.Add(new Concert
                 {
                     Artist = _artistsDsl.Create().Artist,
-                    Date = DateTime.Now.AddMonths(int.Parse(RandomString.GenerateNumeric(1))),
+                    Date = DateTime.Now.AddMonths(-int.Parse(RandomString.GenerateNumeric(1))).Date,
                     Venue = _venuesDsl.Create().Venue
                 }
                 .ActOn(configure))

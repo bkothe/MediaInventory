@@ -8,22 +8,22 @@ using Should;
 namespace MediaInventory.Tests.Unit.Core.Media
 {
     [TestFixture]
-    public class CommercialAudioMediaValidatorTests
+    public class AudioValidatorTests
     {
         private MemoryRepository<MediaInventory.Core.Artist.Artist> _artists;
-        private CommercialAudioMediaValidator _commercialAudioMediaValidator;
+        private AudioValidator _audioValidator;
 
         [SetUp]
         public void SetUp()
         {
             _artists = new MemoryRepository<MediaInventory.Core.Artist.Artist>(x => x.Id);
-            _commercialAudioMediaValidator = new CommercialAudioMediaValidator(_artists);
+            _audioValidator = new AudioValidator(_artists);
         }
 
         [Test]
-        public void should_not_have_error_for_valid_commercial_audio_media()
+        public void should_not_have_error_for_valid_audio()
         {
-            _commercialAudioMediaValidator.Validate(new CommercialAudioMedia
+            _audioValidator.Validate(new Audio
             {
                 Artist = _artists.Add(new MediaInventory.Core.Artist.Artist()),
                 Title = "2112",
@@ -35,19 +35,19 @@ namespace MediaInventory.Tests.Unit.Core.Media
         [Test]
         public void should_have_error_when_artist_is_null()
         {
-            _commercialAudioMediaValidator.ShouldHaveValidationErrorFor(x => x.Artist, new CommercialAudioMedia { Artist = null });
+            _audioValidator.ShouldHaveValidationErrorFor(x => x.Artist, new Audio { Artist = null });
         }
 
         [Test]
         public void should_have_error_when_artist_does_not_exist()
         {
-            _commercialAudioMediaValidator.ShouldHaveValidationErrorFor(x => x.Artist, new MediaInventory.Core.Artist.Artist());
+            _audioValidator.ShouldHaveValidationErrorFor(x => x.Artist, new MediaInventory.Core.Artist.Artist());
         }
 
         [Test]
         public void should_not_have_error_when_artist_exists()
         {
-            _commercialAudioMediaValidator.ShouldNotHaveValidationErrorFor(x => x.Artist, _artists.Add(new MediaInventory.Core.Artist.Artist()));
+            _audioValidator.ShouldNotHaveValidationErrorFor(x => x.Artist, _artists.Add(new MediaInventory.Core.Artist.Artist()));
         }
 
         [TestCase(null, TestName = "should_have_error_when_title_is_null")]
@@ -55,46 +55,46 @@ namespace MediaInventory.Tests.Unit.Core.Media
         [TestCase("    ", TestName = "should_have_error when_title_is_empty")]
         public void should_have_error_when_title_is_invalid(string title)
         {
-            _commercialAudioMediaValidator.ShouldHaveValidationErrorFor(x => x.Title, title);
+            _audioValidator.ShouldHaveValidationErrorFor(x => x.Title, title);
         }
 
         [Test]
         public void should_not_have_error_when_title_is_valid()
         {
-            _commercialAudioMediaValidator.ShouldNotHaveValidationErrorFor(x => x.Title, "Rush");
+            _audioValidator.ShouldNotHaveValidationErrorFor(x => x.Title, "Rush");
         }
 
         [TestCase(0, TestName = "should_have_error_when_title_is_too_short")]
         [TestCase(86, TestName = "should_have_error_when_title_is_too_long")]
         public void should_have_error_for_name_length(int length)
         {
-            _commercialAudioMediaValidator.ShouldHaveValidationErrorFor(x => x.Title, RandomString.GenerateAlphaNumeric(length));
+            _audioValidator.ShouldHaveValidationErrorFor(x => x.Title, RandomString.GenerateAlphaNumeric(length));
         }
 
         [TestCase(1, TestName = "should_not_have_error_when_title_is_min_length")]
         [TestCase(85, TestName = "should_not_have_error_when_title_is_max_length")]
         public void should_not_have_error_for_name_length(int length)
         {
-            _commercialAudioMediaValidator.ShouldNotHaveValidationErrorFor(x => x.Title, RandomString.GenerateAlphaNumeric(length));
+            _audioValidator.ShouldNotHaveValidationErrorFor(x => x.Title, RandomString.GenerateAlphaNumeric(length));
         }
 
         [Test]
         public void should_not_have_error_when_media_format_is_not_null()
         {
-            _commercialAudioMediaValidator.ShouldNotHaveValidationErrorFor(x => x.MediaFormat, MediaFormat.Vinyl);
+            _audioValidator.ShouldNotHaveValidationErrorFor(x => x.MediaFormat, MediaFormat.Vinyl);
         }
 
         [TestCase(null, TestName = "should_have_error_when_media_count_is_null")]
         [TestCase(0, TestName = "should_have_error_when_media_count_is_zero")]
         public void should_have_error_when_media_count_is_invalid(int mediaCount)
         {
-            _commercialAudioMediaValidator.ShouldHaveValidationErrorFor(x => x.MediaCount, mediaCount);
+            _audioValidator.ShouldHaveValidationErrorFor(x => x.MediaCount, mediaCount);
         }
 
         [Test]
         public void should_not_have_error_when_media_count_is_greater_than_zero()
         {
-            _commercialAudioMediaValidator.ShouldNotHaveValidationErrorFor(x => x.MediaFormat, new CommercialAudioMedia { MediaCount = 1 });
+            _audioValidator.ShouldNotHaveValidationErrorFor(x => x.MediaFormat, new Audio { MediaCount = 1 });
         }
     }
 }

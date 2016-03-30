@@ -3,16 +3,16 @@ using MediaInventory.Core.Media;
 
 namespace MediaInventory.Infrastructure.Application.Data.Persistence
 {
-    public class CommercialAudioMediaMap : ClassMap<CommercialAudioMedia>
+    public class AudioMap : ClassMap<Audio>
     {
-        public CommercialAudioMediaMap()
+        public AudioMap()
         {
-            Table("dbo.Media_CommercialAudio");
+            Table("dbo.Media_Audio");
 
             DynamicInsert();
             DynamicUpdate();
 
-            Id(x => x.Id).Column("MediaCommercialAudioId").GeneratedBy.GuidComb();
+            Id(x => x.Id).Column("MediaAudioId").GeneratedBy.GuidComb();
 
             Map(x => x.Title).Column("Title");
             Map(x => x.MediaFormat).Column("MediaFormatId").CustomType(typeof(MediaFormat));

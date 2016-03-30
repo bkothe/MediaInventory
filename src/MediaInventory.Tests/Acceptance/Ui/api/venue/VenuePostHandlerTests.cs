@@ -38,7 +38,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.venue
             var response = Http.ForUi.AsPublic(false, false, PostVenueUrl)
                 .PostJson<VenuePostHandler.Request, VenueModel>(request);
 
-            _testData.IncludeInCleanUp(_testData.Repositories.VenueRepository.Get(response.Data.Id));
+            _testData.IncludeInCleanUp(_testData.Repositories.Venues.Get(response.Data.Id));
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Id.ShouldNotEqual(Guid.Empty);

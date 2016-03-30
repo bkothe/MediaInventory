@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace MediaInventory.Tests.Integration.Infrastructure.Application.Data.Persistence
 {
     [TestFixture]
-    class CommercialAudioMediaMapTests
+    class AudioMapTests
     {
         private IntegrationTestData _testData;
 
@@ -28,7 +28,7 @@ namespace MediaInventory.Tests.Integration.Infrastructure.Application.Data.Persi
         [Test]
         public void should_correctly_persist_entity()
         {
-            new PersistenceSpecification<CommercialAudioMedia>(_testData.Session.GetSession())
+            new PersistenceSpecification<Audio>(_testData.Session.GetSession())
                 .CheckProperty(x => x.Title, RandomString.GenerateAlphaNumeric())
                 .CheckProperty(x => x.MediaFormat, MediaFormat.Vinyl)
                 .CheckProperty(x => x.Released, DateTime.Now, new DateTimeEqualityComparer(1))
@@ -46,7 +46,7 @@ namespace MediaInventory.Tests.Integration.Infrastructure.Application.Data.Persi
         [Test]
         public void should_persist_nullables()
         {
-            new PersistenceSpecification<CommercialAudioMedia>(_testData.Session.GetSession())
+            new PersistenceSpecification<Audio>(_testData.Session.GetSession())
                 .CheckProperty(x => x.Title, RandomString.GenerateAlphaNumeric())
                 .CheckProperty(x => x.MediaFormat, MediaFormat.Vinyl)
                 .CheckProperty(x => x.Released, null)

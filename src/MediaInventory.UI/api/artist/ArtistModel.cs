@@ -1,7 +1,6 @@
 using System;
 using AutoMapper;
 using MediaInventory.Core.Artist;
-using MediaInventory.Infrastructure.Common.Objects;
 
 namespace MediaInventory.UI.api.artist
 {
@@ -11,11 +10,11 @@ namespace MediaInventory.UI.api.artist
         public string Name { get; set; }
     }
 
-    public class ArtistModelMapping : IModelMapping
+    public class ArtistModelMapping : Profile
     {
-        public void Initialize()
+        protected override void Configure()
         {
-            Mapper.CreateMap<Artist, ArtistModel>();
+            CreateMap<Artist, ArtistModel>();
         }
     }
 }

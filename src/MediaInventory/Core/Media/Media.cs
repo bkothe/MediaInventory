@@ -29,7 +29,7 @@ namespace MediaInventory.Core.Media
         Nr = 7
     }
 
-    public class CommercialAudioMedia : IMedia, IIdEntity, ITimestampedEntity
+    public class Audio : IMedia, IIdEntity, ITimestampedEntity
     {
         public virtual Guid Id { get; set; }
         public virtual Artist.Artist Artist { get; set; }
@@ -44,9 +44,9 @@ namespace MediaInventory.Core.Media
         public virtual DateTime Created { get; set; }
         public virtual DateTime? Modified { get; set; }
 
-        public virtual CommercialAudioMedia Clone()
+        public virtual Audio Clone()
         {
-            return (CommercialAudioMedia)MemberwiseClone();
+            return (Audio)MemberwiseClone();
         }
     }
 

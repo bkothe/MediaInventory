@@ -1,11 +1,10 @@
 ﻿using System;
 using AutoMapper;
 using MediaInventory.Core.Media;
-using MediaInventory.Infrastructure.Common.Objects;
 
 namespace MediaInventory.UI.api.media.audio
 {
-    public class CommercialAudioMediaModel
+    public class AudioModel
     {
         public Guid Id { get; set; }
         public Guid ArtistId { get; set; }
@@ -20,11 +19,11 @@ namespace MediaInventory.UI.api.media.audio
         public string Notes { get; set; }
     }
 
-    public class CommercialAudioMediaModelMapping : IModelMapping
+    public class AudioModelMapping : Profile
     {
-        public void Initialize()
+        protected override void Configure()
         {
-            Mapper.CreateMap<CommercialAudioMedia, CommercialAudioMediaModel>();
+            CreateMap<Audio, AudioModel>();
         }
     }
 }

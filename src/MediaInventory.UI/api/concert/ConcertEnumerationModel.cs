@@ -1,7 +1,6 @@
 ﻿using System;
 using AutoMapper;
 using MediaInventory.Core.Performance;
-using MediaInventory.Infrastructure.Common.Objects;
 
 namespace MediaInventory.UI.api.concert
 {
@@ -15,11 +14,11 @@ namespace MediaInventory.UI.api.concert
         public string VenueState { get; set; }
     }
 
-    public class ConcertEnumerationModelMapping : IModelMapping
+    public class ConcertEnumerationModelMapping : Profile
     {
-        public void Initialize()
+        protected override void Configure()
         {
-            Mapper.CreateMap<Concert, ConcertEnumerationModel>()
+            CreateMap<Concert, ConcertEnumerationModel>()
                 .ForMember(x => x.ArtistName, x => x.MapFrom(y => y.Artist.Name))
                 .ForMember(x => x.VenueName, x => x.MapFrom(y => y.Venue.Name))
                 .ForMember(x => x.VenueCity, x => x.MapFrom(y => y.Venue.City))

@@ -33,7 +33,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.artist
             var response = Http.ForUi.AsPublic(false, false, PostArtistUrl)
                 .PostJson<ArtistPostHandler.Request, ArtistModel>(request);
 
-            _testData.IncludeInCleanUp(_testData.Repositories.ArtistRepository.Get(response.Data.Id));
+            _testData.IncludeInCleanUp(_testData.Repositories.Artists.Get(response.Data.Id));
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Id.ShouldNotEqual(Guid.Empty);

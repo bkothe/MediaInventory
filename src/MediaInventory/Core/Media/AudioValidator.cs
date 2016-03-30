@@ -4,7 +4,7 @@ using MediaInventory.Infrastructure.Common.Data.Orm;
 
 namespace MediaInventory.Core.Media
 {
-    public class CommercialAudioMediaValidator : AbstractValidator<CommercialAudioMedia>
+    public class AudioValidator : AbstractValidator<Audio>
     {
         public const string ArtistNullMessage = "An artist is required.";
         public const string ArtistNotExistsMessage = "The artist does not exist.";
@@ -14,7 +14,7 @@ namespace MediaInventory.Core.Media
         public const string MediaCountNotNullMessage = "Media count is required";
         public const string MediaCountGreaterThanMessage = "Media count must be greater than {ComparisonValue}.";
 
-        public CommercialAudioMediaValidator(IRepository<Artist.Artist> artists)
+        public AudioValidator(IRepository<Artist.Artist> artists)
         {
             RuleFor(x => x.Artist)
                 .NotNull().WithMessage(ArtistNullMessage)

@@ -116,9 +116,9 @@
     <Compile Include="Acceptance\Ui\api\concert\ConcertGetHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\concert\ConcertPostHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\concert\ConcertPutHandlerTests.cs" />
-    <Compile Include="Acceptance\Ui\api\media\audio\CommercialAudioMediaDeleteHandlerTests.cs" />
-    <Compile Include="Acceptance\Ui\api\media\audio\CommercialAudioMediaGetHandlerTests.cs" />
-    <Compile Include="Acceptance\Ui\api\media\audio\CommercialAudioMediaPostHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\media\audio\AudioDeleteHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\media\audio\AudioGetHandlerTests.cs" />
+    <Compile Include="Acceptance\Ui\api\media\audio\AudioPostHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\venue\VenueDeleteHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\venue\VenueGetHandlerTests.cs" />
     <Compile Include="Acceptance\Ui\api\venue\VenuePostHandlerTests.cs" />
@@ -128,7 +128,7 @@
     <Compile Include="Common\Configuration.cs" />
     <Compile Include="Common\Data\NHibernate.cs" />
     <Compile Include="Common\Data\TestData\ArtistsDsl.cs" />
-    <Compile Include="Common\Data\TestData\CommercialAudioMedieaDsl.cs" />
+    <Compile Include="Common\Data\TestData\AudiosDsl.cs" />
     <Compile Include="Common\Data\TestData\ConcertsDsl.cs" />
     <Compile Include="Common\Data\TestData\Context.cs" />
     <Compile Include="Common\Data\TestData\Repositories.cs" />
@@ -140,7 +140,7 @@
     <Compile Include="Common\Fakes\Data\MemoryRepository.cs" />
     <Compile Include="Common\Fakes\MemorySessionFactoryBuilder.cs" />
     <Compile Include="Integration\Infrastructure\Application\Data\Persistence\ArtistMapTests.cs" />
-    <Compile Include="Integration\Infrastructure\Application\Data\Persistence\CommercialAudioMediaMapTests.cs" />
+    <Compile Include="Integration\Infrastructure\Application\Data\Persistence\AudioMapTests.cs" />
     <Compile Include="Integration\Infrastructure\Application\Data\Persistence\ConcertMapTests.cs" />
     <Compile Include="Integration\Infrastructure\Application\Data\Persistence\UserMapTests.cs" />
     <Compile Include="Integration\Infrastructure\Application\Data\Persistence\VenueMapTests.cs" />
@@ -151,10 +151,10 @@
     <Compile Include="Unit\Core\Artist\ArtistDeletionServiceTests.cs" />
     <Compile Include="Unit\Core\Artist\ArtistModificationServiceTests.cs" />
     <Compile Include="Unit\Core\Artist\ArtistValidatorTests.cs" />
-    <Compile Include="Unit\Core\Media\CommercialAudioMediaCreationServiceTests.cs" />
-    <Compile Include="Unit\Core\Media\CommercialAudioMediaDeletionServiceTests.cs" />
-    <Compile Include="Unit\Core\Media\CommercialAudioMediaModificationServiceTests.cs" />
-    <Compile Include="Unit\Core\Media\CommercialAudioMediaValidatorTests.cs" />
+    <Compile Include="Unit\Core\Media\AudioCreationServiceTests.cs" />
+    <Compile Include="Unit\Core\Media\AudioDeletionServiceTests.cs" />
+    <Compile Include="Unit\Core\Media\AudioModificationServiceTests.cs" />
+    <Compile Include="Unit\Core\Media\AudioValidatorTests.cs" />
     <Compile Include="Unit\Core\Performance\ConcertDeletionServiceTests.cs" />
     <Compile Include="Unit\Core\Performance\ConcertModificationServiceTests.cs" />
     <Compile Include="Unit\Core\Performance\ConcertValidatorTests.cs" />

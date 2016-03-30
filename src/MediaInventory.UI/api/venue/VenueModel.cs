@@ -1,7 +1,6 @@
 ﻿using System;
 using AutoMapper;
 using MediaInventory.Core.Venue;
-using MediaInventory.Infrastructure.Common.Objects;
 
 namespace MediaInventory.UI.api.venue
 {
@@ -13,11 +12,11 @@ namespace MediaInventory.UI.api.venue
         public string State { get; set; }
     }
 
-    public class VenueModelMapping : IModelMapping
+    public class VenueModelMapping : Profile
     {
-        public void Initialize()
+        protected override void Configure()
         {
-            Mapper.CreateMap<Venue, VenueModel>();
+            CreateMap<Venue, VenueModel>();
         }
     }
 }

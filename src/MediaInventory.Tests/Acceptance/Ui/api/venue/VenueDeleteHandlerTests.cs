@@ -34,7 +34,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.venue
             var response = Http.ForUi.AsPublic(false, false, DeleteVenueUrl, venue.Id).Delete();
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
-            _testData.Repositories.VenueRepository.Count(x => x.Id == venue.Id).ShouldEqual(0);
+            _testData.Repositories.Venues.Count(x => x.Id == venue.Id).ShouldEqual(0);
 
             _testData.ExcludeInCleanup(venue);
         }

@@ -8,7 +8,7 @@ using Should;
 namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
 {
     [TestFixture]
-    public class CommercialAudioMediaDeleteHandlerTests
+    public class AudioDeleteHandlerTests
     {
         private const string DeleteAudioUrl = "api/media/audio/{0}";
 
@@ -27,16 +27,16 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
         }
 
         [Test]
-        public void should_delete_venue()
+        public void should_delete_audio()
         {
-            var audioMedia = _testData.CommercialAudioMediea.Create().CommercialAudioMedia;
+            var audio = _testData.Audios.Create().Audio;
 
-            var response = Http.ForUi.AsPublic(false, false, DeleteAudioUrl, audioMedia.Id).Delete();
+            var response = Http.ForUi.AsPublic(false, false, DeleteAudioUrl, audio.Id).Delete();
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
-            _testData.Repositories.CommercialAudioMediaRepository.Count(x => x.Id == audioMedia.Id).ShouldEqual(0);
+            _testData.Repositories.Audios.Count(x => x.Id == audio.Id).ShouldEqual(0);
 
-            _testData.ExcludeInCleanup(audioMedia);
+            _testData.ExcludeInCleanup(audio);
         }
     }
 }

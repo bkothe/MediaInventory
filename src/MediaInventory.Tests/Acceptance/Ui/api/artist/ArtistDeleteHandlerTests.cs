@@ -34,7 +34,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.artist
             var response = Http.ForUi.AsPublic(false, false, DeleteArtistUrl, artist.Id).Delete();
 
             response.Status.ShouldEqual(HttpStatusCode.OK);
-            _testData.Repositories.ArtistRepository.Count(x => x.Id == artist.Id).ShouldEqual(0);
+            _testData.Repositories.Artists.Count(x => x.Id == artist.Id).ShouldEqual(0);
 
             _testData.ExcludeInCleanup(artist);
         }

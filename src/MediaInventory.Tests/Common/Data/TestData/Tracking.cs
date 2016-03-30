@@ -25,14 +25,14 @@ namespace MediaInventory.Tests.Common.Data.TestData
                 session.BeginTransaction(IsolationLevel.ReadCommitted);
 
             Artists = new List<Artist>();
-            CommercialAudioMediae = new List<CommercialAudioMedia>();
+            Audios = new List<Audio>();
             Concerts = new List<Concert>();
             Users = new List<User>();
             Venues = new List<Venue>();
         }
 
         public List<Artist> Artists { get; }
-        public List<CommercialAudioMedia> CommercialAudioMediae { get; }
+        public List<Audio> Audios { get; }
         public List<Concert> Concerts { get; }
         public List<User> Users { get; }
         public List<Venue> Venues { get; }
@@ -49,11 +49,11 @@ namespace MediaInventory.Tests.Common.Data.TestData
 
         private void DeleteTrackedEntities()
         {
-            CommercialAudioMediae.ForEach(x => _repositories.CommercialAudioMediaRepository.Delete(x));
-            Concerts.ForEach(x => _repositories.ConcertRepository.Delete(x));
-            Artists.ForEach(x => _repositories.ArtistRepository.Delete(x));
-            Venues.ForEach(x => _repositories.VenueRepository.Delete(x));
-            Users.ForEach(x => _repositories.UserRepository.Delete(x));
+            Audios.ForEach(x => _repositories.Audios.Delete(x));
+            Concerts.ForEach(x => _repositories.Concerts.Delete(x));
+            Artists.ForEach(x => _repositories.Artists.Delete(x));
+            Venues.ForEach(x => _repositories.Venues.Delete(x));
+            Users.ForEach(x => _repositories.Users.Delete(x));
 
             _session.Flush();
         }
