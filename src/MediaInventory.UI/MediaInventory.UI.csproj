@@ -360,6 +360,7 @@
     <Compile Include="api\media\audio\AudioGetHandler.cs" />
     <Compile Include="api\media\audio\AudioPostHandler.cs" />
     <Compile Include="api\concert\ConcertPutHandler.cs" />
+    <Compile Include="api\media\audio\AudioPutHandler.cs" />
     <Compile Include="api\RequestGuidId.cs" />
     <Compile Include="api\venue\VenueDeleteHandler.cs" />
     <Compile Include="api\venue\VenueGetHandler.cs" />
