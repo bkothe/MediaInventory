@@ -26,16 +26,16 @@ namespace MediaInventory.Tests.Unit.Core.Media
             _audios = new MemoryRepository<Audio>(x => x.Id);
             _artists = new MemoryRepository<MediaInventory.Core.Artist.Artist>(x => x.Id, _artist);
             _audioValidator = new AudioValidator(_artists);
-            _audioCreationService = new AudioCreationService(_audios, _artists, _audioValidator);
+            _audioCreationService = new AudioCreationService(_audios, _audioValidator);
         }
 
         [Test, AutoData]
         public void should_add_audio_to_repository(Audio autoAudio)
         {
             var audios = Substitute.For<IRepository<Audio>>();
-            var audioCreationService = new AudioCreationService(audios, _artists, new AudioValidator(_artists));
+            var audioCreationService = new AudioCreationService(audios, new AudioValidator(_artists));
 
-            var audio = audioCreationService.Create(_artist.Id, autoAudio.Title, autoAudio.MediaFormat,
+            var audio = audioCreationService.Create(_artist, autoAudio.Title, autoAudio.MediaFormat,
                 autoAudio.Released, autoAudio.Purchased, autoAudio.PurchasePrice, autoAudio.PurchaseLocation, autoAudio.MediaCount, autoAudio.Notes);
 
             audios.Received(1).Add(Arg.Is<Audio>(x => x.Id == audio.Id));
@@ -44,7 +44,7 @@ namespace MediaInventory.Tests.Unit.Core.Media
         [Test, AutoData]
         public void should_create_audio(Audio autoAudio)
         {
-            var audio = _audioCreationService.Create(_artist.Id, autoAudio.Title, autoAudio.MediaFormat,
+            var audio = _audioCreationService.Create(_artist, autoAudio.Title, autoAudio.MediaFormat,
                 autoAudio.Released, autoAudio.Purchased, autoAudio.PurchasePrice, autoAudio.PurchaseLocation, autoAudio.MediaCount, autoAudio.Notes);
 
             audio.Artist.ShouldEqual(_artist);
@@ -62,7 +62,7 @@ namespace MediaInventory.Tests.Unit.Core.Media
         [Test]
         public void should_throw_validation_exception_for_invalid_parameters()
         {
-            Assert.Throws<ValidationException>(() => _audioCreationService.Create(_artist.Id, "", MediaFormat.Cassette, null, null, null, null, 0, null));
+            Assert.Throws<ValidationException>(() => _audioCreationService.Create(_artist, "", MediaFormat.Cassette, null, null, null, null, 0, null));
         }
     }
 }

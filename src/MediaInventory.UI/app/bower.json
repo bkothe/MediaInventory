@@ -17,6 +17,11 @@
   "dependencies": {
     "angular": "1.5.0",
     "angular-route": "1.5.0",
-    "lodash": "~4.6.1"
+    "lodash": "~4.6.1",
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~1.2.5"
+  },
+  "resolutions": {
+    "angular": "1.5.3"
   }
 }

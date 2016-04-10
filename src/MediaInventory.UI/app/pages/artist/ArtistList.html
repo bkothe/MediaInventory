@@ -1,5 +1,15 @@
-﻿<p><a href="/artist/list"></a></p>
+﻿<md-toolbar class=" md-primary">
+    <div class="md-toolbar-tools">
+        <h3 class="ng-binding">Artist List</h3>
+    </div>
+</md-toolbar>
 
-<ul ng-repeat="artist in artists">
-    <li><a href="artist/{{artist.Id}}">{{artist.Name}}</a></li>
-</ul>
+<md-list>
+    <md-list-item class="md-2-line" ng-repeat="artist in artists">
+        <md-icon class="md-avatar-icon">{{ artist.Name | limitTo: 1}}</md-icon>
+        <div class="md-list-item-text" layout="column">
+            <h4><a href="artist/edit/{{artist.Id}}">{{ artist.Name }}</a></h4>
+            <em>{{ artist.Id }}</em>
+        </div>
+    </md-list-item>
+</md-list>

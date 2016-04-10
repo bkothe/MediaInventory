@@ -6,21 +6,125 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
         <title ng-bind="title"></title>
     </head>
 
-    <body>
-        <div ng-view></div>
+<body ng-cloak>
 
-        <script type="text/javascript" src="lib/angular/angular.min.js"></script>
-        <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
-        <script type="text/javascript" src="lib/lodash/lodash.js"></script>
+    <md-toolbar md-whiteframe="3">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Media Inventory</span>
+            </h2>
 
-        <script type="text/javascript" src="app.js"></script>
-        <script type="text/javascript" src="pages/artist/ArtistCtrl.js"></script>
-        <script type="text/javascript" src="pages/artist/ArtistListCtrl.js"></script>
-        <script type="text/javascript" src="pages/artist/ArtistNewCtrl.js"></script>
-        <script type="text/javascript" src="pages/DefaultCtrl.js"></script>
-        <script type="text/javascript" src="services/ArtistService.js"></script>
-    </body>
+            <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)">
+                    Artist
+                </md-button>
+                <md-menu-content width="6">
+                    <md-menu-item>
+                        <md-button href="artist/list">
+                            Artist List
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button href="artist/new">
+                            Artist New
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)">
+                    Media
+                </md-button>
+                <md-menu-content width="6">
+                    <md-menu-item>
+                        <md-button href="media/audio/list">
+                            Audio List
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button href="media/audio/new">
+                            Audio New
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            
+            <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)">
+                    Venue
+                </md-button>
+                <md-menu-content width="6">
+                    <md-menu-item>
+                        <md-button href="venue/list">
+                            Venue List
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button href="venue/new">
+                            Venue New
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <div flex></div>
+        </div>
+    </md-toolbar>
+
+    <div class=" md-padding">
+        <section class="md-whiteframe-z3">
+            <div ng-view></div>
+        </section>
+    </div>
+
+            <!--
+            <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+            <script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+            <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+                <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+                -->
+            <!-- Angular Material requires Angular.js Libraries -->
+            <script src="lib/angular.min.js"></script>
+            <script src="lib/angular-animate.min.js"></script>
+            <script src="lib/angular-aria.min.js"></script>
+            <script src="lib/angular-messages.min.js"></script>
+
+            <!-- Angular Material Library -->
+            <script src="lib/angular-material.min.js"></script>
+
+
+            <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
+            <script type="text/javascript" src="lib/lodash/lodash.js"></script>
+
+            <script type="text/javascript" src="app.js"></script>
+
+            <!-- controllers -->
+            <script type="text/javascript" src="pages/artist/artist.controller.js"></script>
+            <script type="text/javascript" src="pages/artist/artistList.controller.js"></script>
+            <script type="text/javascript" src="pages/artist/artistEdit.controller.js"></script>
+            <script type="text/javascript" src="pages/dashboard.controller.js"></script>
+            <script type="text/javascript" src="pages/media/audio/audioEdit.controller.js"></script>
+            <script type="text/javascript" src="pages/media/audio/audio.controller.js"></script>
+            <script type="text/javascript" src="pages/media/audio/audioList.controller.js"></script>
+            <script type="text/javascript" src="pages/venue/venue.controller.js"></script>
+            <script type="text/javascript" src="pages/venue/venueList.controller.js"></script>
+            <script type="text/javascript" src="pages/venue/venueEdit.controller.js"></script>
+
+            <!-- services -->
+            <script type="text/javascript" src="services/data/artist.service.js"></script>
+            <script type="text/javascript" src="services/data/audio.service.js"></script>
+            <script type="text/javascript" src="services/data/venue.service.js"></script>
+
+            <!-- interceptors -->
+            <script type="text/javascript" src="infrastructure/interceptors/dotNetDate.interceptor.js"></script>
+            <script type="text/javascript" src="infrastructure/interceptors/httpStatus.interceptor.js"></script>
+</body>
 </html>

@@ -1,0 +1,15 @@
+﻿<md-toolbar class=" md-primary">
+    <div class="md-toolbar-tools">
+        <h3 class="ng-binding">Venue List</h3>
+    </div>
+</md-toolbar>
+
+<md-list>
+    <md-list-item class="md-2-line" ng-repeat="venue in venues">
+        <md-icon class="md-avatar-icon">{{ venue.Name | limitTo: 1}}</md-icon>
+        <div class="md-list-item-text" layout="column">
+            <h4><a href="venue/edit/{{venue.Id}}">{{ venue.Name }}</a></h4>
+            <em>{{ venue.Id }}</em>
+        </div>
+    </md-list-item>
+</md-list>

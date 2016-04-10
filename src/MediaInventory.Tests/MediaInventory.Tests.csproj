@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Bender, Version=3.0.33.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bender.3.0.33.0\lib\Bender.dll</HintPath>
       <Private>True</Private>
@@ -165,6 +169,8 @@
     <Compile Include="Unit\Core\Venue\VenueModificationServiceTests.cs" />
     <Compile Include="Unit\Core\Venue\VenueValidatorTests.cs" />
     <Compile Include="Unit\Infrastructure\Common\Collections\EnumerableExtensionsTests.cs" />
+    <Compile Include="Unit\Ui\api\media\audio\AudioPostHandlerTests.cs" />
+    <Compile Include="Unit\Ui\api\media\audio\AudioPutHandlerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

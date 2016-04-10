@@ -1,22 +1,23 @@
 ﻿using System;
+using System.Linq;
 using MediaInventory.Core.Artist;
 using MediaInventory.Core.Media;
-using MediaInventory.Infrastructure.Common.Collections;
 using MediaInventory.Infrastructure.Common.Data.Orm;
 
 namespace MediaInventory.UI.api.media.audio
 {
     public class AudioPutHandler
     {
-        private readonly AudioModificationService _audioModificationService;
+        private readonly IAudioModificationService _audioModificationService;
         private readonly IRepository<Artist> _artists;
+        private readonly IArtistCreationService _artistCreationService;
 
         public class Request
         {
             public Guid AudioId { get; set; }
-            public Guid ArtistId { get; set; }
+            public string ArtistName { get; set; }
             public string Title { get; set; }
-            public int MediaFormat { get; set; }
+            public MediaFormat MediaFormat { get; set; }
             public DateTime? Released { get; set; }
             public DateTime? Purchased { get; set; }
             public decimal? PurchasePrice { get; set; }
@@ -25,19 +26,24 @@ namespace MediaInventory.UI.api.media.audio
             public string Notes { get; set; }
         }
 
-        public AudioPutHandler(AudioModificationService audioModificationService, IRepository<Artist> artists)
+        public AudioPutHandler(IAudioModificationService audioModificationService,
+            IRepository<Artist> artists, IArtistCreationService artistCreationService)
         {
             _audioModificationService = audioModificationService;
             _artists = artists;
+            _artistCreationService = artistCreationService;
         }
 
         public void Execute_AudioId(Request request)
         {
+            var artist = _artists.FirstOrDefault(y => y.Name == request.ArtistName) ??
+                    _artistCreationService.Create(request.ArtistName);
+
             _audioModificationService.Modify(request.AudioId, x =>
             {
-                x.Artist = _artists.FirstOrThrowNotFound(y => y.Id == request.ArtistId, request.ArtistId, "Artist");
+                x.Artist = artist;
                 x.Title = request.Title;
-                x.MediaFormat = (MediaFormat)request.MediaFormat;
+                x.MediaFormat = request.MediaFormat;
                 x.Released = request.Released;
                 x.Purchased = request.Purchased;
                 x.PurchasePrice = request.PurchasePrice;

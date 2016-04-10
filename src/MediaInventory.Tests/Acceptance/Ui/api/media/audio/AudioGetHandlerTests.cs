@@ -18,6 +18,16 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
         private const string GetAudioUrl = "api/media/audio/{0}";
         private const string EnumerateAudioUrl = "api/media/audio";
 
+        private const string ArtistName = "Rush";
+        private const string Title = "2112";
+        private const MediaFormat MediaFormat = Core.Media.MediaFormat.Vinyl;
+        private readonly DateTime Released = DateTime.Parse("4/1/1976");
+        private readonly DateTime Purchased = DateTime.Parse("4/1/1995");
+        private const decimal PurchasePrice = 8.95M;
+        private const string PurchaseLocation = "amazon.com";
+        private const int MediaCount = 1;
+        private const string Notes = "Notes about 2112";
+
         private UiAcceptanceTestData _testData;
 
         [SetUp]
@@ -49,27 +59,17 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
         [Test]
         public void should_get_audio()
         {
-            const string artistName = "Rush";
-            const string title = "2112";
-            const MediaFormat mediaFormat = MediaFormat.Vinyl;
-            DateTime released = DateTime.Now.AddDays(-10);
-            DateTime purchased = DateTime.Now.AddDays(-9);
-            const decimal purchasePrice = (decimal)8.95;
-            const string purchaseLocation = "amazon.com";
-            const int mediaCount = 1;
-            const string notes = "Notes about 2112";
-
             _testData.Audios.Create(x =>
             {
-                x.Artist.Name = artistName;
-                x.Title = title;
-                x.MediaFormat = mediaFormat;
-                x.Released = released;
-                x.Purchased = purchased;
-                x.PurchasePrice = purchasePrice;
-                x.PurchaseLocation = purchaseLocation;
-                x.MediaCount = mediaCount;
-                x.Notes = notes;
+                x.Artist.Name = ArtistName;
+                x.Title = Title;
+                x.MediaFormat = MediaFormat;
+                x.Released = Released;
+                x.Purchased = Purchased;
+                x.PurchasePrice = PurchasePrice;
+                x.PurchaseLocation = PurchaseLocation;
+                x.MediaCount = MediaCount;
+                x.Notes = Notes;
             });
 
             var response = Http.ForUi.AsPublic(false, false, GetAudioUrl,
@@ -78,15 +78,15 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
             response.Status.ShouldEqual(HttpStatusCode.OK);
             response.Data.Id.ShouldEqual(_testData.Tracking.Audios.Single().Id);
             response.Data.ArtistId.ShouldNotEqual(Guid.Empty);
-            response.Data.ArtistName.ShouldEqual(artistName);
-            response.Data.Title.ShouldEqual(title);
-            response.Data.MediaFormat.ShouldEqual(mediaFormat);
-            response.Data.Released.ShouldEqual(released);
-            response.Data.Purchased.ShouldEqual(purchased);
-            response.Data.PurchasePrice.ShouldEqual(purchasePrice);
-            response.Data.PurchaseLocation.ShouldEqual(purchaseLocation);
-            response.Data.MediaCount.ShouldEqual(mediaCount);
-            response.Data.Notes.ShouldEqual(notes);
+            response.Data.ArtistName.ShouldEqual(ArtistName);
+            response.Data.Title.ShouldEqual(Title);
+            response.Data.MediaFormat.ShouldEqual(MediaFormat);
+            response.Data.Released.ShouldEqual(Released);
+            response.Data.Purchased.ShouldEqual(Purchased);
+            response.Data.PurchasePrice.ShouldEqual(PurchasePrice);
+            response.Data.PurchaseLocation.ShouldEqual(PurchaseLocation);
+            response.Data.MediaCount.ShouldEqual(MediaCount);
+            response.Data.Notes.ShouldEqual(Notes);
         }
 
         [Test]

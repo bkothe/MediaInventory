@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using MediaInventory.Core.Artist;
 using MediaInventory.Infrastructure.Common.Collections;
@@ -10,6 +11,11 @@ namespace MediaInventory.UI.api.artist
     {
         private readonly IRepository<Artist> _artists;
         private readonly IMapper _mapper;
+
+        public class RequerstNameFilter
+        {
+            public string Query { get; set; }
+        }
 
         public ArtistGetHandler(IRepository<Artist> artists, IMapper mapper)
         {
@@ -25,6 +31,11 @@ namespace MediaInventory.UI.api.artist
         public List<ArtistModel> Execute()
         {
             return _mapper.Map<List<ArtistModel>>(_artists);
+        }
+
+        public List<ArtistModel> Execute_Filter_Query(RequerstNameFilter filter)
+        {
+            return _mapper.Map<List<ArtistModel>>(_artists.Where(x => x.Name.Contains(filter.Query)));
         }
     }
 }

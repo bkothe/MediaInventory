@@ -1,2 +1,15 @@
-﻿Name: <input type="text" ng-model="artist.Name" /><br/>
-<button ng-click="save()">Save</button><button ng-click="saveAddNew()">Save & Add New</button>
+﻿<md-toolbar class=" md-primary">
+    <div class="md-toolbar-tools">
+        <h3 class="ng-binding">Artist Edit</h3>
+    </div>
+</md-toolbar>
+<div class="md-padding">
+    <md-input-container class="md-block">
+        <label>Artist</label>
+        <input type="text" ng-model="artist.Name" required minlength="2" md-maxlength="65">
+    </md-input-container>
+    <div>
+        <md-button class="md-raised md-primary" ng-click="save()"><i class="fa fa-floppy-o"></i> Save</md-button>
+        <md-button ng-click="saveAddNew()">Save & Add New</md-button>
+    </div>
+</div>

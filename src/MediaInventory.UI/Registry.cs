@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MediaInventory.Core.Artist;
 using MediaInventory.Infrastructure.Common.Web;
 using StructureMap.Graph;
 using Mapper = MediaInventory.Infrastructure.Common.Objects.Mapper;
@@ -21,6 +22,9 @@ namespace MediaInventory.UI
             For<IHttpStatus>().Use<HttpStatus>();
             For<IRequestHeaders>().Use<RequestHeaders>();
             For<IResponseHeaders>().Use<ResponseHeaders>();
+
+            // domain
+            For<IArtistCreationService>().Use<ArtistCreationService>();
         }
     }
 }

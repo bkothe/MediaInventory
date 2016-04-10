@@ -1,0 +1,32 @@
+﻿<md-toolbar class=" md-primary">
+    <div class="md-toolbar-tools">
+        <h3 class="ng-binding">Audio</h3>
+    </div>
+</md-toolbar>
+
+<md-content class="md-padding">
+    <div flex-xs flex-gt-xs="50" layout="column">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{audio.Title}}</span>
+                    <span class="md-subhead">{{audio.ArtitstName}}</span>
+                    {{audio.MediaFormat}}<br />
+                    {{audio.Released}}<br />
+                    {{audio.Purchased}}<br />
+                    {{audio.PurchaseLocation}}<br />
+                    {{audio.PurchasePrice}}<br />
+                    {{audio.MediaCount}}<br />
+                    {{audio.Notes}}
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-lg card-media"></div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</md-content>

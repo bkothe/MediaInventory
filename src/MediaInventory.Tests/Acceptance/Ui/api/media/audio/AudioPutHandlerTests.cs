@@ -48,9 +48,9 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
             Http.ForUi.AsPublic(false, false, PutAudioUrl, audio.Id)
                 .PutJson(new AudioPutHandler.Request
                 {
-                    ArtistId = ArtistModified.Id,
+                    ArtistName = ArtistModified.Name,
                     Title = TitleModified,
-                    MediaFormat = (int)MediaFormatModified,
+                    MediaFormat = MediaFormatModified,
                     Released = ReleasedModified,
                     Purchased = PurchasedModified,
                     PurchasePrice = PurchasePriceModified,
@@ -86,9 +86,9 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
             Http.ForUi.AsPublic(false, false, PutAudioUrl, audio.Id)
                 .PutJson(new AudioPutHandler.Request
                 {
-                    ArtistId = audio.Artist.Id,
+                    ArtistName = audio.Artist.Name,
                     Title = audio.Title,
-                    MediaFormat = (int)audio.MediaFormat,
+                    MediaFormat = audio.MediaFormat,
                     Released = null,
                     Purchased = null,
                     PurchasePrice = null,
@@ -101,17 +101,6 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.media.audio
             audio.Released.ShouldBeNull();
             audio.Purchased.ShouldBeNull();
             audio.PurchasePrice.ShouldBeNull();
-        }
-
-        [Test]
-        public void should_return_not_found_when_artist_does_not_exist()
-        {
-            Http.ForUi.AsPublic(false, false, PutAudioUrl, _testData.Concerts.Create().Concert.Id)
-                .PutJson(new AudioPutHandler.Request
-                {
-                    ArtistId = Guid.NewGuid()
-                })
-                .Status.ShouldEqual(HttpStatusCode.NotFound);
         }
     }
 }
