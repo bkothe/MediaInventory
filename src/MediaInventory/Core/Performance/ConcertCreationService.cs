@@ -1,5 +1,4 @@
 ﻿using System;
-using MediaInventory.Infrastructure.Common.Collections;
 using MediaInventory.Infrastructure.Common.Data.Orm;
 using MediaInventory.Infrastructure.Common.Exceptions;
 
@@ -7,32 +6,27 @@ namespace MediaInventory.Core.Performance
 {
     public interface IConcertCreationService
     {
-        Concert Create(Guid artistId, DateTime date, Guid venueId);
+        Concert Create(Artist.Artist artist, DateTime date, Venue.Venue venue);
     }
 
     public class ConcertCreationService : IConcertCreationService
     {
         private readonly IRepository<Concert> _concerts;
-        private readonly IRepository<Artist.Artist> _artists;
-        private readonly IRepository<Venue.Venue> _venues;
         private readonly ConcertValidator _concertValidator;
 
-        public ConcertCreationService(IRepository<Concert> concerts, IRepository<Artist.Artist> artists,
-            IRepository<Venue.Venue> venues, ConcertValidator concertValidator)
+        public ConcertCreationService(IRepository<Concert> concerts, ConcertValidator concertValidator)
         {
             _concerts = concerts;
-            _artists = artists;
-            _venues = venues;
             _concertValidator = concertValidator;
         }
 
-        public Concert Create(Guid artistId, DateTime date, Guid venueId)
+        public Concert Create(Artist.Artist artist, DateTime date, Venue.Venue venue)
         {
             var concert = new Concert
             {
-                Artist = _artists.FirstOrThrowNotFound(x => x.Id == artistId, artistId, "Artist"),
+                Artist = artist,
                 Date = date,
-                Venue = _venues.FirstOrThrowNotFound(x => x.Id == venueId, venueId, "Venue")
+                Venue = venue
             };
 
             _concertValidator.ValidateAndThrow(concert);

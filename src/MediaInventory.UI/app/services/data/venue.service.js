@@ -1,6 +1,5 @@
 ﻿angular.module('mediainventory').factory('VenueService', function ($http, API_URLS) {
 	var path = API_URLS.VENUE;
-	var filerPath = path + '/filter/';
 
 	var VenueService = function (data) {
 		angular.extend(this, data);
@@ -31,14 +30,6 @@
 		return $http.get(path).then(function (response) {
 			return _.map(response.data, function (d) {
 				return new VenueService(d);
-			});
-		});
-	};
-
-	VenueService.filter = function (value) {
-		return $http.get(filerPath + value).then(function (response) {
-			return _.map(response.data, function (d) {
-				return d.Name;
 			});
 		});
 	};

@@ -25,7 +25,7 @@
 .constant('API_URLS', {
 	'DASHBOARD': '',
 	'ARTIST': '/api/artist/',
-	'VENUE': '',
+	'VENUE': '/api/venue/',
 	'MEDIA': {
 		'AUDIO': '/api/media/audio/'
 	}

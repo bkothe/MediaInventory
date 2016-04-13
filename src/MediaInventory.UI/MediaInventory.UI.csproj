@@ -651,6 +651,7 @@
     <Compile Include="api\venue\VenuePutHandler.cs" />
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Conventions.cs" />
+    <Compile Include="Core\ArtistService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registry.cs" />
   </ItemGroup>

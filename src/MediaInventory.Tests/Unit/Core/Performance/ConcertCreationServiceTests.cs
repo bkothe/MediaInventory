@@ -27,7 +27,7 @@ namespace MediaInventory.Tests.Unit.Core.Performance
             _artists = new MemoryRepository<MediaInventory.Core.Artist.Artist>(x => x.Id);
             _venues = new MemoryRepository<MediaInventory.Core.Venue.Venue>(x => x.Id);
             _concertValidator = new ConcertValidator(_artists, _venues);
-            _concertCreationService = new ConcertCreationService(_concerts, _artists, _venues, _concertValidator);
+            _concertCreationService = new ConcertCreationService(_concerts, _concertValidator);
             _venue = _venues.Add(new MediaInventory.Core.Venue.Venue { Id = Guid.NewGuid() });
             _artist = _artists.Add(new MediaInventory.Core.Artist.Artist());
         }
@@ -36,9 +36,9 @@ namespace MediaInventory.Tests.Unit.Core.Performance
         public void should_add_concert_to_repository()
         {
             var concerts = Substitute.For<IRepository<Concert>>();
-            var concertCreationService = new ConcertCreationService(concerts, _artists, _venues, _concertValidator);
+            var concertCreationService = new ConcertCreationService(concerts, _concertValidator);
 
-            var concert = concertCreationService.Create(_artist.Id, DateTime.Now, _venue.Id);
+            var concert = concertCreationService.Create(_artist, DateTime.Now, _venue);
 
             concerts.Received(1).Add(Arg.Is<Concert>(x => x.Id == concert.Id));
         }
@@ -48,7 +48,7 @@ namespace MediaInventory.Tests.Unit.Core.Performance
         {
             var date = DateTime.Now;
 
-            var concert = _concertCreationService.Create(_artist.Id, DateTime.Now, _venue.Id);
+            var concert = _concertCreationService.Create(_artist, date, _venue);
 
             concert.Id.ShouldNotEqual(Guid.Empty);
             concert.Artist.ShouldEqual(_artist);
@@ -57,17 +57,17 @@ namespace MediaInventory.Tests.Unit.Core.Performance
         }
 
         [Test]
-        public void should_throw_not_found_exception_when_artist_does_not_exist()
+        public void should_throw_validation_exception_when_artist_does_not_exist()
         {
-            Assert.Throws<NotFoundException>(() => _concertCreationService
-                .Create(Guid.NewGuid(), DateTime.Now, _venue.Id));
+            Assert.Throws<ValidationException>(() => _concertCreationService
+                .Create(new MediaInventory.Core.Artist.Artist(), DateTime.Now, _venue));
         }
 
         [Test]
-        public void should_throw_not_found_exception_when_venue_does_not_exist()
+        public void should_throw_validation_exception_when_venue_does_not_exist()
         {
-            Assert.Throws<NotFoundException>(() => _concertCreationService
-                .Create(_artist.Id, DateTime.Now, Guid.NewGuid()));
+            Assert.Throws<ValidationException>(() => _concertCreationService
+                .Create(_artist, DateTime.Now, new MediaInventory.Core.Venue.Venue()));
         }
     }
 }

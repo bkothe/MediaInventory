@@ -1,8 +1,8 @@
 ﻿angular.module('mediainventory').controller('VenueEditController', function ($scope, $location, PAGE_URLS, VenueService, venueId) {
 	var masterEntity = new VenueService();
 	if (venueId) {
-		masterEntity = VenueService.get(venueId).then(function (response) {
-			$scope.venue = response;
+		 masterEntity = VenueService.get(venueId).then(function (response) {
+		 	$scope.venue = response;
 		});
 	}
 	$scope.venue = masterEntity;

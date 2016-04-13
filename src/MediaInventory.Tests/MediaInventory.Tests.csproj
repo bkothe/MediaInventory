@@ -181,8 +181,10 @@
     <Compile Include="Unit\Core\Venue\VenueModificationServiceTests.cs" />
     <Compile Include="Unit\Core\Venue\VenueValidatorTests.cs" />
     <Compile Include="Unit\Infrastructure\Common\Collections\EnumerableExtensionsTests.cs" />
+    <Compile Include="Unit\Ui\api\concert\ConcertPostHandlerTests.cs" />
     <Compile Include="Unit\Ui\api\media\audio\AudioPostHandlerTests.cs" />
     <Compile Include="Unit\Ui\api\media\audio\AudioPutHandlerTests.cs" />
+    <Compile Include="Unit\Ui\Core\ArtistServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

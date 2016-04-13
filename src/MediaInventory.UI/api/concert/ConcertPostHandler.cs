@@ -1,6 +1,8 @@
 ﻿using System;
 using AutoMapper;
 using MediaInventory.Core.Performance;
+using MediaInventory.Core.Venue;
+using MediaInventory.UI.Core;
 
 namespace MediaInventory.UI.api.concert
 {
@@ -8,23 +10,27 @@ namespace MediaInventory.UI.api.concert
     {
         public class Request
         {
-            public Guid ArtistId { get; set; }
+            public string ArtistName { get; set; }
             public DateTime Date { get; set; }
-            public Guid VenueId { get; set; }
+            public string VenueName { get; set; }
         }
 
-        private readonly ConcertCreationService _concertCreationService;
+        private readonly IConcertCreationService _concertCreationService;
         private readonly IMapper _mapper;
+        private readonly IArtistService _artistService;
 
-        public ConcertPostHandler(ConcertCreationService concertCreationService, IMapper mapper)
+        public ConcertPostHandler(IConcertCreationService concertCreationService, IMapper mapper, IArtistService artistService)
         {
             _concertCreationService = concertCreationService;
             _mapper = mapper;
+            _artistService = artistService;
         }
 
         public ConcertModel Execute(Request request)
         {
-            return _mapper.Map<ConcertModel>(_concertCreationService.Create(request.ArtistId, request.Date, request.VenueId));
+            var venue = new Venue();
+            return _mapper.Map<ConcertModel>(_concertCreationService.Create(_artistService.GetOrCreateArtist(request.ArtistName),
+                request.Date, venue));
         }
     }
 }

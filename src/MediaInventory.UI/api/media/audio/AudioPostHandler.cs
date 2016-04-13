@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Linq;
 using AutoMapper;
-using MediaInventory.Core.Artist;
 using MediaInventory.Core.Media;
-using MediaInventory.Infrastructure.Common.Data.Orm;
+using MediaInventory.UI.Core;
 
 namespace MediaInventory.UI.api.media.audio
 {
     public class AudioPostHandler
     {
-        private readonly AudioCreationService _audioCreationService;
+        private readonly IAudioCreationService _audioCreationService;
         private readonly IMapper _mapper;
-        private readonly IRepository<Artist> _artists;
-        private readonly IArtistCreationService _artistCreationService;
+        private readonly IArtistService _artistService;
 
         public class Request
         {
@@ -27,21 +24,16 @@ namespace MediaInventory.UI.api.media.audio
             public string Notes { get; set; }
         }
 
-        public AudioPostHandler(AudioCreationService audioCreationService, IMapper mapper,
-            IRepository<Artist> artists, IArtistCreationService artistCreationService)
+        public AudioPostHandler(IAudioCreationService audioCreationService, IMapper mapper, IArtistService artistService)
         {
             _audioCreationService = audioCreationService;
             _mapper = mapper;
-            _artists = artists;
-            _artistCreationService = artistCreationService;
+            _artistService = artistService;
         }
 
         public AudioModel Execute(Request request)
         {
-            var artist = _artists.FirstOrDefault(x => x.Name == request.ArtistName) ?? 
-                _artistCreationService.Create(request.ArtistName);
-
-            return _mapper.Map<AudioModel>(_audioCreationService.Create(artist,
+            return _mapper.Map<AudioModel>(_audioCreationService.Create(_artistService.GetOrCreateArtist(request.ArtistName),
                 request.Title, request.MediaFormat, request.Released, request.Purchased,
                 request.PurchasePrice, request.PurchaseLocation, request.MediaCount, request.Notes));
         }
