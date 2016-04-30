@@ -1,4 +1,4 @@
-﻿angular.module('mediainventory').controller('AudioEditController', function ($scope, $log, $location, PAGE_URLS, AudioService, ArtistService, audioId) {
+﻿angular.module('mediainventory').controller('AudioEditController', function ($scope, $log, $location, ROUTES, AudioService, ArtistService, audioId) {
 	var masterEntity = new AudioService();
 	if (audioId) {
 		masterEntity = AudioService.get(audioId).then(function (response) {
@@ -29,12 +29,12 @@
 
 	function save() {
 		$scope.audio.save().then(function () {
-			$location.path(PAGE_URLS.MEDIA.AUDIO.LIST);
+			$location.path(ROUTES.MEDIA.AUDIO.LIST);
 		});
 	};
 
 	function cancel() {
-		$location.path(PAGE_URLS.MEDIA.AUDIO.LIST);
+		$location.path(ROUTES.MEDIA.AUDIO.LIST);
 	};
 
 	function searchTextChange(text) {

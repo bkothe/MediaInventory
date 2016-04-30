@@ -1,11 +1,17 @@
 ﻿angular.module('mediainventory', ['ngRoute', 'ngMaterial', 'ngMessages'])
-.constant('PAGE_URLS', {
+.constant('ROUTES', {
 	'DASHBOARD': '/',
 	'ARTIST': {
-		'LIST': '/artist/list',
-		'NEW': '/artist/new',
-		'EDIT': '/artist/edit',
-		'VIEW': '/artist'
+		'LIST': 'artist/list',
+		'NEW': 'artist/new',
+		'EDIT': 'artist/edit',
+		'VIEW': 'artist'
+	},
+	'CONCERT': {
+		'LIST': '/concert/list',
+		'NEW': '/concert/new',
+		'EDIT': '/concert/edit',
+		'VIEW': '/concert'
 	},
 	'VENUE': {
 		'LIST': '/venue/list',
@@ -25,31 +31,32 @@
 .constant('API_URLS', {
 	'DASHBOARD': '',
 	'ARTIST': '/api/artist/',
+	'CONCERT': '/api/concert/',
 	'VENUE': '/api/venue/',
 	'MEDIA': {
 		'AUDIO': '/api/media/audio/'
 	}
 })
-.config(function ($locationProvider, $routeProvider, PAGE_URLS) {
+.config(function ($locationProvider, $routeProvider, ROUTES) {
 		$locationProvider.html5Mode(true);
 
 		$routeProvider
-			.when(PAGE_URLS.DASHBOARD, {
+			.when(ROUTES.DASHBOARD, {
 				controller: 'DashboardController',
 				templateUrl: 'pages/dashboard.html'
 			})
-			.when(PAGE_URLS.ARTIST.LIST, {
+			.when(ROUTES.ARTIST.LIST, {
 				controller: 'ArtistListController',
 				templateUrl: 'pages/artist/artistList.html'
 			})
-			.when(PAGE_URLS.ARTIST.NEW, {
+			.when(ROUTES.ARTIST.NEW, {
 				controller: 'ArtistEditController',
 				templateUrl: 'pages/artist/artistEdit.html',
 				resolve: {
 					artistId: function() { return null }
 				}
 			})
-			.when(PAGE_URLS.ARTIST.EDIT + '/:id', {
+			.when(ROUTES.ARTIST.EDIT + '/:id', {
 				controller: 'ArtistEditController',
 				templateUrl: 'pages/artist/artistEdit.html',
 				resolve: {
@@ -58,7 +65,7 @@
 					}
 				}
 			})
-			.when(PAGE_URLS.ARTIST.VIEW + '/:id', {
+			.when(ROUTES.ARTIST.VIEW + '/:id', {
 				controller: 'ArtistController',
 				templateUrl: 'pages/artist/artist.html',
 				resolve: {
@@ -67,18 +74,18 @@
 					}
 				}
 			})
-			.when(PAGE_URLS.MEDIA.AUDIO.LIST, {
+			.when(ROUTES.MEDIA.AUDIO.LIST, {
 				controller: 'AudioListController',
 				templateUrl: 'pages/media/audio/audioList.html'
 			})
-			.when(PAGE_URLS.MEDIA.AUDIO.NEW, {
+			.when(ROUTES.MEDIA.AUDIO.NEW, {
 				controller: 'AudioEditController',
 				templateUrl: 'pages/media/audio/audioEdit.html',
 				resolve: {
 					audioId: function () { return null }
 				}
 			})
-			.when(PAGE_URLS.MEDIA.AUDIO.EDIT + '/:id', {
+			.when(ROUTES.MEDIA.AUDIO.EDIT + '/:id', {
 				controller: 'AudioEditController',
 				templateUrl: 'pages/media/audio/audioEdit.html',
 				resolve: {
@@ -87,7 +94,7 @@
 					}
 				}
 			})
-			.when(PAGE_URLS.MEDIA.AUDIO.VIEW + '/:id', {
+			.when(ROUTES.MEDIA.AUDIO.VIEW + '/:id', {
 				controller: 'AudioController',
 				templateUrl: 'pages/media/audio/audio.html',
 				resolve: {
@@ -96,18 +103,49 @@
 					}
 				}
 			})
-			.when(PAGE_URLS.VENUE.LIST, {
+
+			.when(ROUTES.CONCERT.LIST, {
+				controller: 'ConcertListController',
+				templateUrl: 'pages/concert/concertList.html'
+			})
+			.when(ROUTES.CONCERT.NEW, {
+				controller: 'ConcertEditController',
+				templateUrl: 'pages/concert/concertEdit.html',
+				resolve: {
+					concertId: function () { return null }
+				}
+			})
+			.when(ROUTES.CONCERT.EDIT + '/:id', {
+				controller: 'ConcertEditController',
+				templateUrl: 'pages/concert/concertEdit.html',
+				resolve: {
+					concertId: function ($route) {
+						return $route.current.params.id;
+					}
+				}
+			})
+			.when(ROUTES.CONCERT.VIEW + '/:id', {
+				controller: 'ConcertController',
+				templateUrl: 'pages/concert/concert.html',
+				resolve: {
+					concertId: function ($route) {
+						return $route.current.params.id;
+					}
+				}
+			})
+
+			.when(ROUTES.VENUE.LIST, {
 				controller: 'VenueListController',
 				templateUrl: 'pages/venue/venueList.html'
 			})
-			.when(PAGE_URLS.VENUE.NEW, {
+			.when(ROUTES.VENUE.NEW, {
 				controller: 'VenueEditController',
 				templateUrl: 'pages/venue/venueEdit.html',
 				resolve: {
 					venueId: function () { return null }
 				}
 			})
-			.when(PAGE_URLS.VENUE.EDIT + '/:id', {
+			.when(ROUTES.VENUE.EDIT + '/:id', {
 				controller: 'VenueEditController',
 				templateUrl: 'pages/venue/venueEdit.html',
 				resolve: {
@@ -116,7 +154,7 @@
 					}
 				}
 			})
-			.when(PAGE_URLS.VENUE.VIEW + '/:id', {
+			.when(ROUTES.VENUE.VIEW + '/:id', {
 				controller: 'VenueController',
 				templateUrl: 'pages/venue/venue.html',
 				resolve: {
@@ -125,4 +163,7 @@
 					}
 				}
 			})
-	});
+	})
+    .run(function ($rootScope, ROUTES) {
+    	$rootScope.ROUTES = ROUTES;
+    });

@@ -1,7 +1,5 @@
-﻿using System.Web.Management;
-using FubuMVC.Bender;
+﻿using FubuMVC.Bender;
 using MediaInventory.Infrastructure.Application.Web;
-using MediaInventory.Infrastructure.Common.Web;
 using MediaInventory.Infrastructure.Common.Web.Fubu;
 
 namespace MediaInventory.UI

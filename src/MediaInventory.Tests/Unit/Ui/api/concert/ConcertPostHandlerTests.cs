@@ -15,14 +15,25 @@ namespace MediaInventory.Tests.Unit.Ui.api.concert
     public class ConcertPostHandlerTests
     {
         [Test]
-        public void should_call_get_artist()
+        public void should_call_resolve_artist()
         {
-            var artistService = Substitute.For<IArtistService>();
+            var artistResolverService = Substitute.For<IArtistResolverService>();
             new ConcertPostHandler(Substitute.For<IConcertCreationService>(),
-                new Mapper(new List<Profile> {new ConcertModelMapping(), new VenueModelMapping(), new ArtistModelMapping() }), artistService)
+                new Mapper(new List<Profile> {new ConcertModelMapping(), new VenueModelMapping(), new ArtistModelMapping() }), artistResolverService, Substitute.For<IVenueResolverService>())
                 .Execute(new ConcertPostHandler.Request { ArtistName = "Rush" });
 
-            artistService.Received(1).GetOrCreateArtist(Arg.Is("Rush"));
+            artistResolverService.Received(1).ResolveArtist(Arg.Is("Rush"));
+        }
+
+        [Test]
+        public void should_call_resolve_venue()
+        {
+            var venueResolverService = Substitute.For<IVenueResolverService>();
+            new ConcertPostHandler(Substitute.For<IConcertCreationService>(),
+                new Mapper(new List<Profile> { new ConcertModelMapping(), new VenueModelMapping(), new ArtistModelMapping() }), Substitute.For<IArtistResolverService>(), venueResolverService)
+                .Execute(new ConcertPostHandler.Request { VenueName = "Alpine Valley" });
+
+            venueResolverService.Received(1).ResolveVenue(Arg.Is("Alpine Valley"));
         }
     }
 }

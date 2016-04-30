@@ -9,7 +9,7 @@ namespace MediaInventory.UI.api.media.audio
     {
         private readonly IAudioCreationService _audioCreationService;
         private readonly IMapper _mapper;
-        private readonly IArtistService _artistService;
+        private readonly IArtistResolverService _artistResolverService;
 
         public class Request
         {
@@ -24,16 +24,16 @@ namespace MediaInventory.UI.api.media.audio
             public string Notes { get; set; }
         }
 
-        public AudioPostHandler(IAudioCreationService audioCreationService, IMapper mapper, IArtistService artistService)
+        public AudioPostHandler(IAudioCreationService audioCreationService, IMapper mapper, IArtistResolverService artistResolverService)
         {
             _audioCreationService = audioCreationService;
             _mapper = mapper;
-            _artistService = artistService;
+            _artistResolverService = artistResolverService;
         }
 
         public AudioModel Execute(Request request)
         {
-            return _mapper.Map<AudioModel>(_audioCreationService.Create(_artistService.GetOrCreateArtist(request.ArtistName),
+            return _mapper.Map<AudioModel>(_audioCreationService.Create(_artistResolverService.ResolveArtist(request.ArtistName),
                 request.Title, request.MediaFormat, request.Released, request.Purchased,
                 request.PurchasePrice, request.PurchaseLocation, request.MediaCount, request.Notes));
         }

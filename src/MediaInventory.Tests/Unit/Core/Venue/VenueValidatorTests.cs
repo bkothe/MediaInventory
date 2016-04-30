@@ -79,13 +79,13 @@ namespace MediaInventory.Tests.Unit.Core.Venue
         }
 
         // state
-        [TestCase(null, TestName = "should_have_error_when_state_is_null")]
-        [TestCase("", TestName = "should_have_error_when_state_is_zero_length")]
-        [TestCase("      ", TestName = "should_have_error_when_state_is_empty")]
-        public void should_have_error_when_state_is_invalid(string state)
-        {
-            _venueValidator.ShouldHaveValidationErrorFor(x => x.State, state);
-        }
+        //[TestCase(null, TestName = "should_have_error_when_state_is_null")]
+        //[TestCase("", TestName = "should_have_error_when_state_is_zero_length")]
+        //[TestCase("      ", TestName = "should_have_error_when_state_is_empty")]
+        //public void should_have_error_when_state_is_invalid(string state)
+        //{
+        //    _venueValidator.ShouldHaveValidationErrorFor(x => x.State, state);
+        //}
 
         [Test]
         public void should_not_have_error_when_state_is_valid()
@@ -93,12 +93,12 @@ namespace MediaInventory.Tests.Unit.Core.Venue
             _venueValidator.ShouldNotHaveValidationErrorFor(x => x.State, "IL");
         }
 
-        [TestCase(1, TestName = "should_have_error_when_state_is_too_short")]
-        [TestCase(3, TestName = "should_have_error_when_state_is_too_long")]
-        public void should_have_error_for_state_length(int length)
-        {
-            _venueValidator.ShouldHaveValidationErrorFor(x => x.State, RandomString.GenerateAlphaNumeric(length));
-        }
+        //[TestCase(1, TestName = "should_have_error_when_state_is_too_short")]
+        //[TestCase(3, TestName = "should_have_error_when_state_is_too_long")]
+        //public void should_have_error_for_state_length(int length)
+        //{
+        //    _venueValidator.ShouldHaveValidationErrorFor(x => x.State, RandomString.GenerateAlphaNumeric(length));
+        //}
 
         [Test]
         public void should_not_have_error_when_state_is_valid_length()
@@ -107,13 +107,13 @@ namespace MediaInventory.Tests.Unit.Core.Venue
         }
 
         // city
-        [TestCase(null, TestName = "should_have_error_when_city_is_null")]
-        [TestCase("", TestName = "should_have_error_when_city_is_zero_length")]
-        [TestCase("      ", TestName = "should_have_error_when_city_is_empty")]
-        public void should_have_error_when_city_is_invalid(string city)
-        {
-            _venueValidator.ShouldHaveValidationErrorFor(x => x.City, city);
-        }
+        //[TestCase(null, TestName = "should_have_error_when_city_is_null")]
+        //[TestCase("", TestName = "should_have_error_when_city_is_zero_length")]
+        //[TestCase("      ", TestName = "should_have_error_when_city_is_empty")]
+        //public void should_have_error_when_city_is_invalid(string city)
+        //{
+        //    _venueValidator.ShouldHaveValidationErrorFor(x => x.City, city);
+        //}
 
         [Test]
         public void should_not_have_error_when_city_is_valid()
@@ -121,12 +121,12 @@ namespace MediaInventory.Tests.Unit.Core.Venue
             _venueValidator.ShouldNotHaveValidationErrorFor(x => x.City, "Chicago");
         }
 
-        [TestCase(1, TestName = "should_have_error_when_city_is_too_short")]
-        [TestCase(46, TestName = "should_have_error_when_city_is_too_long")]
-        public void should_have_error_for_city_length(int length)
-        {
-            _venueValidator.ShouldHaveValidationErrorFor(x => x.City, RandomString.GenerateAlphaNumeric(length));
-        }
+        //[TestCase(1, TestName = "should_have_error_when_city_is_too_short")]
+        //[TestCase(46, TestName = "should_have_error_when_city_is_too_long")]
+        //public void should_have_error_for_city_length(int length)
+        //{
+        //    _venueValidator.ShouldHaveValidationErrorFor(x => x.City, RandomString.GenerateAlphaNumeric(length));
+        //}
 
         [TestCase(2, TestName = "should_not_have_error_when_city_is_min_length")]
         [TestCase(45, TestName = "should_not_have_error_when_city_is_max_length")]

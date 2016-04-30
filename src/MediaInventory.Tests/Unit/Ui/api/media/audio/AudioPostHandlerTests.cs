@@ -15,13 +15,13 @@ namespace MediaInventory.Tests.Unit.Ui.api.media.audio
         [Test]
         public void should_call_get_artist()
         {
-            var artistService = Substitute.For<IArtistService>();
+            var artistService = Substitute.For<IArtistResolverService>();
 
             new AudioPostHandler(Substitute.For<IAudioCreationService>(),
                 new Mapper(new List<Profile> { new AudioModelMapping() }), artistService)
                 .Execute(new AudioPostHandler.Request { ArtistName = "Rush" });
 
-            artistService.Received(1).GetOrCreateArtist(Arg.Is("Rush"));
+            artistService.Received(1).ResolveArtist(Arg.Is("Rush"));
         }
     }
 }

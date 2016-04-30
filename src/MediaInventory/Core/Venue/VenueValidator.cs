@@ -23,13 +23,13 @@ namespace MediaInventory.Core.Venue
                 .Must((venue, name) => !venues.Any(x => x.Id != venue.Id && x.Name == name))
                     .WithMessage(NameDuplicateMessage);
 
-            RuleFor(x => x.State)
-                .NotEmpty().WithMessage(StateNullEmptyMessage)
-                .Length(2).WithMessage(StateLengthMessage);
+            //RuleFor(x => x.State)
+            //    .NotEmpty().WithMessage(StateNullEmptyMessage)
+            //    .Length(2).WithMessage(StateLengthMessage);
 
-            RuleFor(x => x.City)
-                .NotEmpty().WithMessage(StateNullEmptyMessage)
-                .Length(2, 45).WithMessage(StateLengthMessage);
+            //RuleFor(x => x.City)
+            //    .NotEmpty().WithMessage(StateNullEmptyMessage)
+            //    .Length(2, 45).WithMessage(StateLengthMessage);
         }
     }
 }

@@ -59,12 +59,12 @@
       <HintPath>..\packages\flexo.1.0.22.0\lib\Flexo.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FubuCore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuCore.2.0.0.311\lib\FubuCore.dll</HintPath>
+    <Reference Include="FubuCore, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuCore.2.0.1.321\lib\FubuCore.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FubuLocalization, Version=0.9.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuLocalization.0.9.5.124\lib\FubuLocalization.dll</HintPath>
+    <Reference Include="FubuLocalization, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuLocalization.1.1.0.184\lib\FubuLocalization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FubuMVC.Bender, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
@@ -72,19 +72,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FubuMVC.Core, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuMVC.Core.1.3.0.1710\lib\net40\FubuMVC.Core.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.Core.1.3.0.1820\lib\net40\FubuMVC.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FubuMVC.Core.Assets, Version=0.9.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FubuMVC.Core.Assets.0.9.9.577\lib\net40\FubuMVC.Core.Assets.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FubuMVC.Core.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuMVC.Core.UI.1.0.0.166\lib\net40\FubuMVC.Core.UI.dll</HintPath>
+    <Reference Include="FubuMVC.Core.UI, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Core.UI.1.0.1.644\lib\net40\FubuMVC.Core.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FubuMVC.Core.View, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuMVC.Core.View.1.1.0.581\lib\net40\FubuMVC.Core.View.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.Core.View.1.1.0.597\lib\net40\FubuMVC.Core.View.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FubuMVC.Diagnostics, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
@@ -111,8 +111,8 @@
       <HintPath>..\packages\FubuMVC.TwitterBootstrap.0.0.0.660\lib\net40\FubuMVC.TwitterBootstrap.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="HtmlTags, Version=1.2.0.144, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlTags.1.2.0.144\lib\4.0\HtmlTags.dll</HintPath>
+    <Reference Include="HtmlTags, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlTags.2.1.0.183\lib\4.0\HtmlTags.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -128,12 +128,12 @@
       <HintPath>..\packages\Spark.1.8.1.0\lib\NET45\Spark.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap, Version=3.1.7.350, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.7.350\lib\net40\StructureMap.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap.Net4, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+    <Reference Include="StructureMap.Net4, Version=3.1.7.350, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.7.350\lib\net40\StructureMap.Net4.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -447,6 +447,12 @@
     <Content Include="app\pages\artist\artistList.html" />
     <Content Include="app\pages\artist\artistList.controller.js" />
     <Content Include="app\pages\artist\artistEdit.controller.js" />
+    <Content Include="app\pages\concert\concert.controller.js" />
+    <Content Include="app\pages\concert\concert.html" />
+    <Content Include="app\pages\concert\concertEdit.controller.js" />
+    <Content Include="app\pages\concert\concertEdit.html" />
+    <Content Include="app\pages\concert\concertList.controller.js" />
+    <Content Include="app\pages\concert\concertList.html" />
     <Content Include="app\pages\dashboard.html" />
     <Content Include="app\pages\dashboard.controller.js" />
     <Content Include="app\pages\artist\artist.controller.js" />
@@ -651,7 +657,8 @@
     <Compile Include="api\venue\VenuePutHandler.cs" />
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Conventions.cs" />
-    <Compile Include="Core\ArtistService.cs" />
+    <Compile Include="Core\ArtistResolverService.cs" />
+    <Compile Include="Core\VenueResolverService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registry.cs" />
   </ItemGroup>

@@ -6,6 +6,7 @@ namespace MediaInventory.Core.Venue
     public interface IVenueCreationService
     {
         Venue Create(string name, string city, string state);
+        Venue Create(string name);
     }
 
     public class VenueCreationService : IVenueCreationService
@@ -26,6 +27,18 @@ namespace MediaInventory.Core.Venue
                 Name = name,
                 City = city,
                 State = state
+            };
+
+            _venueValidator.ValidateAndThrow(venue);
+
+            return _venues.Add(venue);
+        }
+
+        public Venue Create(string name)
+        {
+            var venue = new Venue
+            {
+                Name = name
             };
 
             _venueValidator.ValidateAndThrow(venue);

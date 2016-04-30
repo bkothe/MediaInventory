@@ -1,4 +1,4 @@
-﻿angular.module('mediainventory').controller('ArtistEditController', function ($scope, $location, PAGE_URLS, ArtistService, artistId) {
+﻿angular.module('mediainventory').controller('ArtistEditController', function ($scope, $location, ROUTES, ArtistService, artistId) {
 	var masterEntity = new ArtistService();
 	if (artistId) {
 		masterEntity = ArtistService.get(artistId).then(function (response) {
@@ -14,9 +14,9 @@
 	$scope.save = function (addAnother) {
 		$scope.artist.save().then(function () {
 			if (addAnother)
-				$location.path(PAGE_URLS.ARTIST.NEW);
+				$location.path(ROUTES.ARTIST.NEW);
 			else
-				$location.path(PAGE_URLS.ARTIST.LIST);
+				$location.path(ROUTES.ARTIST.LIST);
 		});
 	};
 });

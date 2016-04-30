@@ -1,7 +1,6 @@
 ﻿using System;
 using AutoMapper;
 using MediaInventory.Core.Performance;
-using MediaInventory.Core.Venue;
 using MediaInventory.UI.Core;
 
 namespace MediaInventory.UI.api.concert
@@ -17,20 +16,21 @@ namespace MediaInventory.UI.api.concert
 
         private readonly IConcertCreationService _concertCreationService;
         private readonly IMapper _mapper;
-        private readonly IArtistService _artistService;
+        private readonly IArtistResolverService _artistResolverService;
+        private readonly IVenueResolverService _venueResolverService;
 
-        public ConcertPostHandler(IConcertCreationService concertCreationService, IMapper mapper, IArtistService artistService)
+        public ConcertPostHandler(IConcertCreationService concertCreationService, IMapper mapper, IArtistResolverService artistResolverService, IVenueResolverService venueResolverService)
         {
             _concertCreationService = concertCreationService;
             _mapper = mapper;
-            _artistService = artistService;
+            _artistResolverService = artistResolverService;
+            _venueResolverService = venueResolverService;
         }
 
         public ConcertModel Execute(Request request)
         {
-            var venue = new Venue();
-            return _mapper.Map<ConcertModel>(_concertCreationService.Create(_artistService.GetOrCreateArtist(request.ArtistName),
-                request.Date, venue));
+            return _mapper.Map<ConcertModel>(_concertCreationService.Create(_artistResolverService.ResolveArtist(request.ArtistName),
+                request.Date, _venueResolverService.ResolveVenue(request.VenueName)));
         }
     }
 }

@@ -14,6 +14,7 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.concert
         private const string PostConcertUrl = "api/concert";
 
         private const string ArtistName = "Rush";
+        private const string VenueName = "Alpine Valley";
         private readonly DateTime ConcertDate = DateTime.Parse("4/1/1976");
 
         private UiAcceptanceTestData _testData;
@@ -31,13 +32,13 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.concert
         }
 
         [Test]
-        public void should_create_audio()
+        public void should_create_concert()
         {
             var request = new ConcertPostHandler.Request
             {
                 ArtistName = ArtistName,
                 Date = ConcertDate,
-                VenueName = ""
+                VenueName = VenueName
             };
 
             var response = Http.ForUi.AsPublic(false, false, PostConcertUrl)
@@ -49,10 +50,10 @@ namespace MediaInventory.Tests.Acceptance.Ui.api.concert
             response.Data.Id.ShouldNotEqual(Guid.Empty);
             response.Data.ArtistName.ShouldEqual(ArtistName);
             response.Data.ArtistId.ShouldNotEqual(Guid.Empty);
-            //response.Data.Venue.Id.ShouldEqual(venue.Id);
-            //response.Data.Venue.Name.ShouldEqual(VenueName);
-            //response.Data.Venue.City.ShouldEqual(venue.City);
-            //response.Data.Venue.State.ShouldEqual(venue.State);
+            response.Data.Venue.Id.ShouldNotEqual(Guid.Empty);
+            response.Data.Venue.Name.ShouldEqual(VenueName);
+            response.Data.Venue.City.ShouldBeNull();
+            response.Data.Venue.State.ShouldBeNull();
             response.Data.Date.ShouldEqual(ConcertDate);
         }
     }
