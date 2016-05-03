@@ -12,11 +12,9 @@ namespace MediaInventory.UI
                 .Bindings(y => y.BindRequest())
                 .Configure(y => y.Serialization(z => z.WriteMicrosoftJsonDateTime())));
 
-            Policies.Add<ModelPropertyPolicy>();
 
             Policies
-                .WrapBehaviorChainsWith<TransactionScopeBehavior>(
-                    x => !x.HasAttribute<OverrideTransactionScopeAttribute>() && !x.IsContent() && !x.IsDiagnostics())
+                .WrapBehaviorChainsWith<TransactionScopeBehavior>(x => !x.HasAttribute<OverrideTransactionScopeAttribute>() && !x.IsContent() && !x.IsDiagnostics())
                 .WrapBehaviorChainsWith<RestExceptionHandlerBehavior>(x => x.IsEndpoint());
             //.WrapBehaviorChainsWith<ExceptionHandlerBehavior>(x => x.IsView() && !Assembly.GetExecutingAssembly().IsInDebugMode())
         }

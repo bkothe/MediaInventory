@@ -2,10 +2,10 @@
 .constant('ROUTES', {
 	'DASHBOARD': '/',
 	'ARTIST': {
-		'LIST': 'artist/list',
-		'NEW': 'artist/new',
-		'EDIT': 'artist/edit',
-		'VIEW': 'artist'
+		'LIST': '/artist/list',
+		'NEW': '/artist/new',
+		'EDIT': '/artist/edit',
+		'VIEW': '/artist'
 	},
 	'CONCERT': {
 		'LIST': '/concert/list',
@@ -103,7 +103,6 @@
 					}
 				}
 			})
-
 			.when(ROUTES.CONCERT.LIST, {
 				controller: 'ConcertListController',
 				templateUrl: 'pages/concert/concertList.html'
@@ -133,7 +132,6 @@
 					}
 				}
 			})
-
 			.when(ROUTES.VENUE.LIST, {
 				controller: 'VenueListController',
 				templateUrl: 'pages/venue/venueList.html'
@@ -162,8 +160,5 @@
 						return $route.current.params.id;
 					}
 				}
-			})
-	})
-    .run(function ($rootScope, ROUTES) {
-    	$rootScope.ROUTES = ROUTES;
-    });
+			});
+	});

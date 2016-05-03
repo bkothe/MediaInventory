@@ -185,8 +185,6 @@
     <Compile Include="Infrastructure\Common\Web\DictionaryExtensions.cs" />
     <Compile Include="Infrastructure\Common\Web\Exceptions\UnhandledWebException.cs" />
     <Compile Include="Infrastructure\Common\Web\Fubu\Extensions.cs" />
-    <Compile Include="Infrastructure\Common\Web\Fubu\ModelProperty.cs" />
-    <Compile Include="Infrastructure\Common\Web\Fubu\ModelPropertyJsonReader.cs" />
     <Compile Include="Infrastructure\Common\Web\Fubu\ReaderBase.cs" />
     <Compile Include="Infrastructure\Common\Web\Fubu\TransactionScopeBehavior.cs" />
     <Compile Include="Infrastructure\Common\Web\HttpStatus.cs" />
