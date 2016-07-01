@@ -5,7 +5,7 @@
 </md-toolbar>
 
 <md-list>
-    <md-list-item class="md-2-line" ng-repeat="artist in artists">
+    <md-list-item class="md-2-line" ng-repeat="artist in vm.artists">
         <md-icon class="md-avatar-icon">{{ artist.Name | limitTo: 1}}</md-icon>
         <div class="md-list-item-text" layout="column">
             <h4><a href="artist/edit/{{artist.Id}}">{{ artist.Name }}</a></h4>

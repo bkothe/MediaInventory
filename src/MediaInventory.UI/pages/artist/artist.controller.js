@@ -1,5 +1,12 @@
-﻿angular.module('mediainventory').controller('ArtistController', function ($scope, $rootScope, ArtistService, artistId) {
-	ArtistService.get(artistId).then(function (response) {
-		$scope.artist = response;
-	});
-});
+﻿(function () {
+	angular.module('mediainventory').controller('ArtistController', Artist);
+
+	Artist.$inject = ['ArtistService', 'artistId'];
+
+	function Artist(ArtistService, artistId) {
+		var vm = this;
+		ArtistService.get(artistId).then(function() {
+			vm.artist = ArtistService.artist;
+		});
+	}
+})();

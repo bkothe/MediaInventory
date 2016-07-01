@@ -159,6 +159,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="directives\bkArtistAutocomplete.js" />
+    <Content Include="directives\template.html" />
     <Content Include="index.controller.js" />
     <Content Include="index.html" />
     <Content Include="infrastructure\interceptors\dotNetDate.interceptor.js" />
@@ -472,6 +474,7 @@
     <Content Include="pages\venue\venueList.html" />
     <Content Include="services\data\artist.service.js" />
     <Content Include="services\data\audio.service.js" />
+    <Content Include="services\data\concert.service.js" />
     <Content Include="services\data\venue.service.js" />
     <Content Include="packages.config" />
     <Content Include="bower.json" />

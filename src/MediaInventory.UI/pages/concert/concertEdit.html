@@ -1,1 +1,19 @@
-﻿
+﻿<md-toolbar class="md-primary">
+    <div class="md-toolbar-tools">
+        <h3 class="ng-binding">Concert Edit</h3>
+    </div>
+</md-toolbar>
+<div class="md-padding">
+   <bk-artist-autocomplete></bk-artist-autocomplete>
+    
+    
+    <md-datepicker name="concertDate" ng-model="vm.concert.Date" md-placeholder="Date"></md-datepicker>
+    <div class="validation-messages" ng-messages="formEdit.concertDate.$error">
+        <div ng-message="valid">The entered value is not a date!</div>
+    </div>
+
+    <div>
+        <md-button class="md-raised md-primary" ng-click="vm.save()"><i class="fa fa-floppy-o"></i> Save</md-button>
+        <md-button ng-click="vm.cancel()">Cancel</md-button>
+    </div>
+</div>

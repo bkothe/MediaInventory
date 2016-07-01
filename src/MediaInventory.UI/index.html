@@ -13,139 +13,143 @@
         <title ng-bind="title"></title>
     </head>
 
-<body ng-cloak ng-controller="IndexController">
-    <md-toolbar md-whiteframe="3">
-        <div class="md-toolbar-tools">
-            <h2>
-                <span>Media Inventory</span>
-            </h2>
+    <body ng-cloak ng-controller="IndexController">
+        <md-toolbar md-whiteframe="3">
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Media Inventory</span>
+                </h2>
 
-            <md-menu>
-                <md-button ng-click="$mdOpenMenu($event)">
-                    Artist
-                </md-button>
-                <md-menu-content width="6">
-                    <md-menu-item>
-                        <md-button href="{{ROUTES.ARTIST.LIST}}">
-                            Artist List
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="{{ROUTES.ARTIST.NEW}}">
-                            Artist New
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
+                <md-menu>
+                    <md-button ng-click="$mdOpenMenu($event)">
+                        Artist
+                    </md-button>
+                    <md-menu-content width="6">
+                        <md-menu-item>
+                            <md-button href="{{ROUTES.ARTIST.LIST}}">
+                                Artist List
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button href="{{ROUTES.ARTIST.NEW}}">
+                                Artist New
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
 
-            <md-menu>
-                <md-button ng-click="$mdOpenMenu($event)">
-                    Media
-                </md-button>
-                <md-menu-content width="6">
-                    <md-menu-item>
-                        <md-button href="{{ROUTES.MEDIA.AUDIO.LIST}}">
-                            Audio List
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="{{ROUTES.MEDIA.AUDIO.NEW}}">
-                            Audio New
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
+                <md-menu>
+                    <md-button ng-click="$mdOpenMenu($event)">
+                        Media
+                    </md-button>
+                    <md-menu-content width="6">
+                        <md-menu-item>
+                            <md-button href="{{ROUTES.MEDIA.AUDIO.LIST}}">
+                                Audio List
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button href="{{ROUTES.MEDIA.AUDIO.NEW}}">
+                                Audio New
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
             
-            <md-menu>
-                <md-button ng-click="$mdOpenMenu($event)">
-                    Venue
-                </md-button>
-                <md-menu-content width="6">
-                    <md-menu-item>
-                        <md-button href="{{ROUTES.VENUE.LIST}}">
-                            Venue List
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="{{ROUTES.VENUE.NEW}}">
-                            Venue New
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
+                <md-menu>
+                    <md-button ng-click="$mdOpenMenu($event)">
+                        Venue
+                    </md-button>
+                    <md-menu-content width="6">
+                        <md-menu-item>
+                            <md-button href="{{ROUTES.VENUE.LIST}}">
+                                Venue List
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button href="{{ROUTES.VENUE.NEW}}">
+                                Venue New
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
             
-            <md-menu>
-                <md-button ng-click="$mdOpenMenu($event)">
-                    Concert
-                </md-button>
-                <md-menu-content width="6">
-                    <md-menu-item>
-                        <md-button href="{{ROUTES.CONCERT.LIST}}">
-                            Concert List
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="{{ROUTES.CONCERT.NEW}}">
-                            Concert New
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
+                <md-menu>
+                    <md-button ng-click="$mdOpenMenu($event)">
+                        Concert
+                    </md-button>
+                    <md-menu-content width="6">
+                        <md-menu-item>
+                            <md-button href="{{ROUTES.CONCERT.LIST}}">
+                                Concert List
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button href="{{ROUTES.CONCERT.NEW}}">
+                                Concert New
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
 
-            <div flex></div>
+                <div flex></div>
+            </div>
+        </md-toolbar>
+
+        <div class=" md-padding">
+            <section class="md-whiteframe-z3">
+                <div ng-view></div>
+            </section>
         </div>
-    </md-toolbar>
 
-    <div class=" md-padding">
-        <section class="md-whiteframe-z3">
-            <div ng-view></div>
-        </section>
-    </div>
+        <!--
+        <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+        -->
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-animate.min.js"></script>
+        <script src="lib/angular-aria.min.js"></script>
+        <script src="lib/angular-messages.min.js"></script>
 
-            <!--
-            <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
-            <script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
-            <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="lib/angular/angular.min.js"></script>
-            -->
-            <!-- Angular Material requires Angular.js Libraries -->
-            <script src="lib/angular.min.js"></script>
-            <script src="lib/angular-animate.min.js"></script>
-            <script src="lib/angular-aria.min.js"></script>
-            <script src="lib/angular-messages.min.js"></script>
-
-            <!-- Angular Material Library -->
-            <script src="lib/angular-material.min.js"></script>
+        <!-- Angular Material Library -->
+        <script src="lib/angular-material.min.js"></script>
 
 
-            <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
-            <script type="text/javascript" src="lib/lodash/lodash.js"></script>
+        <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="lib/lodash/lodash.js"></script>
 
-            <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="app.js"></script>
 
-            <!-- controllers -->
-            <script type="text/javascript" src="index.controller.js"></script>
-            <script type="text/javascript" src="pages/artist/artist.controller.js"></script>
-            <script type="text/javascript" src="pages/artist/artistList.controller.js"></script>
-            <script type="text/javascript" src="pages/artist/artistEdit.controller.js"></script>
-            <script type="text/javascript" src="pages/concert/concert.controller.js"></script>
-            <script type="text/javascript" src="pages/concert/concertList.controller.js"></script>
-            <script type="text/javascript" src="pages/concert/concertEdit.controller.js"></script>
-            <script type="text/javascript" src="pages/dashboard.controller.js"></script>
-            <script type="text/javascript" src="pages/media/audio/audioEdit.controller.js"></script>
-            <script type="text/javascript" src="pages/media/audio/audio.controller.js"></script>
-            <script type="text/javascript" src="pages/media/audio/audioList.controller.js"></script>
-            <script type="text/javascript" src="pages/venue/venue.controller.js"></script>
-            <script type="text/javascript" src="pages/venue/venueList.controller.js"></script>
-            <script type="text/javascript" src="pages/venue/venueEdit.controller.js"></script>
+        <!-- controllers -->
+        <script type="text/javascript" src="index.controller.js"></script>
+        <script type="text/javascript" src="pages/artist/artist.controller.js"></script>
+        <script type="text/javascript" src="pages/artist/artistList.controller.js"></script>
+        <script type="text/javascript" src="pages/artist/artistEdit.controller.js"></script>
+        <script type="text/javascript" src="pages/concert/concert.controller.js"></script>
+        <script type="text/javascript" src="pages/concert/concertList.controller.js"></script>
+        <script type="text/javascript" src="pages/concert/concertEdit.controller.js"></script>
+        <script type="text/javascript" src="pages/dashboard.controller.js"></script>
+        <script type="text/javascript" src="pages/media/audio/audioEdit.controller.js"></script>
+        <script type="text/javascript" src="pages/media/audio/audio.controller.js"></script>
+        <script type="text/javascript" src="pages/media/audio/audioList.controller.js"></script>
+        <script type="text/javascript" src="pages/venue/venue.controller.js"></script>
+        <script type="text/javascript" src="pages/venue/venueList.controller.js"></script>
+        <script type="text/javascript" src="pages/venue/venueEdit.controller.js"></script>
+    
+        <!-- directives -->
+        <!--<script type="text/javascript" src="directives/bkArtistAutocomplete.js"></script>-->
+            
+        <!-- services -->
+        <script type="text/javascript" src="services/data/artist.service.js"></script>
+        <script type="text/javascript" src="services/data/audio.service.js"></script>
+        <script type="text/javascript" src="services/data/concert.service.js"></script>
+        <script type="text/javascript" src="services/data/venue.service.js"></script>
 
-            <!-- services -->
-            <script type="text/javascript" src="services/data/artist.service.js"></script>
-            <script type="text/javascript" src="services/data/audio.service.js"></script>
-            <script type="text/javascript" src="services/data/venue.service.js"></script>
-
-            <!-- interceptors -->
-            <script type="text/javascript" src="infrastructure/interceptors/dotNetDate.interceptor.js"></script>
-            <script type="text/javascript" src="infrastructure/interceptors/httpStatus.interceptor.js"></script>
-</body>
+        <!-- interceptors -->
+        <script type="text/javascript" src="infrastructure/interceptors/dotNetDate.interceptor.js"></script>
+        <script type="text/javascript" src="infrastructure/interceptors/httpStatus.interceptor.js"></script>
+    </body>
 </html>

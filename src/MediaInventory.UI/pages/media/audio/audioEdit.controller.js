@@ -1,24 +1,24 @@
-﻿angular.module('mediainventory').controller('AudioEditController', function ($scope, $log, $location, ROUTES, AudioService, ArtistService, audioId) {
-	var masterEntity = new AudioService();
+﻿angular.module('mediainventory').controller('AudioEditController', function ($location, ROUTES, AudioService, ArtistsFactory, audioId)
+{
+	var vm = this;
+
+	vm.audio = AudioService.audio;
 	if (audioId) {
-		masterEntity = AudioService.get(audioId).then(function (response) {
-			$scope.audio = response;
+		AudioService.get(audioId).then(function () {
+			vm.audio = AudioService.audio;
 		});
 	}
-	$scope.audio = masterEntity;
 
-	$scope.ctrl = {};
-	$scope.ctrl.availableMediaFormats = getAvailableMediaFormats();
-	$scope.ctrl.querySearch = querySearch;
-	$scope.ctrl.searchTextChange = searchTextChange;
-	$scope.ctrl.selectedItemChange = selectedItemChange;
-	$scope.ctrl.save = save;
-	$scope.ctrl.cancel = cancel;
+	vm.availableMediaFormats = getAvailableMediaFormats();
+	vm.querySearch = querySearch;
+	vm.searchTextChange = searchTextChange;
+	vm.selectedItemChange = selectedItemChange;
+	vm.save = save;
+	vm.cancel = cancel;
 
 	function querySearch(query) {
-		return query ? ArtistService.filter(query).then(function (response) {
-			$log.info('Response:', response);
-			return response;
+		return query ? ArtistsFactory.filter(query).then(function (artists) {
+			return artists;
 		}) : [];
 	};
 
@@ -28,7 +28,7 @@
 	};
 
 	function save() {
-		$scope.audio.save().then(function () {
+		AudioService.save(vm.audio).then(function () {
 			$location.path(ROUTES.MEDIA.AUDIO.LIST);
 		});
 	};
@@ -38,12 +38,10 @@
 	};
 
 	function searchTextChange(text) {
-		$log.info('Change', text);
-		$scope.audio.ArtistName = text;
+		vm.audio.ArtistName = text;
 	};
 
 	function selectedItemChange(item) {
-		$log.info('Selected', item);
 		searchTextChange(item);
 	}
 });

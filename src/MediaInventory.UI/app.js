@@ -47,10 +47,12 @@
 			})
 			.when(ROUTES.ARTIST.LIST, {
 				controller: 'ArtistListController',
+				controllerAs: 'vm',
 				templateUrl: 'pages/artist/artistList.html'
 			})
 			.when(ROUTES.ARTIST.NEW, {
 				controller: 'ArtistEditController',
+				controllerAs: 'vm',
 				templateUrl: 'pages/artist/artistEdit.html',
 				resolve: {
 					artistId: function() { return null }
@@ -58,6 +60,7 @@
 			})
 			.when(ROUTES.ARTIST.EDIT + '/:id', {
 				controller: 'ArtistEditController',
+				controllerAs: 'vm',
 				templateUrl: 'pages/artist/artistEdit.html',
 				resolve: {
 					artistId: function ($route) {
@@ -80,6 +83,7 @@
 			})
 			.when(ROUTES.MEDIA.AUDIO.NEW, {
 				controller: 'AudioEditController',
+				controllerAs: 'vm',
 				templateUrl: 'pages/media/audio/audioEdit.html',
 				resolve: {
 					audioId: function () { return null }
@@ -87,6 +91,7 @@
 			})
 			.when(ROUTES.MEDIA.AUDIO.EDIT + '/:id', {
 				controller: 'AudioEditController',
+				controllerAs: 'vm',
 				templateUrl: 'pages/media/audio/audioEdit.html',
 				resolve: {
 					audioId: function ($route) {
@@ -109,6 +114,7 @@
 			})
 			.when(ROUTES.CONCERT.NEW, {
 				controller: 'ConcertEditController',
+				controllerAs: 'vm',
 				templateUrl: 'pages/concert/concertEdit.html',
 				resolve: {
 					concertId: function () { return null }

@@ -1,22 +1,36 @@
-﻿angular.module('mediainventory').controller('ArtistEditController', function ($scope, $location, ROUTES, ArtistService, artistId) {
-	var masterEntity = new ArtistService();
-	if (artistId) {
-		masterEntity = ArtistService.get(artistId).then(function (response) {
-			$scope.artist = response;
-		});
+﻿(function () {
+	angular.module('mediainventory').controller('ArtistEditController', ArtistEdit);
+
+	ArtistEdit.$inject = ['$location', '$log', 'ROUTES', 'ArtistsFactory', 'artistId'];
+
+	function ArtistEdit($location, $log, ROUTES, ArtistsFactory, artistId) {
+		var vm = this;
+
+		if (artistId) {
+			ArtistsFactory.get(artistId).then(function (artist) {
+				vm.artist = artist;
+			});
+		} else {
+			ArtistsFactory.new().then(function (artist) {
+				vm.artist = artist;
+			});
+		}
+
+		vm.saveAddNew = saveAndAddNew;
+		vm.save = save;
+
+		function saveAndAddNew() {
+			save(true);
+		};
+
+		function save(addAnother) {
+			$log.info(vm.artist);
+			ArtistsFactory.save(vm.artist).then(function () {
+				if (addAnother)
+					$location.path(ROUTES.ARTIST.NEW);
+				else
+					$location.path(ROUTES.ARTIST.LIST);
+			});
+		};
 	}
-	$scope.artist = masterEntity;
-
-	$scope.saveAddNew = function () {
-		$scope.save(true);
-	};
-
-	$scope.save = function (addAnother) {
-		$scope.artist.save().then(function () {
-			if (addAnother)
-				$location.path(ROUTES.ARTIST.NEW);
-			else
-				$location.path(ROUTES.ARTIST.LIST);
-		});
-	};
-});
+})();

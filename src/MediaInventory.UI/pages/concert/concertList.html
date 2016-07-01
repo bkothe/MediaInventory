@@ -1,1 +1,16 @@
-﻿
+﻿<md-toolbar class=" md-primary">
+    <div class="md-toolbar-tools">
+        <h3 class="ng-binding">Concert List</h3>
+    </div>
+</md-toolbar>
+
+<md-list>
+    <md-list-item class="md-2-line" ng-repeat="concert in concerts">
+        <md-icon class="md-avatar-icon">{{ concert.ArtistName | limitTo: 1}}</md-icon>
+        <div class="md-list-item-text" layout="column">
+            <h4><a href="concert/edit/{{concert.Id}}">{{ concert.ArtistName }}</a></h4>
+            {{concert.Date}} {{concert.Venue.Name}}<br /> 
+            <em>{{ concert.Id }}</em>
+        </div>
+    </md-list-item>
+</md-list>

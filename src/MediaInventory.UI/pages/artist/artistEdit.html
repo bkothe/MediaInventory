@@ -6,10 +6,10 @@
 <div class="md-padding">
     <md-input-container class="md-block">
         <label>Artist</label>
-        <input type="text" ng-model="artist.Name" required minlength="2" md-maxlength="65">
+        <input type="text" ng-model="vm.artist.Name" required minlength="2" md-maxlength="65">
     </md-input-container>
     <div>
-        <md-button class="md-raised md-primary" ng-click="save()"><i class="fa fa-floppy-o"></i> Save</md-button>
-        <md-button ng-click="saveAddNew()">Save & Add New</md-button>
+        <md-button class="md-raised md-primary" ng-click="vm.save()"><i class="fa fa-floppy-o"></i> Save</md-button>
+        <md-button ng-click="vm.saveAddNew()">Save & Add New</md-button>
     </div>
 </div>
