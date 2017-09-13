@@ -18,6 +18,10 @@ __pycache__
 *.Cache
 ._src
 node_modules/
-.vs
+.vs/
 
 src/packages
+
+src/*/fubu-content/*
+!src/*/fubu-content/*.zip
+!src/*/fubu-content/*.txt
