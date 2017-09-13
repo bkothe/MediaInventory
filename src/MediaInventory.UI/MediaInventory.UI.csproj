@@ -159,12 +159,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="common\common.js" />
+    <Content Include="common\logger.js" />
+    <Content Include="config.js" />
+    <Content Include="config.route.js" />
     <Content Include="directives\bkArtistAutocomplete.js" />
     <Content Include="directives\template.html" />
     <Content Include="index.controller.js" />
     <Content Include="index.html" />
     <Content Include="infrastructure\interceptors\dotNetDate.interceptor.js" />
     <Content Include="infrastructure\interceptors\httpStatus.interceptor.js" />
+    <Content Include="layout\shell.html" />
     <Content Include="lib\angular-animate.min.js" />
     <Content Include="lib\angular-aria.min.js" />
     <Content Include="lib\angular-bootstrap\index.js" />
@@ -445,6 +450,10 @@
     <Content Include="lib\lodash\vendor\underscore\test\utility.js" />
     <Content Include="lib\lodash\vendor\underscore\underscore-min.js" />
     <Content Include="lib\lodash\vendor\underscore\underscore.js" />
+    <Content Include="lib\toastr\toastr.css" />
+    <Content Include="lib\toastr\toastr.js" />
+    <Content Include="lib\toastr\toastr.min.css" />
+    <Content Include="lib\toastr\toastr.min.js" />
     <Content Include="pages\artist\artist.html" />
     <Content Include="pages\artist\artistEdit.html" />
     <Content Include="pages\artist\artistList.html" />
@@ -472,6 +481,7 @@
     <Content Include="pages\venue\venueEdit.html" />
     <Content Include="pages\venue\venueList.controller.js" />
     <Content Include="pages\venue\venueList.html" />
+    <Content Include="services\datacontext.js" />
     <Content Include="services\data\artist.service.js" />
     <Content Include="services\data\audio.service.js" />
     <Content Include="services\data\concert.service.js" />
@@ -624,6 +634,12 @@
     <Content Include="lib\jquery\README.md" />
     <Content Include="lib\jquery\sizzle\dist\sizzle.min.map" />
     <Content Include="lib\jquery\src\.jshintrc" />
+    <Content Include="lib\toastr\.bower.json" />
+    <Content Include="lib\toastr\bower.json" />
+    <Content Include="lib\toastr\README.md" />
+    <Content Include="lib\toastr\toastr.js.map" />
+    <Content Include="lib\toastr\toastr.less" />
+    <Content Include="lib\toastr\toastr.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -632,6 +648,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="services\model.js" />
+    <Content Include="services\repositories.js" />
+    <Content Include="services\repository.abstract.js" />
+    <Content Include="services\repository.artist.js" />
+    <Content Include="services\routeMediator.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -691,9 +712,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>9465</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://mediainventory.dev.briankothe.com</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://mediainventory.dev.briankothe.com</IISAppRootUrl>
+          <IISUrl>http://localhost:9465/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

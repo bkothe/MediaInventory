@@ -1,3 +1,3 @@
-﻿angular.module('mediainventory').controller('IndexController', function ($scope, ROUTES) {
-	$scope.ROUTES = ROUTES;
+﻿angular.module('mediainventory').controller('IndexController', function () {
+	//$scope.ROUTES = ROUTES;
 });

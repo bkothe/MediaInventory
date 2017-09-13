@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Administration\User.cs" />
+    <Compile Include="Core\Administration\UserCreationService.cs" />
     <Compile Include="Core\Administration\UserValidator.cs" />
     <Compile Include="Core\Artist\Artist.cs" />
     <Compile Include="Core\Artist\ArtistCreationService.cs" />
