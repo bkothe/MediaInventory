@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MediaInventory.Tests</RootNamespace>
     <AssemblyName>MediaInventory.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -195,10 +196,6 @@
     <ProjectReference Include="..\MediaInventory.UI\MediaInventory.UI.csproj">
       <Project>{E6A606CB-5672-4A85-AD97-4BEE167E7ACB}</Project>
       <Name>MediaInventory.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MediaInventory\MediaInventory.csproj">
-      <Project>{62a2c2fc-a3d2-403a-91b7-e88f332847a5}</Project>
-      <Name>MediaInventory</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
