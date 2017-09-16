@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MediaInventory</RootNamespace>
     <AssemblyName>MediaInventory</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -35,17 +35,11 @@
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Bender, Version=3.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bender.3.0.33.0\lib\Bender.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Bender, Version=3.0.75.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bender.3.0.75\lib\Bender.dll</HintPath>
     </Reference>
-    <Reference Include="Bottles, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bottles.2.2.0.610\lib\Bottles.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Flexo, Version=1.0.22.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\flexo.1.0.22.0\lib\Flexo.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Flexo, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\flexo.1.0.24.0\lib\Flexo.dll</HintPath>
     </Reference>
     <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
@@ -55,59 +49,21 @@
       <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FubuCore, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuCore.2.0.1.321\lib\FubuCore.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FubuLocalization, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuLocalization.1.1.0.184\lib\FubuLocalization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FubuMVC.Core, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuMVC.Core.1.3.0.1820\lib\net40\FubuMVC.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FubuMVC.Core.Assets, Version=0.9.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuMVC.Core.Assets.0.9.9.577\lib\net40\FubuMVC.Core.Assets.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FubuMVC.Core.UI, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuMVC.Core.UI.1.0.1.644\lib\net40\FubuMVC.Core.UI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FubuMVC.Core.View, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuMVC.Core.View.1.1.0.597\lib\net40\FubuMVC.Core.View.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FubuMVC.RegexUrlPolicy, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuMVC.RegexUrlPolicy.1.0.21.0\lib\FubuMVC.RegexUrlPolicy.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="HtmlTags, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlTags.2.1.0.183\lib\4.0\HtmlTags.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.1.1.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleConfig, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleConfig.1.0.38.0\lib\SimpleConfig.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="SimpleConfig, Version=1.0.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleConfig.1.0.43.0\lib\SimpleConfig.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap, Version=3.1.7.350, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\structuremap.3.1.7.350\lib\net40\StructureMap.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="StructureMap.Net4, Version=3.1.7.350, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\structuremap.3.1.7.350\lib\net40\StructureMap.Net4.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="StructureMap, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.5.2\lib\net45\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -150,8 +106,6 @@
     <Compile Include="Infrastructure\Application\Data\Persistence\ConcertMap.cs" />
     <Compile Include="Infrastructure\Application\Data\Persistence\UserMap.cs" />
     <Compile Include="Infrastructure\Application\Data\Persistence\VenueMap.cs" />
-    <Compile Include="Infrastructure\Application\Web\Conventions.cs" />
-    <Compile Include="Infrastructure\Application\Web\RestExceptionHandlerBehavior.cs" />
     <Compile Include="Infrastructure\Common\Collections\EnumerableExtensions.cs" />
     <Compile Include="Infrastructure\Common\Collections\QueryableExtensions.cs" />
     <Compile Include="Infrastructure\Common\Data\Orm\IAuditedCreateEntity.cs" />
@@ -184,21 +138,24 @@
     <Compile Include="Infrastructure\Common\Reflection\ObjectExtensions.cs" />
     <Compile Include="Infrastructure\Common\StringExtensions.cs" />
     <Compile Include="Infrastructure\Common\Web\DictionaryExtensions.cs" />
-    <Compile Include="Infrastructure\Common\Web\Exceptions\UnhandledWebException.cs" />
-    <Compile Include="Infrastructure\Common\Web\Fubu\Extensions.cs" />
-    <Compile Include="Infrastructure\Common\Web\Fubu\ModelProperty.cs" />
-    <Compile Include="Infrastructure\Common\Web\Fubu\ModelPropertyJsonReader.cs" />
-    <Compile Include="Infrastructure\Common\Web\Fubu\ReaderBase.cs" />
-    <Compile Include="Infrastructure\Common\Web\Fubu\TransactionScopeBehavior.cs" />
+    <Compile Include="Infrastructure\Common\Web\HttpApplication.cs" />
+    <Compile Include="Infrastructure\Common\Web\HttpContext.cs" />
+    <Compile Include="Infrastructure\Common\Web\HttpMethod.cs" />
+    <Compile Include="Infrastructure\Common\Web\HttpModuleBase.cs" />
+    <Compile Include="Infrastructure\Common\Web\HttpRequest.cs" />
+    <Compile Include="Infrastructure\Common\Web\HttpResponse.cs" />
     <Compile Include="Infrastructure\Common\Web\HttpStatus.cs" />
+    <Compile Include="Infrastructure\Common\Web\NameValueCollectionAdapterBase.cs" />
     <Compile Include="Infrastructure\Common\Web\RequestHeaders.cs" />
     <Compile Include="Infrastructure\Common\Web\ResponseHeaders.cs" />
-    <Compile Include="Infrastructure\Common\Web\NameValueCollectionAdapterBase.cs" />
     <Compile Include="Infrastructure\Common\Web\Security\AuthHeaderExtensions.cs" />
-    <Compile Include="Infrastructure\Common\Web\UriExtensions.cs" />
+    <Compile Include="Infrastructure\Common\Web\Security\BasicAuthentication.cs" />
+    <Compile Include="Infrastructure\Common\Web\ServerVariables.cs" />
+    <Compile Include="Infrastructure\Common\Web\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

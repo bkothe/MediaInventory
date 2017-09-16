@@ -1,10 +1,7 @@
-﻿using Bottles;
-using FubuMVC.Core;
-using FubuMVC.Core.Packaging.VirtualPaths;
-using FubuMVC.StructureMap3;
-using MediaInventory.Infrastructure.Common.Web.Fubu;
+﻿using System.Web.Http;
+using Graphite.AspNet;
+using Graphite.StructureMap;
 using MediaInventory.UI;
-using StructureMap;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Bootstrap), "Start")]
 
@@ -15,21 +12,28 @@ namespace MediaInventory.UI
         public static void Start()
         {
 
-            //DynamicModuleUtility.RegisterModule(typeof(ServerHeaderModule));
+            //var configuration = GlobalConfiguration.Configuration;
 
-            FubuApplication.For<Conventions>()
-                .StructureMap(new Container(x => {
-                    x.AddRegistry<Application.Registry>();
-                    x.AddRegistry<Registry>();  
-                }))
-                .Packages(x =>
-                {
-                    //x.Activator(new NonCachingVirtualPathProviderActivator());
-                    x.RemoveActivator<VirtualPathProviderActivator>();
-                })
-                .Bootstrap();
+            //configuration.InitializeGraphite(c => c
+            //    .EnableDiagnosticsInDebugMode()
+            //    .UseStructureMapContainer(configuration)
+            //);
 
-            PackageRegistry.AssertNoFailures();
+            //configuration.EnsureInitialized();
+
+            //FubuApplication.For<Conventions>()
+            //    .StructureMap(new Container(x => {
+            //        x.AddRegistry<Application.Registry>();
+            //        x.AddRegistry<Registry>();  
+            //    }))
+            //    .Packages(x =>
+            //    {
+            //        //x.Activator(new NonCachingVirtualPathProviderActivator());
+            //        x.RemoveActivator<VirtualPathProviderActivator>();
+            //    })
+            //    .Bootstrap();
+
+            //PackageRegistry.AssertNoFailures();
         }
     }
 }

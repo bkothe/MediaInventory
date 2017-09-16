@@ -5,12 +5,11 @@ using MediaInventory.Core.Performance;
 using MediaInventory.Core.Venue;
 using MediaInventory.Infrastructure.Common.Web;
 using MediaInventory.UI.Core;
-using StructureMap.Graph;
 using Mapper = MediaInventory.Infrastructure.Common.Objects.Mapper;
 
 namespace MediaInventory.UI
 {
-    public class Registry : StructureMap.Configuration.DSL.Registry
+    public class Registry : StructureMap.Registry
     {
         public Registry()
         {

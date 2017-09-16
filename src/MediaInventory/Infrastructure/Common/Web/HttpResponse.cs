@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Web;
 
-namespace Reachmail.Infrastructure.Framework.Web
+namespace MediaInventory.Infrastructure.Common.Web
 {
     public interface IHttpResponse
     {

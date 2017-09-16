@@ -4,13 +4,12 @@ using MediaInventory.Infrastructure.Common.Data.Orm.NHibernate;
 
 namespace MediaInventory.Application
 {
-    public class Registry : StructureMap.Configuration.DSL.Registry
+    public class Registry : StructureMap.Registry
     {
         public Registry()
         {
-            var configuration = SimpleConfig.Configuration.Load<Configuration>();
-
-            ForSingletonOf<Configuration>().Use(configuration);
+            ForSingletonOf<Configuration>()
+                .Use(SimpleConfig.Configuration.Load<Configuration>());
 
             // ------------------------------ Data Access ------------------------------
             // NHibernate

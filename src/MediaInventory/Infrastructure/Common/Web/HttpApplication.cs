@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace Reachmail.Infrastructure.Framework.Web
+namespace MediaInventory.Infrastructure.Common.Web
 {
     public interface IHttpApplication
     {
@@ -33,14 +33,6 @@ namespace Reachmail.Infrastructure.Framework.Web
         public void OnEndRequest(Action<IHttpContext> handler)
         {
             _context.EndRequest += handler.ToEventHandler();
-        }
-    }
-
-    public static class Extensions
-    {
-        public static EventHandler ToEventHandler(this Action<IHttpContext> handler)
-        {
-            return (sender, args) => handler(new HttpContextWrapper());
         }
     }
 }

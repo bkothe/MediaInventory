@@ -4,7 +4,7 @@ using MediaInventory.Tests.Common.Fakes.Data;
 using MediaInventory.UI.Core;
 using NSubstitute;
 using NUnit.Framework;
-using Ploeh.AutoFixture.NUnit2;
+using Ploeh.AutoFixture.NUnit3;
 using Should;
 
 namespace MediaInventory.Tests.Unit.Ui.Core
@@ -14,20 +14,20 @@ namespace MediaInventory.Tests.Unit.Ui.Core
     {
         private MemoryRepository<Artist> _artists;
         private IArtistCreationService _artistCreationService;
-        private ArtistResolverService _artistResolverService;
+        private ArtistResolverService _sut;
 
         [SetUp]
         public void SetUp()
         {
             _artists = new MemoryRepository<Artist>(x => x.Id);
             _artistCreationService = Substitute.For<IArtistCreationService>();
-            _artistResolverService = new ArtistResolverService(_artists, _artistCreationService);
+            _sut = new ArtistResolverService(_artists, _artistCreationService);
         }
 
         [Test, AutoData]
         public void should_return_existing_artist(Artist autoArtist)
         {
-            var result = _artistResolverService.ResolveArtist(_artists.Add(autoArtist).Name);
+            var result = _sut.ResolveArtist(_artists.Add(autoArtist).Name);
 
             result.Id.ShouldEqual(autoArtist.Id);
             result.Name.ShouldEqual(autoArtist.Name);
@@ -36,17 +36,17 @@ namespace MediaInventory.Tests.Unit.Ui.Core
         [Test]
         public void should_not_call_create_when_artist_with_specified_name_exists()
         {
-            _artistResolverService.ResolveArtist(_artists.Add(new Artist { Name = RandomString.GenerateAlphaNumeric() }).Name);
+            _sut.ResolveArtist(_artists.Add(new Artist { Name = RandomString.GenerateAlphaNumeric() }).Name);
 
             _artistCreationService.DidNotReceiveWithAnyArgs().Create(Arg.Any<string>());
         }
 
-        [Test]
+        [Test, AutoData]
         public void should_call_create_when_artist_with_specified_name_does_not_exist(Artist autoArtist)
         {
-            _artistResolverService.ResolveArtist(autoArtist.Name);
+            _sut.ResolveArtist(autoArtist.Name);
 
-            _artistCreationService.Received(1).Create(autoArtist.Name);
+            _artistCreationService.Received(1).Create(Arg.Is(autoArtist.Name));
         }
     }
 }

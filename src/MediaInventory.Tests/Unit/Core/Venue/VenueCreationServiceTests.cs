@@ -5,7 +5,6 @@ using MediaInventory.Tests.Common.Extensions;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;
 using NUnit.Framework;
-using Ploeh.AutoFixture.NUnit2;
 using Should;
 
 namespace MediaInventory.Tests.Unit.Core.Venue

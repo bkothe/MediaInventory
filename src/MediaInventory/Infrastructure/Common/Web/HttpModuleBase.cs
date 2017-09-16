@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace Reachmail.Infrastructure.Framework.Web
+namespace MediaInventory.Infrastructure.Common.Web
 {
     public abstract class HttpModuleBase : IHttpModule
     {

@@ -5,7 +5,6 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Helpers;
 using MediaInventory.Application;
-using MediaInventory.Core;
 using MediaInventory.Infrastructure.Application.Configuration;
 using NHibernate;
 using NHibernate.Util;

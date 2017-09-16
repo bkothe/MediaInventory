@@ -1,4 +1,5 @@
 ﻿using System;
+using MediaInventory.Infrastructure.Common.Web;
 
 namespace MediaInventory.Infrastructure.Common
 {
@@ -97,9 +98,33 @@ namespace MediaInventory.Infrastructure.Common
             result = false;
             return false;
         }
+
         public static string[] Split(this string value, string splitOn)
         {
             return value.Split(new[] { splitOn }, StringSplitOptions.RemoveEmptyEntries);
+        }
+
+        public static bool IsNullOrEmpty(this string value)
+        {
+            return string.IsNullOrEmpty(value);
+        }
+
+        public static HttpMethod ToHttpMethod(this string method)
+        {
+            if (method.IsNullOrEmpty()) return HttpMethod.Unsupported;
+            switch (method.ToLower())
+            {
+                case "get": return HttpMethod.Get;
+                case "head": return HttpMethod.Head;
+                case "post": return HttpMethod.Post;
+                case "put": return HttpMethod.Put;
+                case "delete": return HttpMethod.Delete;
+                case "trace": return HttpMethod.Trace;
+                case "options": return HttpMethod.Options;
+                case "connect": return HttpMethod.Connect;
+                case "patch": return HttpMethod.Patch;
+                default: return HttpMethod.Unsupported;
+            }
         }
     }
 }

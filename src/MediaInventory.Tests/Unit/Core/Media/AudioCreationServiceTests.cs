@@ -5,7 +5,7 @@ using MediaInventory.Infrastructure.Common.Exceptions;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NSubstitute;
 using NUnit.Framework;
-using Ploeh.AutoFixture.NUnit2;
+using Ploeh.AutoFixture.NUnit3;
 using Should;
 
 namespace MediaInventory.Tests.Unit.Core.Media

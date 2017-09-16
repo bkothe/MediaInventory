@@ -1,8 +1,10 @@
-﻿using System.IO;
-using System.Web;
-using Reachmail.Infrastructure.Framework.Web.Security;
+﻿
 
-namespace Reachmail.Infrastructure.Framework.Web
+using System.IO;
+using System.Web;
+using MediaInventory.Infrastructure.Common.Web.Security;
+
+namespace MediaInventory.Infrastructure.Common.Web
 {
     public interface IHttpRequest
     {

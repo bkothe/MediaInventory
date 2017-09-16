@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using AutoMapper.Internal;
 
 namespace MediaInventory.Infrastructure.Common.Objects
 {

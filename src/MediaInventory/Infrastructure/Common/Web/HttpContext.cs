@@ -1,4 +1,4 @@
-﻿namespace Reachmail.Infrastructure.Framework.Web
+﻿namespace MediaInventory.Infrastructure.Common.Web
 {
     public interface IHttpContext
     {
