@@ -1,7 +1,4 @@
-﻿using System.Web.Http;
-using Graphite.AspNet;
-using Graphite.StructureMap;
-using MediaInventory.UI;
+﻿using MediaInventory.UI;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Bootstrap), "Start")]
 

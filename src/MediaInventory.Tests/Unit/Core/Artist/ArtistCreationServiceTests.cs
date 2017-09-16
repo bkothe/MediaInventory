@@ -1,10 +1,8 @@
 ﻿using System;
 using FluentAssertions;
 using MediaInventory.Core.Artist;
-using MediaInventory.Infrastructure.Common.Data.Orm;
 using MediaInventory.Infrastructure.Common.Exceptions;
 using MediaInventory.Tests.Common.Fakes.Data;
-using NSubstitute;
 using NUnit.Framework;
 using Ploeh.AutoFixture;
 
