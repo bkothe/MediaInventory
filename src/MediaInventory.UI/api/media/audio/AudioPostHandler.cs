@@ -1,9 +1,6 @@
 ﻿using System;
-using AutoMapper;
-using MediaInventory.Core.Media;
-using MediaInventory.UI.Core;
 
-namespace MediaInventory.UI.api.media.audio
+namespace MediaInventory.Ui.api.media.audio
 {
     public class AudioPostHandler
     {

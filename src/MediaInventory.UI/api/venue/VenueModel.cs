@@ -1,8 +1,6 @@
 ﻿using System;
-using AutoMapper;
-using MediaInventory.Core.Venue;
 
-namespace MediaInventory.UI.api.venue
+namespace MediaInventory.Ui.api.venue
 {
     public class VenueModel
     {

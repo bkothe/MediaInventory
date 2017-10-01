@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
-using AutoMapper;
-using MediaInventory.Core.Venue;
-using MediaInventory.Infrastructure.Common.Collections;
-using MediaInventory.Infrastructure.Common.Data.Orm;
 
-namespace MediaInventory.UI.api.venue
+namespace MediaInventory.Ui.api.venue
 {
     public class VenueGetHandler
     {

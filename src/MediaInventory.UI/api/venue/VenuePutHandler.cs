@@ -1,7 +1,6 @@
 ﻿using System;
-using MediaInventory.Core.Venue;
 
-namespace MediaInventory.UI.api.venue
+namespace MediaInventory.Ui.api.venue
 {
     public class VenuePutHandler
     {

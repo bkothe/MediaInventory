@@ -1,0 +1,17 @@
+﻿<button md-icon-button [mdMenuTriggerFor]="menu">
+    <md-icon>more_vert</md-icon>
+</button>
+<md-menu #menu="mdMenu">
+    <button md-menu-item [routerLink]="'/dashboard'">
+        <md-icon>dashboard</md-icon>
+        <span>Dashboard</span>
+    </button>
+    <button md-menu-item [routerLink]="'/artists'">
+        <md-icon>person</md-icon>
+        <span>Artists</span>
+    </button>
+    <button md-menu-item [routerLink]="'/artists/new'">
+        <md-icon>person add</md-icon>
+        <span>New Artist</span>
+    </button>
+</md-menu>

@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
-using AutoMapper;
-using MediaInventory.Core.Performance;
-using MediaInventory.Infrastructure.Common.Collections;
-using MediaInventory.Infrastructure.Common.Data.Orm;
 
-namespace MediaInventory.UI.api.concert
+namespace MediaInventory.Ui.api.concert
 {
     public class ConcertGetHandler
     {

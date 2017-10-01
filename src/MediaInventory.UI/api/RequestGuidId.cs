@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MediaInventory.UI.api
+namespace MediaInventory.Ui.api
 {
     public class RequestGuidId
     {

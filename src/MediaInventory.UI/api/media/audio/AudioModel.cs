@@ -1,8 +1,6 @@
 ﻿using System;
-using AutoMapper;
-using MediaInventory.Core.Media;
 
-namespace MediaInventory.UI.api.media.audio
+namespace MediaInventory.Ui.api.media.audio
 {
     public class AudioModel
     {

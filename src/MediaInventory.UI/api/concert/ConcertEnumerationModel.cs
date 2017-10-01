@@ -1,8 +1,6 @@
 ﻿using System;
-using AutoMapper;
-using MediaInventory.Core.Performance;
 
-namespace MediaInventory.UI.api.concert
+namespace MediaInventory.Ui.api.concert
 {
     public class ConcertEnumerationModel
     {

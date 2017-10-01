@@ -1,8 +1,4 @@
-﻿using System.Linq;
-using MediaInventory.Core.Artist;
-using MediaInventory.Infrastructure.Common.Data.Orm;
-
-namespace MediaInventory.UI.Core
+﻿namespace MediaInventory.Ui.Core
 {
     public interface IArtistResolverService
     {

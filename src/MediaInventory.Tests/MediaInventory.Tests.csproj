@@ -177,10 +177,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MediaInventory.UI\MediaInventory.UI.csproj">
-      <Project>{E6A606CB-5672-4A85-AD97-4BEE167E7ACB}</Project>
-      <Name>MediaInventory.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MediaInventory\MediaInventory.csproj">
       <Project>{62A2C2FC-A3D2-403A-91B7-E88F332847A5}</Project>
       <Name>MediaInventory</Name>

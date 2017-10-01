@@ -1,8 +1,7 @@
-﻿using System.Linq;
+﻿using FluentAssertions;
 using MediaInventory.Core.Media;
 using MediaInventory.Tests.Common.Fakes.Data;
 using NUnit.Framework;
-using Should;
 
 namespace MediaInventory.Tests.Unit.Core.Media
 {
@@ -10,24 +9,24 @@ namespace MediaInventory.Tests.Unit.Core.Media
     public class AudioDeletionServiceTests
     {
         private MemoryRepository<Audio> _audios;
-        private AudioDeletionService _audioDeletionService;
+        private AudioDeletionService _sut;
 
         [SetUp]
         public void SetUp()
         {
             _audios = new MemoryRepository<Audio>(x => x.Id);
-            _audioDeletionService = new AudioDeletionService(_audios);
+            _sut = new AudioDeletionService(_audios);
         }
 
         [Test]
         public void should_delete_audio()
         {
             var audio = _audios.Add(new Audio());
-            _audios.Count(x => x.Id == audio.Id).ShouldEqual(1);
+            _audios.Should().Contain(x => x == audio);
 
-            _audioDeletionService.Delete(audio.Id);
+            _sut.Delete(audio.Id);
 
-            _audios.Count(x => x.Id == audio.Id).ShouldEqual(0);
+            _audios.Should().NotContain(x => x == audio);
         }
     }
 }

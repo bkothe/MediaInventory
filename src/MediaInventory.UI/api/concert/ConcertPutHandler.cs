@@ -1,11 +1,6 @@
 ﻿using System;
-using MediaInventory.Core.Artist;
-using MediaInventory.Core.Performance;
-using MediaInventory.Core.Venue;
-using MediaInventory.Infrastructure.Common.Collections;
-using MediaInventory.Infrastructure.Common.Data.Orm;
 
-namespace MediaInventory.UI.api.concert
+namespace MediaInventory.Ui.api.concert
 {
     public class ConcertPutHandler
     {

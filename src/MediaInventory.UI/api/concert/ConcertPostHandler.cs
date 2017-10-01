@@ -1,9 +1,6 @@
 ﻿using System;
-using AutoMapper;
-using MediaInventory.Core.Performance;
-using MediaInventory.UI.Core;
 
-namespace MediaInventory.UI.api.concert
+namespace MediaInventory.Ui.api.concert
 {
     public class ConcertPostHandler
     {

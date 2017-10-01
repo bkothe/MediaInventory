@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Linq;
-using MediaInventory.Core.Artist;
-using MediaInventory.Core.Media;
-using MediaInventory.Infrastructure.Common.Data.Orm;
 
-namespace MediaInventory.UI.api.media.audio
+namespace MediaInventory.Ui.api.media.audio
 {
     public class AudioPutHandler
     {

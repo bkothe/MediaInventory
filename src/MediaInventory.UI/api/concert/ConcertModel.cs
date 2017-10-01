@@ -1,9 +1,7 @@
 ﻿using System;
-using AutoMapper;
-using MediaInventory.Core.Performance;
-using MediaInventory.UI.api.venue;
+using MediaInventory.Ui.api.venue;
 
-namespace MediaInventory.UI.api.concert
+namespace MediaInventory.Ui.api.concert
 {
     public class ConcertModel
     {

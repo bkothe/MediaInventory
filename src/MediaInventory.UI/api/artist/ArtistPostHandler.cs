@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using MediaInventory.Core.Artist;
-
-namespace MediaInventory.UI.api.artist
+﻿namespace MediaInventory.Ui.api.artist
 {
     public class ArtistPostHandler
     {

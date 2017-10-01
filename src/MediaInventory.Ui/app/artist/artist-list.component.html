@@ -1,0 +1,13 @@
+<div>
+    <h3>Artist List</h3>
+</div>
+
+<div *ngFor="let artist of artists">
+    <h4><a [routerLink]="['edit', artist.id]">{{artist.name}}</a></h4>
+</div>
+
+<form class="example-form">
+    <md-form-field class="example-full-width">
+        <input mdInput placeholder="Artist Name">
+    </md-form-field>
+</form>

@@ -1,11 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using AutoMapper;
-using MediaInventory.Core.Artist;
-using MediaInventory.Infrastructure.Common.Collections;
-using MediaInventory.Infrastructure.Common.Data.Orm;
 
-namespace MediaInventory.UI.api.artist
+namespace MediaInventory.Ui.api.artist
 {
     public class ArtistGetHandler
     {
