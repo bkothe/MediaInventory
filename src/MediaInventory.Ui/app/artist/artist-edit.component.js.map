@@ -1,1 +1,0 @@
-{"version":3,"file":"artist-edit.component.js","sourceRoot":"","sources":["artist-edit.component.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,sCAA0C;AAO1C;IACI;IAEA,CAAC;IAHQ,mBAAmB;QAL/B,gBAAS,CAAC;YACP,QAAQ,EAAE,MAAM,CAAC,EAAE;YACnB,QAAQ,EAAE,aAAa;YACvB,WAAW,EAAE,8BAA8B;SAC9C,CAAC;;OACW,mBAAmB,CAI/B;IAAD,0BAAC;CAAA,AAJD,IAIC;AAJY,kDAAmB"}
