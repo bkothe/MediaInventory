@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaInventory", "MediaInve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaInventory.Tests", "MediaInventory.Tests\MediaInventory.Tests.csproj", "{0967D731-1E40-472E-BABC-A4AF601BCF07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaInventory.Ui", "MediaInventory.Ui\MediaInventory.Ui.csproj", "{2C384704-309B-4614-B0A7-CD860C070D56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaInventory.Ui", "MediaInventory.Ui\MediaInventory.Ui.csproj", "{5738712F-5934-4FF5-828C-68B9201AB372}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{0967D731-1E40-472E-BABC-A4AF601BCF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0967D731-1E40-472E-BABC-A4AF601BCF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0967D731-1E40-472E-BABC-A4AF601BCF07}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C384704-309B-4614-B0A7-CD860C070D56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C384704-309B-4614-B0A7-CD860C070D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C384704-309B-4614-B0A7-CD860C070D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C384704-309B-4614-B0A7-CD860C070D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5738712F-5934-4FF5-828C-68B9201AB372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5738712F-5934-4FF5-828C-68B9201AB372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5738712F-5934-4FF5-828C-68B9201AB372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5738712F-5934-4FF5-828C-68B9201AB372}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
